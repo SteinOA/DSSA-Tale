@@ -4,7 +4,7 @@ Gratis lokal norsk diktering, møteopptak og lydimport. Offentlig betaversjon: *
 
 ## Last ned og installer
 
-1. Åpne [siste utgivelse](https://github.com/SteinOA/DSSA-Tale/releases/latest) og last ned `DSSA-Tale-1.10.4-dssa.35-Windows-x64.exe`.
+1. Åpne [siste utgivelse](https://github.com/SteinOA/DSSA-Tale/releases/tag/v1.10.4-dssa.35) og last ned `DSSA-Tale-1.10.4-dssa.35-Windows-x64.exe`.
 2. Lukk DSSA Tale før installasjon. Installer og start appen.
 3. Velg mikrofon og hurtigtast under innstillingene. Under **Tale til tekst** velger du en NB-Whisper-modell fra Nasjonalbiblioteket og laster den ned.
 4. Hold inne hurtigtasten mens du snakker. Slipp tastene for å sette teksten inn i det aktive skrivefeltet.
@@ -38,3 +38,4 @@ Dette repositoriet inneholder kildeeksporten til v35 med en offentlig README. De
 Utviklere trenger Node.js 24 eller nyere. Kjør `npm ci`, og klargjør native avhengigheter som beskrevet i distribusjonsdokumentasjonen og kildearkivene før bygging. Modellvekter og nedlastede binærfiler inngår ikke i Git-kilden. Brukere av installasjonsfilen trenger ikke utviklingsverktøy.
 
 Mac-versjonen omfattes ikke av denne Windows-utgivelsen.
+
