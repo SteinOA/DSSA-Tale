@@ -1,0 +1,10 @@
+/* Warm offwhite surfaces throughout light mode, with visible structural dividers. */
+:root:not(.dark) .bg-white {
+  background-color: var(--color-card);
+}
+:root:not(.dark) :is(header, aside, nav, [role="separator"]) {
+  border-color: var(--color-border);
+}
+:root:not(.dark) [class*="divide-border"] > :not(:last-child) {
+  border-color: var(--color-border);
+}

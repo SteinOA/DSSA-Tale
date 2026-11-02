@@ -1,0 +1,165 @@
+[
+  {
+    "name": "altgraph",
+    "version": "0.17.5",
+    "license": "MIT",
+    "licenseFiles": [
+      "yt-dlp/altgraph/altgraph-0.17.5.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "brotli",
+    "version": "1.2.1",
+    "license": "MIT",
+    "licenseFiles": [
+      "yt-dlp/brotli/brotli-1.2.1.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "certifi",
+    "version": "2026.10.23",
+    "license": "MPL-2.0",
+    "licenseFiles": [
+      "yt-dlp/certifi/certifi-2026.10.23.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "charset-normalizer",
+    "version": "3.5.2",
+    "license": "MIT",
+    "licenseFiles": [
+      "yt-dlp/charset-normalizer/charset_normalizer-3.5.2.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "license": "BSD-3-Clause",
+    "licenseFiles": [
+      "yt-dlp/idna/idna-3.20.dist-info/licenses/LICENSE.md"
+    ]
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "licenseFiles": [
+      "yt-dlp/packaging/packaging-26.3.dist-info/licenses/LICENSE",
+      "yt-dlp/packaging/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "yt-dlp/packaging/packaging-26.3.dist-info/licenses/LICENSE.BSD"
+    ]
+  },
+  {
+    "name": "pefile",
+    "version": "2023.2.7",
+    "license": "MIT",
+    "licenseFiles": [
+      "yt-dlp/pefile/pefile-2023.2.7.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "pip",
+    "version": "25.0.1",
+    "license": "MIT",
+    "licenseFiles": [
+      "yt-dlp/pip/pip-25.0.1.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pycryptodomex",
+    "version": "3.24.1",
+    "license": "BSD, Public Domain",
+    "licenseFiles": [
+      "yt-dlp/pycryptodomex/pycryptodomex-3.24.1.dist-info/LICENSE.rst"
+    ]
+  },
+  {
+    "name": "pyinstaller",
+    "version": "6.13.0",
+    "license": "GPLv2-or-later with a special exception which allows to use PyInstaller to build and distribute non-free programs (including commercial ones)",
+    "licenseFiles": [
+      "yt-dlp/pyinstaller/pyinstaller-6.13.0.dist-info/COPYING.txt"
+    ]
+  },
+  {
+    "name": "pyinstaller-hooks-contrib",
+    "version": "2026.9",
+    "license": null,
+    "licenseFiles": [
+      "yt-dlp/pyinstaller-hooks-contrib/pyinstaller_hooks_contrib-2026.9.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "pywin32-ctypes",
+    "version": "0.2.3",
+    "license": "BSD-3-Clause",
+    "licenseFiles": [
+      "yt-dlp/pywin32-ctypes/pywin32_ctypes-0.2.3.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "requests",
+    "version": "2.34.2",
+    "license": "Apache-2.0",
+    "licenseFiles": [
+      "yt-dlp/requests/requests-2.34.2.dist-info/licenses/LICENSE",
+      "yt-dlp/requests/requests-2.34.2.dist-info/licenses/NOTICE"
+    ]
+  },
+  {
+    "name": "setuptools",
+    "version": "84.2.1",
+    "license": "MIT",
+    "licenseFiles": [
+      "yt-dlp/setuptools/setuptools-84.2.1.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/packaging-26.3.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "yt-dlp/setuptools/setuptools/_vendor/packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "yt-dlp/setuptools/setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+      "yt-dlp/setuptools/setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+      "yt-dlp/setuptools/setuptools/config/NOTICE",
+      "yt-dlp/setuptools/setuptools/config/_validate_pyproject/NOTICE"
+    ]
+  },
+  {
+    "name": "urllib3",
+    "version": "2.8.0",
+    "license": "MIT",
+    "licenseFiles": [
+      "yt-dlp/urllib3/urllib3-2.8.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "websockets",
+    "version": "17.4",
+    "license": "BSD-3-Clause",
+    "licenseFiles": [
+      "yt-dlp/websockets/websockets-17.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "yt-dlp",
+    "version": "2026.7.4",
+    "license": "Unlicense",
+    "licenseFiles": [
+      "yt-dlp/yt-dlp/yt_dlp-2026.7.4.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "yt-dlp-ejs",
+    "version": "0.8.0",
+    "license": "Unlicense AND MIT AND ISC",
+    "licenseFiles": [
+      "yt-dlp/yt-dlp-ejs/yt_dlp_ejs-0.8.0.dist-info/licenses/LICENSE"
+    ]
+  }
+]

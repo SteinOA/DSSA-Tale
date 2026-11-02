@@ -1,0 +1,122 @@
+/* Text size preferences change typography without scaling the window or icons. */
+:root {
+  --text-xs: calc(0.75rem * var(--dssa-ui-text-scale, 1));
+  --text-sm: calc(0.875rem * var(--dssa-ui-text-scale, 1));
+  --text-base: calc(1rem * var(--dssa-ui-text-scale, 1));
+  --text-lg: calc(1.125rem * var(--dssa-ui-text-scale, 1));
+  --text-xl: calc(1.25rem * var(--dssa-ui-text-scale, 1));
+  --text-2xl: calc(1.5rem * var(--dssa-ui-text-scale, 1));
+  --text-3xl: calc(1.875rem * var(--dssa-ui-text-scale, 1));
+  --text-4xl: calc(2.25rem * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[8px]"] {
+  font-size: calc(8px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[9px]"] {
+  font-size: calc(9px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[10px]"] {
+  font-size: calc(10px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[11px]"] {
+  font-size: calc(11px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[12px]"] {
+  font-size: calc(12px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[13px]"] {
+  font-size: calc(13px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[14px]"] {
+  font-size: calc(14px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[15px]"] {
+  font-size: calc(15px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[16px]"] {
+  font-size: calc(16px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[17px]"] {
+  font-size: calc(17px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[18px]"] {
+  font-size: calc(18px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[19px]"] {
+  font-size: calc(19px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[20px]"] {
+  font-size: calc(20px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[21px]"] {
+  font-size: calc(21px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[22px]"] {
+  font-size: calc(22px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[23px]"] {
+  font-size: calc(23px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[24px]"] {
+  font-size: calc(24px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[25px]"] {
+  font-size: calc(25px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[26px]"] {
+  font-size: calc(26px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[27px]"] {
+  font-size: calc(27px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[28px]"] {
+  font-size: calc(28px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[29px]"] {
+  font-size: calc(29px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[30px]"] {
+  font-size: calc(30px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[31px]"] {
+  font-size: calc(31px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[32px]"] {
+  font-size: calc(32px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[33px]"] {
+  font-size: calc(33px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[34px]"] {
+  font-size: calc(34px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[35px]"] {
+  font-size: calc(35px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[36px]"] {
+  font-size: calc(36px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[37px]"] {
+  font-size: calc(37px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[38px]"] {
+  font-size: calc(38px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[39px]"] {
+  font-size: calc(39px * var(--dssa-ui-text-scale, 1));
+}
+[class~="text-[40px]"] {
+  font-size: calc(40px * var(--dssa-ui-text-scale, 1));
+}
+html[data-dssa-content-size]
+  :is(
+    .dssa-content-text,
+    .rich-text-editor-content,
+    .rich-text-editor-content p,
+    .rich-text-editor-content li,
+    .rich-text-editor-content td,
+    .rich-text-editor-content th
+  ) {
+  font-size: var(--dssa-content-text-size) !important;
+  line-height: 1.6;
+}

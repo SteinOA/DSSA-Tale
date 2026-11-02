@@ -1,0 +1,46 @@
+{
+  "version": "1.10.4-dssa.31",
+  "ffmpeg": {
+    "version": "6.1.1",
+    "license": "LGPL-2.1-or-later",
+    "gpl": false,
+    "nonfree": false,
+    "lame": "3.100",
+    "opus": "1.5.2",
+    "zig": "0.14.1",
+    "sourceAsset": "DSSA-Tale-corresponding-source.zip"
+  },
+  "ytDlp": {
+    "version": "2026.07.04",
+    "python": "3.12.10",
+    "pyinstaller": "6.13.0",
+    "mutagenBundled": false,
+    "curlCffiBundled": false,
+    "microsoftRuntimeBundled": false,
+    "sourceAsset": "DSSA-Tale-corresponding-source.zip"
+  },
+  "binaries": [
+    {
+      "file": "ffmpeg.exe",
+      "sha256": "0f76077fdfb4ae78998c32f69bbf6dc7e9dce92ae2351afedda58467b12cb48c"
+    },
+    {
+      "file": "yt-dlp-win32-x64.exe",
+      "sha256": "8b7ab9d8e7ea9ea73980a5698ff83d4f2b6a9b9d593d772da347417b08308f4c"
+    }
+  ],
+  "nirCmdOriginalFiles": [
+    {
+      "file": "nircmd.exe",
+      "sha256": "2e81e048ab419fdc6e5f4336a951bd282ed6b740048dc38d7673678ee3490cda"
+    },
+    {
+      "file": "nircmdc.exe",
+      "sha256": "c3e28c6e201d5c0206d941bed96c1c6219397da9b563771d856da1b6cc390554"
+    },
+    {
+      "file": "NirCmd.chm",
+      "sha256": "573aa5b8db5f7b73cd0cb166514a197553e73659e881707c781691cbf2034516"
+    }
+  ]
+}

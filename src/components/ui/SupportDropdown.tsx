@@ -1,0 +1,80 @@
+import React, { useState } from "react";
+import DssaUserGuide from "../dssa/DssaUserGuide";
+import { useTranslation } from "react-i18next";
+import { Button } from "./button";
+import { HelpCircle, Mail, Bug, BookOpen } from "../icons";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./dropdown-menu";
+import { cn } from "../lib/utils";
+import logger from "../../utils/logger";
+
+interface SupportDropdownProps {
+  className?: string;
+  trigger?: React.ReactNode;
+}
+
+const openExternal = async (url: string) => {
+  try {
+    const result = await window.electronAPI?.openExternal(url);
+    if (!result?.success) {
+      logger.error("Failed to open URL", { error: result?.error }, "support");
+    }
+  } catch (error) {
+    logger.error("Error opening URL", { error }, "support");
+  }
+};
+
+export default function SupportDropdown({ className, trigger }: SupportDropdownProps) {
+  const { t } = useTranslation();
+  const [guideOpen, setGuideOpen] = useState(false);
+  return (
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          {trigger || (
+            <Button
+              variant="ghost"
+              size="icon"
+              className={cn(
+                "text-foreground/70 hover:text-foreground hover:bg-foreground/10",
+                className
+              )}
+            >
+              <HelpCircle size={16} />
+            </Button>
+          )}
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuItem onSelect={() => setGuideOpen(true)}>
+            <BookOpen className="me-2 h-4 w-4" />
+            Norsk bruksanvisning
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={async () => {
+              const result = await window.electronAPI?.openExternal(
+                "mailto:support@openwhispr.com"
+              );
+              if (!result?.success) {
+                openExternal("https://mail.google.com/mail/?view=cm&to=support@openwhispr.com");
+              }
+            }}
+          >
+            <Mail className="me-2 h-4 w-4" />
+            {t("support.contactSupport")}
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => openExternal("https://github.com/SteinOA/openwhispr-nb-whisper/issues")}
+          >
+            <Bug className="me-2 h-4 w-4" />
+            {t("support.submitBug")}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+      <DssaUserGuide open={guideOpen} onOpenChange={setGuideOpen} />
+    </>
+  );
+}

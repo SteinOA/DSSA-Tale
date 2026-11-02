@@ -1,0 +1,170 @@
+[
+  {
+    "component": "altgraph",
+    "version": "0.17.5",
+    "file": "altgraph-0.17.5.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/7e/f8/97fdf103f38fed6792a1601dbc16cc8aac56e7459a9fff08c812d8ae177a/altgraph-0.17.5.tar.gz",
+    "bytes": 48428,
+    "sha256": "c87b395dd12fabde9c99573a9749d67da8d29ef9de0125c7f536699b4a9bc9e7"
+  },
+  {
+    "component": "brotli",
+    "version": "1.2.1",
+    "file": "brotli-1.2.1.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz",
+    "bytes": 7389447,
+    "sha256": "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
+  },
+  {
+    "component": "certifi",
+    "version": "2026.10.23",
+    "file": "certifi-2026.10.23.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/fd/11/b524cbd9bbdaca58608e4cf4053fd463417549e1959fa8d3aa18319f9555/certifi-2026.10.23.tar.gz",
+    "bytes": 136225,
+    "sha256": "a9895e6e2758b371e0545e321a3a8fd1fcfd9829ada8824a936dfb16aaaf36cd"
+  },
+  {
+    "component": "charset-normalizer",
+    "version": "3.5.2",
+    "file": "charset_normalizer-3.5.2.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz",
+    "bytes": 172659,
+    "sha256": "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
+  },
+  {
+    "component": "idna",
+    "version": "3.20",
+    "file": "idna-3.20.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz",
+    "bytes": 216463,
+    "sha256": "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
+  },
+  {
+    "component": "packaging",
+    "version": "26.3",
+    "file": "packaging-26.3.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz",
+    "bytes": 313412,
+    "sha256": "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  },
+  {
+    "component": "pefile",
+    "version": "2023.2.7",
+    "file": "pefile-2023.2.7.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/78/c5/3b3c62223f72e2360737fd2a57c30e5b2adecd85e70276879609a7403334/pefile-2023.2.7.tar.gz",
+    "bytes": 74854,
+    "sha256": "82e6114004b3d6911c77c3953e3838654b04511b8b66e8583db70c65998017dc"
+  },
+  {
+    "component": "pip",
+    "version": "25.0.1",
+    "file": "pip-25.0.1.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/70/53/b309b4a497b09655cb7e07088966881a57d082f48ac3cb54ea729fd2c6cf/pip-25.0.1.tar.gz",
+    "bytes": 1950850,
+    "sha256": "88f96547ea48b940a3a385494e181e29fb8637898f88d88737c5049780f196ea"
+  },
+  {
+    "component": "pycryptodomex",
+    "version": "3.24.1",
+    "file": "pycryptodomex-3.24.1.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz",
+    "bytes": 4934627,
+    "sha256": "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
+  },
+  {
+    "component": "pyinstaller",
+    "version": "6.13.0",
+    "file": "pyinstaller-6.13.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/a8/b1/2949fe6d3874e961898ca5cfc1bf2cf13bdeea488b302e74a745bc28c8ba/pyinstaller-6.13.0.tar.gz",
+    "bytes": 4276427,
+    "sha256": "38911feec2c5e215e5159a7e66fdb12400168bd116143b54a8a7a37f08733456"
+  },
+  {
+    "component": "pyinstaller-hooks-contrib",
+    "version": "2026.9",
+    "file": "pyinstaller_hooks_contrib-2026.9.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/96/25/e47c6188228281372be7e9911a93931e01ec8798c02c93abd680b9b9521f/pyinstaller_hooks_contrib-2026.9.tar.gz",
+    "bytes": 180783,
+    "sha256": "2748767901acb5cecd1304652b6c7add5bffcff1d71d01207fe24a5d42942a56"
+  },
+  {
+    "component": "pywin32-ctypes",
+    "version": "0.2.3",
+    "file": "pywin32-ctypes-0.2.3.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/85/9f/01a1a99704853cb63f253eea009390c88e7131c67e66a0a02099a8c917cb/pywin32-ctypes-0.2.3.tar.gz",
+    "bytes": 29471,
+    "sha256": "d162dc04946d704503b2edc4d55f3dba5c1d539ead017afa00142c38b9885755"
+  },
+  {
+    "component": "requests",
+    "version": "2.34.2",
+    "file": "requests-2.34.2.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/ac/c3/e2a2b89f2d3e2179abd6d00ebd70bff6273f37fb3e0cc209f48b39d00cbf/requests-2.34.2.tar.gz",
+    "bytes": 142856,
+    "sha256": "f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed"
+  },
+  {
+    "component": "setuptools",
+    "version": "84.2.1",
+    "file": "setuptools-84.2.1.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz",
+    "bytes": 1230289,
+    "sha256": "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
+  },
+  {
+    "component": "urllib3",
+    "version": "2.8.0",
+    "file": "urllib3-2.8.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz",
+    "bytes": 458972,
+    "sha256": "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
+  },
+  {
+    "component": "websockets",
+    "version": "17.4",
+    "file": "websockets-17.4.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/75/79/590c5f0cc7d1661195aeefccb0e342b79f4c77d368d526d028821a390332/websockets-17.4.tar.gz",
+    "bytes": 191391,
+    "sha256": "09d3939b70df0c8ad2da145ebd50978bccaee1d565e838b0e7921a34d38571eb"
+  },
+  {
+    "component": "yt-dlp",
+    "version": "2026.7.4",
+    "file": "yt_dlp-2026.7.4.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/47/c5/9972af4b472b0d55badf841ebafd2f98944cb0ae0f46e11d01f363ea5b91/yt_dlp-2026.7.4.tar.gz",
+    "bytes": 3049326,
+    "sha256": "b094813404f87a9dd2186f00815231df32e5fd8a5403be0f807b3bb2d21a4432"
+  },
+  {
+    "component": "yt-dlp-ejs",
+    "version": "0.8.0",
+    "file": "yt_dlp_ejs-0.8.0.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/d3/e6/cceb9530e8f4e5940f6f7822d90e9d94f1b85343329a16baaf47bbbb3de1/yt_dlp_ejs-0.8.0.tar.gz",
+    "bytes": 96571,
+    "sha256": "d5fa1639f63b5c4af8d932495f60689d5370f1a095782c944f7f62a303eb104e"
+  },
+  {
+    "file": "Python-3.12.10.tar.xz",
+    "url": "https://www.python.org/ftp/python/3.12.10/Python-3.12.10.tar.xz",
+    "bytes": 20520960,
+    "sha256": "07ab697474595e06f06647417d3c7fa97ded07afc1a7e4454c5639919b46eaea"
+  },
+  {
+    "file": "ffmpeg-6.1.1.tar.xz",
+    "url": "https://ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz",
+    "bytes": 10458600,
+    "sha256": "8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968"
+  },
+  {
+    "file": "lame-3.100.tar.gz",
+    "url": "https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz",
+    "bytes": 1524133,
+    "sha256": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
+  },
+  {
+    "file": "opus-1.5.2.tar.gz",
+    "url": "https://downloads.xiph.org/releases/opus/opus-1.5.2.tar.gz",
+    "bytes": 7839412,
+    "sha256": "65c1d2f78b9f2fb20082c38cbe47c951ad5839345876e46941612ee87f9a7ce1"
+  }
+]

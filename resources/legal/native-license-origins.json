@@ -1,0 +1,93 @@
+[
+  {
+    "file": "native/whisper-cpp-MIT.txt",
+    "url": "https://raw.githubusercontent.com/OpenWhispr/whisper.cpp/0.0.10/LICENSE",
+    "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+  },
+  {
+    "file": "native/llama-cpp-MIT.txt",
+    "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/b9763/LICENSE",
+    "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+  },
+  {
+    "file": "native/sherpa-onnx-Apache-2.0.txt",
+    "url": "https://raw.githubusercontent.com/k2-fsa/sherpa-onnx/v1.13.8/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "file": "native/onnxruntime-MIT.txt",
+    "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/LICENSE",
+    "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+  },
+  {
+    "file": "native/onnxruntime-ThirdPartyNotices.txt",
+    "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.28.2/ThirdPartyNotices.txt",
+    "sha256": "0e07b95f3a8d6230037707c5c4a2b554d12c4cb67369669ac255635528ffcee2"
+  },
+  {
+    "file": "native/qdrant-Apache-2.0.txt",
+    "url": "https://raw.githubusercontent.com/qdrant/qdrant/v1.19.2/LICENSE",
+    "sha256": "210b508429e913d9de5301f90508bc2cbf5b2281de5b45e607c04d58f0f3bd8f"
+  },
+  {
+    "file": "native/abseil-Apache-2.0.txt",
+    "url": "https://raw.githubusercontent.com/abseil/abseil-cpp/9ac7062b1860d895fb5a8cbf58c3e9ef8f674b5f/LICENSE",
+    "sha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747"
+  },
+  {
+    "file": "native/silero-MIT.txt",
+    "url": "https://raw.githubusercontent.com/snakers4/silero-vad/v5.1.2/LICENSE",
+    "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b"
+  },
+  {
+    "file": "native/3D-Speaker-Apache-2.0.txt",
+    "url": "https://raw.githubusercontent.com/modelscope/3D-Speaker/main/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "file": "native/NotoSans-OFL.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosans/OFL.txt",
+    "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+  },
+  {
+    "file": "native/Inter-OFL.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+    "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+  },
+  {
+    "file": "native/Caveat-OFL.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/caveat/OFL.txt",
+    "sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b"
+  },
+  {
+    "file": "native/OpenMP-5.0-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-5.0.0/openmp/LICENSE.txt",
+    "sha256": "67f1f61d2169b6a8d3f17ead9afea7d31731d7dac8759d0afcc958e3c9b9cc30"
+  },
+  {
+    "file": "native/yt-dlp-Unlicense.txt",
+    "url": "https://raw.githubusercontent.com/yt-dlp/yt-dlp/2026.07.04/LICENSE",
+    "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+  },
+  {
+    "file": "native/WebRTC-LICENSE.txt",
+    "url": "https://webrtc.googlesource.com/src/+/8838a7c28655afbf9336063b71a51429e7d72774/LICENSE?format=TEXT",
+    "sha256": "ab00a482b6a3902e40211b43c5d0441962ea99b6cc7c25c0f243fa270b78d482"
+  },
+  {
+    "file": "native/WebRTC-AUTHORS.txt",
+    "url": "https://webrtc.googlesource.com/src/+/8838a7c28655afbf9336063b71a51429e7d72774/AUTHORS?format=TEXT",
+    "sha256": "6ee6a19f67231f876020b317b2bf4a4a2390aed560e7371f83425593d956f60e"
+  },
+  {
+    "file": "native/WebRTC-PATENTS.txt",
+    "url": "https://webrtc.googlesource.com/src/+/8838a7c28655afbf9336063b71a51429e7d72774/PATENTS?format=TEXT",
+    "sha256": "01462e2068d1a04c2274f3389773014c14ed9bc3446b28303543bd3e3c064145"
+  },
+  {
+    "file": "native/pyannote-segmentation-MIT.txt",
+    "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-segmentation-models/sherpa-onnx-pyannote-segmentation-3-0.tar.bz2",
+    "archiveMember": "sherpa-onnx-pyannote-segmentation-3-0/LICENSE",
+    "sha256": "14d7016ad68e7394d6e6b78d96cc2ae431c905287b89674cfdf021e79e62b8ba"
+  }
+]

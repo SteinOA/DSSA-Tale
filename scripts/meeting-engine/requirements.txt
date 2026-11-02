@@ -1,0 +1,5 @@
+# Isolated experiment only. No modification of the application's dictation runtime.
+faster-whisper==1.2.1
+av==16.1.0
+ctranslate2==4.8.4
+nvidia-cudnn-cu12==9.10.2.21; sys_platform == "win32"

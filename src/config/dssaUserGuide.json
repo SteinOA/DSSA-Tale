@@ -1,0 +1,208 @@
+{
+  "title": "Bruksanvisning for DSSA Tale",
+  "intro": "Norsk veiledning for Windows-utgaven. Denne bruksanvisningen følger med appen og kan leses uten internett. Funksjoner som bruker skytjenester, krever fortsatt nett og nødvendige tilganger.",
+  "sections": [
+    {
+      "id": "start",
+      "title": "Kom i gang",
+      "paragraphs": [
+        "DSSA Tale kan skrive det du sier ved markøren, ta opp møter, transkribere lydfiler og lagre dokumenter. Lokal bruk krever ikke abonnement eller OpenWhispr-konto. Dette er en lokal testutgave; kontroller viktige utskrifter mot opptaket.",
+        "Bruk én utgave av appen om gangen. To åpne dikteringsapper kan reagere på samme hurtigtast.",
+        "Under Innstillinger → Generelt → Bokstavstørrelse kan du endre menyer og knapper uavhengig av innholdet i notater og utskrifter. Valgene huskes på PC-en. Dette endrer visningen i appen, ikke skriftstørrelsen i eksporterte dokumenter."
+      ],
+      "steps": [
+        "Velg mikrofon under Innstillinger → Generelt. Gjør et kort prøveopptak.",
+        "Velg grensesnittspråk og transkripsjonsspråk hver for seg under Generelt.",
+        "Kontroller modellen under Tale til tekst. Diktering, møteopptak og lydimport kan ha ulike modellvalg.",
+        "Kontroller hurtigtasten under Hurtigtaster. Et eksisterende oppsett beholdes; bruk kombinasjonen som vises hos deg."
+      ]
+    },
+    {
+      "id": "menyer",
+      "title": "Finn fram i menyene",
+      "paragraphs": [
+        "Hjem viser dikteringshistorikk og snarveier. Møter og notater samler notater, utskrifter og bearbeidede referater. Lydimport brukes for lyd- og videofiler. Ordliste brukes til egne navn og faguttrykk. Teams og filer samler møteveiledning og valgfri Microsoft-tilkobling.",
+        "Innstillinger inneholder Generelt, Hurtigtaster, Tone og stil, Tilkoblinger, Tale til tekst, Språkmodeller, Personvern og data og System. Hjelp → Norsk bruksanvisning åpner denne veiledningen. Søkefeltet øverst i appen finner møter, notater og utskrifter.",
+        "Små spørsmålstegn ved knapper og overskrifter åpner hjelp for akkurat det området. Klikk utenfor boksen eller trykk Escape for å lukke den."
+      ]
+    },
+    {
+      "id": "diktering",
+      "title": "Dikter der markøren står",
+      "steps": [
+        "Sett markøren i et felt du kan skrive i, for eksempel i Word eller en e-post.",
+        "Start opptak med dikteringshurtigtasten. Snakk tydelig og i normal takt.",
+        "Avslutt med samme hurtigtast i Trykk-modus, eller slipp tastene i Hold inne-modus.",
+        "Vent til behandlingen er ferdig. Automatisk liming styres under Generelt. Hvis teksten ikke limes inn, se historikken på Hjem."
+      ],
+      "paragraphs": [
+        "Løpende tekstvisning viser et foreløpig resultat i et flytende vindu. Det kan endres før den ferdige teksten kommer. Slå funksjonen av eller på under Tale til tekst.",
+        "Hurtigtaster for taleassistent, oversettelse og møtemodus er egne funksjoner. Bruk vanlig diktering når teksten skal beholde språket du snakker. Oversettelseshurtigtasten er laget for oversettelse."
+      ]
+    },
+    {
+      "id": "sprak",
+      "title": "Bokmål, nynorsk og engelsk",
+      "paragraphs": [
+        "Grensesnittspråk bestemmer menyene. Transkripsjonsspråk bestemmer hvordan talen behandles. Velg ønsket målform før opptaket; et norsk grensesnitt alene låser ikke transkripsjonen til norsk.",
+        "Både bokmål og nynorsk finnes som valg. Nynorsk skal bevares gjennom opprydding, referat og eksport. Talegjenkjenning kan likevel gjøre feil eller blande målformer. Kontroller spesielt dialekt, navn og faguttrykk. Et språkvalg gir ingen garanti for feilfri nynorsk.",
+        "Legg egne navn og faguttrykk i Ordliste. Ordliste og språkvalg hjelper, men erstatter ikke kontroll av resultatet. Hvis norsk tale blir til engelsk tekst, kontroller valgt språk, mikrofon og modell, og prøv et kort opptak uten tekstopprydding."
+      ]
+    },
+    {
+      "id": "modeller",
+      "title": "Talemodell, språkmodell og GPU",
+      "paragraphs": [
+        "Tale til tekst velger modellen som hører lyden og lager utskriften. NB-Whisper er et norsk alternativ. En kvantisert modell bruker vanligvis mindre minne enn utgaven med full presisjon. Nedlastede modeller er tilgjengelige på PC-en; kontroller hvilket valg som er merket Aktiv.",
+        "Språkmodeller brukes til blant annet tekstopprydding og referat. De er noe annet enn talemodellen. Du trenger ikke aktivere tekstopprydding for å få en vanlig utskrift. Valg av en skyleverandør kan sende innhold til den leverandøren; lokal modell behandler innholdet på PC-en.",
+        "GPU-akselerasjon kan gi raskere lokal transkripsjon når maskinvaren og den valgte modellen støttes. Den retter ikke språkfeil i seg selv. Behandlingstiden avhenger av lydlengde, modell, minne og annen aktivitet på PC-en."
+      ]
+    },
+    {
+      "id": "moter",
+      "title": "Ta opp et møte eller en Teams-samtale",
+      "steps": [
+        "Åpne Møter og notater og opprett et nytt notat. Gi møtet en tydelig tittel.",
+        "Velg møteopptak og ønsket behandling: transkribering underveis eller etter møtet.",
+        "Start Teams-samtalen som vanlig. DSSA Tale tar opp mikrofonen og møtelyden på PC-en; den deltar ikke som en bot.",
+        "Gjør et kort prøveopptak og kontroller at både du og motparten høres. Stopp opptaket når møtet er ferdig, og vent på behandlingen.",
+        "Les utskriften og korriger talernavn før du lager og eksporterer referatet."
+      ],
+      "paragraphs": [
+        "Informer møtedeltakerne om opptaket og følg rutinene som gjelder for møtet. Teams-opptak som allerede finnes, kan også åpnes gjennom Lydimport. Automatisk møteoppdagelse er valgfri under Generelt.",
+        "Teams-siden skiller mellom lokalt opptak og Teams sitt eget skyopptak. Knappen for lokalt opptak oppretter et notat og starter opptak i DSSA Tale uten automatisk Teams-varsel. For varslet opptak åpner du møtet og starter Teams sin egen opptaksfunksjon i Teams. Direkte start av Teams-skyopptak fra DSSA Tale er ikke implementert."
+      ]
+    },
+    {
+      "id": "lydimport",
+      "title": "Importer og transkriber lydfiler",
+      "steps": [
+        "Åpne Lydimport. Slipp en fil i feltet, eller klikk for å velge fra PC-en.",
+        "Du kan også bruke en fast skymappe, et opptaksbibliotek eller en støttet direkte lyd-/videolenke.",
+        "Kontroller modellen på knappen under Lydfiler. Klikk knappen for å åpne innstillingene for lydimport.",
+        "Velg om appen skal skille talere. Start transkripsjonen og følg status, tidsbruk og framdrift.",
+        "Når behandlingen er ferdig, åpner du resultatet som notat og kontrollerer utskriften."
+      ],
+      "paragraphs": [
+        "Støttede lydformater omfatter MP3, WAV, M4A, WebM, OGG, FLAC, AAC og Opus. Filstørrelse alene sier lite om behandlingstiden: et møte på halvannen time inneholder like mye tale selv om MP3-filen er liten.",
+        "Du kan navigere til andre sider i appen mens importen arbeider og gå tilbake til Lydimport. Ikke avslutt selve appen. Navigering er ikke det samme som Avbryt. Hvis en jobb faktisk feiler eller avbrytes, les meldingen; ikke anta at alt er ferdig eller at en omstart alltid kan fortsette fra samme punkt.",
+        "Prosent gjelder behandlingsfasen som vises. Slutten kan også omfatte talerskille, etterbehandling og lagring. Ved en feil som ECONNRESET ble forbindelsen til den lokale motoren brutt. Behold originalfilen og noter feilmeldingen før du prøver igjen."
+      ]
+    },
+    {
+      "id": "talere",
+      "title": "Skill mellom talere",
+      "paragraphs": [
+        "Talermerking forsøker å gruppere utsagnet etter stemme. Den vet ikke automatisk hvem personen er. Kontroller og gi riktige navn til talernumrene i utskriften.",
+        "Nødvendige modeller må være tilgjengelige før lokal talermerking virker. Noen motorer krever egen modelltilgang. Et aktivert valg er ikke bevis på at alle stemmene er skilt riktig; les eventuelle varsler om manglende talermerking.",
+        "Overlappende tale, korte svar, støy og mange deltakere gjør oppgaven vanskeligere. Tolv møtedeltakere gir ingen garanti for tolv korrekte grupper. Kontroller viktige utsagn mot lyd og tidsstempel.",
+        "Velg Taler og navn ved Legg til deltakere. Velg for eksempel Taler 3, skriv navnet og lagre. Navnet brukes i både utskriften og Notater. Ukjente partier blir ikke automatisk navngitt."
+      ]
+    },
+    {
+      "id": "tidsjustering",
+      "title": "Tidsjustering med WhisperX",
+      "steps": [
+        "Velg lokal transkripsjon og Community-1 under Lydimport.",
+        "Velg Av, Rask lokal tidsjustering eller Grundig lokal tidsjustering. Krever nedlastet justeringsmodell for bokmål eller nynorsk.",
+        "Følg den egne fremdriften for tidsjustering etter at teksten er transkribert. Du kan bruke andre deler av appen mens jobben pågår."
+      ],
+      "paragraphs": [
+        "Tidsjusteringen gir nye ordtider uten å skrive om teksten. Vanlig diktering bruker fortsatt modellen du har valgt der.",
+        "Rask bruker mindre tid og minne. Grundig bruker en større modell. GPU brukes når CUDA og nok GPU-minne er tilgjengelig. Ved minnemangel eller CUDA-feil fortsetter tidsjusteringen på CPU. Dette ekstra trinnet kan forlenge behandlingstiden for et langt møte.",
+        "Hvis noen partier ikke kan justeres, beholdes originaltekst og tilgjengelige tider. Kontroller varsler og talernavn før du bruker referatet. Et talernummer bekrefter ikke personens identitet."
+      ]
+    },
+    {
+      "id": "skymapper",
+      "title": "Google Disk, OneDrive, SharePoint og iCloud Drive",
+      "steps": [
+        "Åpne Innstillinger → Tilkoblinger.",
+        "Bruk en funnet mappe, eller velg en fast mappe for Google Disk, OneDrive / SharePoint eller iCloud Drive.",
+        "Hvis du må logge inn, åpne leverandørens innlogging. Fullfør innloggingen hos leverandøren; bruk passkey hvis den tilbyr det.",
+        "Gå til Lydimport og bruk den tilsvarende skyknappen for å velge opptaket. Den faste mappen huskes også etter omstart."
+      ],
+      "paragraphs": [
+        "Disse snarveiene bruker mapper som Windows har tilgang til, vanligvis gjennom leverandørens synkroniseringsapp. De er ikke en egen fullstendig nettbasert filbehandler for Google eller Apple. En fil som bare ligger i skyen, må kunne hentes av synkroniseringsappen før lokal behandling.",
+        "Innlogging i en nettside gir ikke automatisk DSSA Tale filtilgang. Appen henter ikke nettleserens påloggingskapsler. SharePoint-biblioteker som allerede er synkronisert til Windows, kan brukes som mapper. En privat delingslenke er ikke nødvendigvis en direkte nedlastingslenke.",
+        "Hvis en fast mappe blir utilgjengelig, kontroller konto, synkronisering og mappevalg under Tilkoblinger. Appen skal ikke stille velge en annen konto. Å fjerne en mappekobling fjerner koblingen, ikke innholdet i skytjenesten."
+      ]
+    },
+    {
+      "id": "mobil",
+      "title": "RØDE Reporter, iPhone og Android",
+      "steps": [
+        "Del eller lagre opptaket fra RØDE Reporter eller telefonens opptaksapp til en mappe PC-en kan åpne, for eksempel en synkronisert skymappe.",
+        "Åpne Mine opptaksbiblioteker under Lydimport.",
+        "Velg RØDE Reporter, Apple Taleopptak, Android-opptak eller Annen opptaksmappe. Gi eventuelt koblingen et eget navn.",
+        "Velg Koble opptaksmappe. Senere kan du åpne nye opptak fra denne koblingen."
+      ],
+      "paragraphs": [
+        "DSSA Tale kan ikke lese direkte i det private opptaksbiblioteket inne i en iPhone-app. En kobling til RØDE Reporter er en kobling til en tilgjengelig mappe, ikke fjernstyring av telefonappen. Når opptaket først finnes i mappen, trenger du ikke flytte det manuelt til en egen importmappe."
+      ]
+    },
+    {
+      "id": "microsoft",
+      "title": "Valgfri Microsoft 365-tilkobling",
+      "paragraphs": [
+        "Teams og filer har egne områder for Teams, Kalender, Filer og SharePoint og Tilkobling. Microsoft-tilkoblingen kan brukes til kalender og filtilgang når den er konfigurert. Lokal diktering og møteopptak krever ikke denne innloggingen.",
+        "Direkte Microsoft-tilkobling krever en offentlig klient-ID fra en Entra-appregistrering og nødvendige tillatelser. Organisasjonens regler kan kreve administratorgodkjenning selv om du allerede kan åpne området i nettleseren. Bruk eksisterende synkroniserte mapper dersom det dekker behovet ditt.",
+        "Kalender- og filhandlinger må bekreftes gjennom fungerende innlogging. De er ikke ferdig kontrollert mot alle kontotyper i denne testutgaven. En synlig knapp eller tilkoblingsside betyr ikke at kontoen allerede er koblet til."
+      ]
+    },
+    {
+      "id": "referat",
+      "title": "Tekstopprydding og møtereferat",
+      "paragraphs": [
+        "Utskriften er talegjenkjenningens resultat. Mine notater er teksten du skriver selv. Bearbeidet referat er et forslag laget fra møtematerialet med en språkmodell. Behold utskriften slik at du kan kontrollere referatet.",
+        "Den strenge automatiske tekstoppryddingen skal bevare ordene og målformen og bare tillate forsiktige rettelser i blant annet tegnsetting. Hvis resultatet endrer innholdet for mye, brukes originalteksten som reserve. Den kan ikke gjenopprette ord som talemodellen allerede har hørt feil.",
+        "Referatkontrollen krever kildegrunnlag for strukturerte beslutninger og oppgaver i den kontrollerte referatflyten. Fri referattekst kan være merket som et ubekreftet utkast. Dette er ingen garanti for at språkmodellen har forstått møtet riktig. Kontroller alltid beslutninger, navn, ansvar, frister og tall før dokumentet deles."
+      ]
+    },
+    {
+      "id": "eksport",
+      "title": "Lagre Word, PDF eller ren tekst",
+      "steps": [
+        "Åpne notatet og velg Lagre dokument.",
+        "Velg Bearbeidet referat, Full utskrift eller Mine notater. Bearbeidet referat er tilgjengelig når det finnes et slikt innhold.",
+        "For Full utskrift kan du velge talernavn eller talernummer og tidsstempler.",
+        "Velg Word (.docx), PDF eller Ren tekst, og velg målmappe i lagrevinduet.",
+        "Åpne dokumentet og kontroller innhold og formatering før du sender det videre."
+      ],
+      "paragraphs": [
+        "Du kan lagre til en lokal mappe eller en tilgjengelig synkronisert skymappe. Skytjenesten kan deretter laste opp filen. Eksporten er ikke en ny kvalitetssjekk eller automatisk oversettelse av teksten."
+      ]
+    },
+    {
+      "id": "vad",
+      "title": "Silero VAD og taleaktivitet",
+      "paragraphs": [
+        "Silero VAD finner sannsynlige talepartier før lokal Whisper-transkripsjon. Den lager ikke teksten, identifiserer ikke personer og fjerner ikke støy inne i talen. For strenge verdier kan kutte korte eller svake ord. Under Tale til tekst finnes en egen forklaringsboks og i-symboler ved alle verdiene.",
+        "VAD-terskel: lavere verdi kan slippe gjennom svak tale, men også mer støy. Minimum talevarighet: korte lydpartier under grensen kan falle bort. Minimum stillhetsvarighet: hvor lang pause som kan avslutte et taleparti.",
+        "Maksimal talevarighet deler lange talepartier; den stopper ikke hele møtet etter for eksempel 30 sekunder. Taleutfylling legger litt lyd rundt et taleparti. Lydoverlapp gir sammenheng mellom lydsegmenter, men mer lyd å behandle.",
+        "1000 ms er ett sekund. Endre én verdi om gangen og sammenlign med samme korte opptak. Behold fungerende verdier dersom du ikke har et konkret problem å løse. Bryterne for diktering, møteopptak og møter er separate."
+      ]
+    },
+    {
+      "id": "system",
+      "title": "Ressursbruk, lagring og feilsøking",
+      "paragraphs": [
+        "Nederst vises Appens CPU og Appens RAM for DSSA Tale med underprosesser, også lokal transkripsjon. CPU-prosenten er andel av hele PC-ens kapasitet. RAM vises mot total installert tilgjengelig fysisk hukommelse. Delte minnesider kan telles i flere prosesser.",
+        "GPU og GPU-minne er merket hele PC-en. De omfatter også andre programmer og er ikke en egen måling av bare DSSA Tale.",
+        "Personvern og data styrer blant annet historikk og lagring av dikteringslyd. Ikke anta at alle møteopptak finnes som en varig lydkopi fordi utskriften finnes. Behold originalfilene du importerer, og lagre viktige dokumenter selv.",
+        "Hvis dikteringen er treg: kontroller at riktig modell er aktiv, at GPU-akselerasjonen fungerer og at andre jobber ikke bruker opp minnet. Hvis en import feiler: noter filtype, lydlengde, modell, fase, tidsbruk og feilmelding. Ikke legg private møteopptak eller passord i en feilrapport.",
+        "Send inn feil under Hjelp åpner prosjektets GitHub-side i nettleseren. Det sender ingen rapport automatisk. GitHub krever normalt innlogging for å opprette en sak, og siden må være tilgjengelig for kontoen din. Denne appen og endringene publiseres ikke ved at du åpner hjelpen."
+      ]
+    },
+    {
+      "id": "kalendere",
+      "title": "Google Kalender, Microsoft Kalender og Apple Kalender",
+      "paragraphs": [
+        "Under Kalender vises Google og Apple sammen med Microsoft-kalenderen. Google Kalender bruker appens eksisterende OAuth-flyt med lesetilgang og fornyelse av tilgang. Før første tilkobling må en gyldig Google OAuth-skrivebordsapp være konfigurert. Importer oppsettets JSON fra Google Cloud gjennom oppsettknappen; ikke lim inn kontoens passord. Nytt oppsett lagres kryptert på PC-en. Innlogging kan bruke passkey når Google tilbyr det.",
+        "Du kan koble flere Google-kontoer og velge å ta med alle tilgjengelige kalendere. Google-avtaler kan oppdateres og møtelenker åpnes. Dette er lesetilgang; redigering av kalenderavtaler er ikke lagt til. Microsoft-kalenderen bruker den valgfrie Microsoft 365-tilkoblingen.",
+        "Google Meet åpnes via møtelenke. Opptak med automatisk varsel må startes i Meet og krever riktig tilgang. Apple Kalender åpnes i iCloud i nettleseren; det er ikke intern Apple-kalendersynkronisering på Windows. FaceTime krever en lenke fra en Apple-enhet og en støttet nettleser. DSSA Tale starter ikke varslet FaceTime-opptak.",
+        "Pålogging og tilgang huskes når leverandøren tillater det. Passkey er en innloggingsmetode hos leverandøren, ikke et passord DSSA Tale lagrer. Nye tillatelser, utløpt eller tilbakekalt tilgang kan likevel kreve ny godkjenning."
+      ]
+    }
+  ]
+}

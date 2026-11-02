@@ -1,0 +1,5 @@
+# Separate venv from Faster-Whisper. Install the CUDA 12.6 PyTorch wheels first.
+torch==2.8.0
+torchaudio==2.8.0
+torchcodec==0.7.0
+pyannote.audio==4.0.3
