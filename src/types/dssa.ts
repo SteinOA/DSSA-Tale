@@ -87,6 +87,7 @@ export interface GoogleDriveItem {
   size?: string;
 }
 export interface MeetingSetupStatus extends DssaResult {
+  sileroInstalled?: boolean;
   busy: boolean;
   phase: string;
   kind?: string;
@@ -231,11 +232,7 @@ declare global {
       googleDriveClient: () => Promise<DssaResult>;
       googleDriveConnect: () => Promise<GoogleDriveStatus>;
       googleDriveDisconnect: () => Promise<GoogleDriveStatus>;
-      googleDriveList: (args: {
-        folder?: string;
-        query?: string;
-        pageToken?: string;
-      }) => Promise<{
+      googleDriveList: (args: { folder?: string; query?: string; pageToken?: string }) => Promise<{
         success?: boolean;
         error?: string;
         items: GoogleDriveItem[];

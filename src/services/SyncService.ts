@@ -807,7 +807,7 @@ export class SyncService {
 
   private async pushNote(id: number): Promise<void> {
     const note = await window.electronAPI.getNote?.(id);
-    if (!note) return;
+    if (!note || note.dssa_local_only) return;
     if (readNoteConflictIds().has(note.client_note_id)) {
       // An unresolved conflict: the editor's debounced push would auto-resolve
       // it as local-wins (or 409-spam) before the user chose Keep or Refresh.

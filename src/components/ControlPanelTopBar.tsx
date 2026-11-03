@@ -48,7 +48,7 @@ export default function ControlPanelTopBar({
     <header
       className={cn(
         // The trailing column never shrinks past its actions and window controls.
-        "grid h-12 shrink-0 grid-cols-[minmax(0,1fr)_minmax(0,340px)_minmax(max-content,1fr)] items-center gap-4 border-b border-border px-3 dark:border-white/10",
+        "grid h-12 shrink-0 grid-cols-[minmax(0,1fr)_minmax(0,340px)_minmax(max-content,1fr)] items-center gap-4 border-b border-border px-3 dark:border-white/10 @max-[800px]:grid-cols-[minmax(0,1fr)_auto] @max-[800px]:gap-2",
         // Eased with the sidebar spacer so the toggle glides instead of jumping when the
         // clearance switches; a jump would drag it back under the cursor and re-trigger peek.
         "transition-[padding] duration-300 ease-out",
@@ -99,29 +99,43 @@ export default function ControlPanelTopBar({
           onClick={onOpenSearch}
           data-no-window-drag=""
           style={noDragStyle}
-          className="flex h-8 w-full items-center gap-2.5 rounded-full border border-border bg-foreground/4 px-4 text-start outline-none transition-colors duration-150 hover:bg-foreground/6 focus-visible:ring-1 focus-visible:ring-primary/30 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/8"
+          className="flex h-8 w-full items-center gap-2.5 rounded-full border border-border bg-foreground/4 px-4 text-start outline-none transition-colors duration-150 hover:bg-foreground/6 focus-visible:ring-1 focus-visible:ring-primary/30 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/8 @max-[800px]:hidden"
         >
           <Search size={14} className="shrink-0 text-muted-foreground/70" />
           <span className="flex-1 truncate text-[13px] text-muted-foreground/70">
             {t("commandSearch.placeholder")}
           </span>
-          <kbd
-            dir="ltr"
-            className="dssa-search-shortcut shrink-0 font-sans"
-          >
+          <kbd dir="ltr" className="dssa-search-shortcut shrink-0 font-sans">
             {platform === "darwin" ? "⌘ + K" : "Ctrl + K"}
           </kbd>
         </button>
       )}
 
-      <div className="col-start-3 flex items-center gap-2">
+      <div className="col-start-3 flex items-center gap-2 @max-[800px]:col-start-2">
+        {!isSidePanelLayout && (
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={onOpenSearch}
+            aria-label={t("commandSearch.placeholder")}
+            title={t("commandSearch.placeholder")}
+            data-no-window-drag=""
+            style={noDragStyle}
+            className="hidden h-8 w-8 @max-[800px]:inline-flex"
+          >
+            <Search size={14} aria-hidden="true" />
+          </Button>
+        )}
         {!isSidePanelLayout && actions && (
           <div
             data-no-window-drag=""
             style={noDragStyle}
             // macOS keeps no window controls here, so the actions take the far
             // end; elsewhere they sit beside the search, left of the controls.
-            className={cn("flex items-center", platform === "darwin" && "ms-auto")}
+            className={cn(
+              "flex items-center @max-[520px]:hidden",
+              platform === "darwin" && "ms-auto"
+            )}
           >
             {actions}
           </div>

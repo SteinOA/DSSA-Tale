@@ -60,7 +60,7 @@ export function OverviewAskSection({
   );
 
   return (
-    <div className="relative isolate mx-auto w-full max-w-2xl">
+    <div className="relative isolate w-full min-w-0">
       {conversationPicker}
       {hasMessages && (
         <div className="flex h-[min(26rem,50vh)] min-h-0 flex-col">

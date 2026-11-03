@@ -1,0 +1,35 @@
+[
+  {
+    "version": "1.10.4-dssa.38",
+    "changes": [
+      "System viser installerte tale- og tekstmodeller, valgt dikteringsmodell, lagret språk og status for Silero VAD, sherpa-onnx, Community-1 og ordtidsmodeller.",
+      "System har ingen modell- eller språkvalg. Bare valgfritt Community-1-oppsett er tilgjengelig der, med forklaring på krav til modelltilgang.",
+      "Nedlasting av valgfrie wav2vec2-ordtidsmodeller ligger ved tidsjustering i Lydopplasting, med språket som er valgt der.",
+      "Installerte modeller og valgt bruk skilles tydelig. En nedlasting aktiverer ikke tidsjustering automatisk.",
+      "Endringsoversikten følger installasjonsfilen og krever ingen innlogging eller nett. Installert versjon merkes uten å påstå at den er nyest tilgjengelig."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.37",
+    "changes": [
+      "Kopier, transkriber på nytt, originaltekst, Filutforsker og Slett er synlige knapper i historikken.",
+      "Kalenderen er flyttet over velkomsten. Tekstområdene følger vindusbredden med små kantavstander.",
+      "Windows-startstørrelsen tilpasses skjermens arbeidsflate og skalering. Topplinjen tilpasses smale vinduer."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.36",
+    "changes": [
+      "Automatisk lokal notatblokk på Hjem samler ferdig diktering uten ekstra modellkjøring.",
+      "Kopier, Tøm og Angre tømming; manuelle rettelser og ny tekst etter tømming bevares.",
+      "Den flytende tekstforhåndsvisningen er lavere og bredere."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.35",
+    "changes": [
+      "Tekstopprydding er frivillig og aktiveres ikke av modellvalg eller nedlasting alene.",
+      "Modellkort viser råd om minnebehov og ekstra behandlingstid."
+    ]
+  }
+]

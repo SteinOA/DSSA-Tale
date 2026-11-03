@@ -195,7 +195,7 @@ export default function ChatView() {
             className="pointer-events-none absolute inset-x-0 bottom-0 z-10 px-3 pb-5 pt-1"
           >
             <ChatInput
-              className="pointer-events-auto mx-auto w-full max-w-2xl"
+              className="pointer-events-auto w-full min-w-0"
               // New chat and switching cancel the stream at once, but the
               // cancelled send can hold the submission lock until an
               // in-flight tool returns; a message sent before then would

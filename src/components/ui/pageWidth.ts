@@ -1,4 +1,3 @@
-// Content column shared by the control panel pages. Apply it inside a scroll
-// container, never around one, so the wheel and scrollbar keep the full pane.
-// .rich-text-editor-content in index.css centers note text on the same width.
-export const PAGE_CONTENT_WIDTH_CLASS = "mx-auto w-full max-w-5xl";
+// Pages fill the available pane, including with collapsed navigation.
+// Apply inside the scroll container; each page retains a small gutter.
+export const PAGE_CONTENT_WIDTH_CLASS = "w-full min-w-0";

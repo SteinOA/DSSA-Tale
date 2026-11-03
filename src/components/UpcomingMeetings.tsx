@@ -20,6 +20,7 @@ import { createGrassRustle, type GrassRustle } from "../utils/grassRustle";
 import { formatTimeRange, parseEventDate } from "../utils/dateFormatting";
 
 interface UpcomingMeetingsProps {
+  layout?: "sidebar" | "top";
   events: CalendarEvent[];
   isLoading: boolean;
   isConnected: boolean;
@@ -354,6 +355,7 @@ function DayCard({ group, isNowFn }: { group: DayGroup; isNowFn: (e: CalendarEve
 }
 
 export default function UpcomingMeetings({
+  layout = "sidebar",
   events,
   isLoading,
   isConnected,
@@ -371,6 +373,32 @@ export default function UpcomingMeetings({
     const end = new Date(event.end_time);
     return start <= now && now <= end;
   };
+
+  if (
+    layout === "top" &&
+    !isLoading &&
+    (!isConnected || (events.length === 0 && !needsSystemAudioGrant))
+  ) {
+    return (
+      <section
+        aria-label={t("upcoming.connectCalendar")}
+        className={cn(CARD_SURFACE_CLASS, "flex flex-wrap items-center gap-4 px-4 py-3")}
+      >
+        <Calendar className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold">
+            {t(isConnected ? "upcoming.noUpcomingEvents" : "upcoming.connectCalendar")}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {t(isConnected ? "upcoming.moreCalendarsHint" : "upcoming.connectCalendarDescription")}
+          </p>
+        </div>
+        <Button size="sm" variant="outline" onClick={onConnectCalendar}>
+          {t(isConnected ? "upcoming.connectHere" : "upcoming.connectCalendarButton")}
+        </Button>
+      </section>
+    );
+  }
 
   return (
     <div>
@@ -441,7 +469,13 @@ export default function UpcomingMeetings({
 
       {/* Day cards */}
       {!isLoading && isConnected && groupedEvents.length > 0 && (
-        <div className="space-y-2.5">
+        <div
+          className={
+            layout === "top"
+              ? "grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3"
+              : "space-y-2.5"
+          }
+        >
           {groupedEvents.map((group) => (
             <DayCard key={group.key} group={group} isNowFn={isNowFn} />
           ))}

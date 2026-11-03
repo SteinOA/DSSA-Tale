@@ -109,7 +109,7 @@ export default function DssaCalendarConnections({ compact = false }: { compact?:
     await openUrl(url.href);
   };
   return (
-    <div className="space-y-4 max-w-3xl">
+    <div className="space-y-4 w-full min-w-0">
       <h2 className="text-lg font-semibold">{t("dssaCalendars.title")}</h2>
       <p className="text-sm text-muted-foreground">{t("dssaCalendars.remembered")}</p>
       <section

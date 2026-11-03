@@ -65,7 +65,7 @@ export default function DssaConnections() {
     };
   }, [api, t]);
   return (
-    <div className="max-w-3xl space-y-5">
+    <div className="w-full min-w-0 space-y-5">
       <div>
         <div className="flex items-center gap-4">
           <h2 className="text-lg font-semibold">{tr("title")}</h2>

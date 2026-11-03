@@ -3,6 +3,22 @@ const assert = require("node:assert/strict");
 
 const load = () => import("../../src/lib/noteEditorPendingSave.ts");
 
+test("notepad edits carry the displayed database base through delayed saves and navigation", async () => {
+  const { planNoteTransition, applyNoteDraftMutation, collectPendingNoteWrites } = await load();
+  const source = { ...note(7, "Opprinnelig tekst."), dssa_local_only: 1 };
+  const draft = planNoteTransition(source, null, null).nextDraft;
+  const edited = applyNoteDraftMutation(draft, {
+    sourceNoteId: 7,
+    field: "content",
+    value: "Manuelt retta tekst.",
+  });
+  const pending = { ...edited, contentEdited: true, clearContent: false };
+  const writes = collectPendingNoteWrites(pending, null);
+  assert.equal(writes[0].updates.automatic_notepad_base, source.content);
+  assert.equal(writes[0].updates.content, "Manuelt retta tekst.");
+  assert.deepEqual(planNoteTransition(null, pending, null).writes, writes);
+});
+
 function note(id, content, enhancedContent = null) {
   return {
     id,

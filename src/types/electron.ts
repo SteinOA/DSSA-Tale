@@ -414,6 +414,7 @@ export interface Leaderboard {
 }
 
 export interface NoteItem {
+  dssa_local_only?: number;
   id: number;
   title: string;
   content: string;
@@ -1564,6 +1565,7 @@ declare global {
         rawText?: string | null,
         options?: {
           status?: TranscriptionStatus;
+          appendToNotepad?: boolean;
           errorMessage?: string | null;
           errorCode?: TranscriptionErrorCode;
           clientTranscriptionId?: string;
@@ -1696,6 +1698,14 @@ declare global {
       undoLearnedCorrections?: (words: string[]) => Promise<{ success: boolean }>;
 
       // Note operations
+      automaticNotepad: (action: "read" | "clear" | "undo") => Promise<{
+        success: boolean;
+        enabled: boolean;
+        note?: NoteItem | null;
+        canUndo?: boolean;
+        error?: string;
+      }>;
+      onAutomaticNotepadChanged: (callback: (status?: { failed?: boolean }) => void) => () => void;
       saveNote: (
         title: string,
         content: string,
@@ -1716,6 +1726,7 @@ declare global {
       updateNote: (
         id: number,
         updates: {
+          automatic_notepad_base?: string;
           clear_fields?: Array<"content" | "enhanced_content">;
           title?: string;
           content?: string;

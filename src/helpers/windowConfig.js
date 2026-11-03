@@ -1,6 +1,9 @@
 const path = require("path");
 const { getLinuxSessionInfo } = require("./linuxSession");
-const { ASSISTANT_PANEL_SIZE_LIMITS } = require("./voiceSurfaceGeometry");
+const {
+  ASSISTANT_PANEL_SIZE_LIMITS,
+  LIVE_TRANSCRIPT_SURFACE_LIMITS,
+} = require("./voiceSurfaceGeometry");
 
 const FOCUSLESS_OVERLAY_ROLES = new Set(["main", "notification"]);
 
@@ -103,6 +106,22 @@ function fitAssistantContentWindowToWorkArea(requestedSurfaceHeight, workArea) {
     width: maximumWindow.width,
     maximumSurfaceHeight: maximumWindow.height - limits.gutter,
   });
+}
+
+function fitLiveTranscriptWindowToWorkArea(requestedSurfaceHeight, workArea) {
+  const limits = LIVE_TRANSCRIPT_SURFACE_LIMITS;
+  const fitted = fitContentWindowToWorkArea(
+    { minSurfaceHeight: limits.minHeight, gutter: limits.gutter },
+    requestedSurfaceHeight,
+    {
+      width: Math.max(1, Math.min(limits.surfaceWidth + limits.gutter, workArea.width)),
+      maximumSurfaceHeight: Math.max(
+        1,
+        Math.min(limits.maxHeight, workArea.height - limits.gutter)
+      ),
+    }
+  );
+  return { ...fitted, height: Math.max(1, Math.min(workArea.height, fitted.height)) };
 }
 
 function fitDictationErrorContentWindowToWorkArea(requestedSurfaceHeight, workArea) {
@@ -214,7 +233,7 @@ const ONBOARDING_WINDOW_SIZES = {
 
 // Control panel window configuration
 const CONTROL_PANEL_CONFIG = {
-  width: 1200,
+  width: process.platform === "win32" ? 1000 : 1200,
   height: 800,
   // macOS: fully transparent, so nothing paints into the compact onboarding
   // frame's rounded corners. Windows/Linux keep an opaque backing (the renderer
@@ -381,7 +400,22 @@ class WindowPositionUtil {
   }
 }
 
+// Electron work areas use device-independent pixels and already account for
+// Windows display scaling and the taskbar. Never infer size from inches or
+// divide these values by scaleFactor a second time.
+function fitControlPanelToWorkArea(workArea) {
+  const width = Math.max(1, Math.min(1000, Math.floor(workArea.width * 0.8)));
+  const height = Math.max(1, Math.min(800, Math.floor(workArea.height * 0.9)));
+  return {
+    width,
+    height,
+    x: Math.round(workArea.x + (workArea.width - width) / 2),
+    y: Math.round(workArea.y + (workArea.height - height) / 2),
+  };
+}
+
 module.exports = {
+  fitControlPanelToWorkArea,
   fitMeetingNotificationWindow,
   MAIN_WINDOW_CONFIG,
   CONTROL_PANEL_CONFIG,
@@ -389,6 +423,7 @@ module.exports = {
   NOTIFICATION_WINDOW_CONFIG,
   ASSISTANT_PANEL_SIZE_LIMITS,
   fitAssistantContentWindowToWorkArea,
+  fitLiveTranscriptWindowToWorkArea,
   fitAssistantWindowToWorkArea,
   fitDictationErrorContentWindowToWorkArea,
   fitDictationErrorWindowToWorkArea,

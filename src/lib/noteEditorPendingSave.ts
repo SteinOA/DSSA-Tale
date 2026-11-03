@@ -1,4 +1,5 @@
 export interface NoteEditorDraft {
+  readonly automaticNotepadBase?: string;
   readonly noteId: number;
   readonly title: string;
   readonly content: string;
@@ -10,6 +11,7 @@ export type NoteDraftMutation =
   | { sourceNoteId: number; field: "enhancedContent"; value: string | null };
 
 export interface PendingDocumentSnapshot {
+  readonly automaticNotepadBase?: string;
   readonly noteId: number;
   readonly title: string;
   readonly content: string;
@@ -30,6 +32,7 @@ export interface PendingEnhancedSnapshot {
 }
 
 export type PendingNoteUpdates = {
+  readonly automatic_notepad_base?: string;
   readonly title?: string;
   readonly content?: string;
   readonly enhanced_content?: string | null;
@@ -42,6 +45,7 @@ export interface PendingNoteWrite {
 }
 
 interface NoteDraftSource {
+  readonly dssa_local_only?: number;
   readonly id: number;
   readonly title: string;
   readonly content: string;
@@ -78,6 +82,9 @@ export function documentSaveUpdates(document: PendingDocumentSnapshot): PendingN
   return {
     title: document.title,
     content: document.content,
+    ...(document.automaticNotepadBase !== undefined && {
+      automatic_notepad_base: document.automaticNotepadBase,
+    }),
     ...(document.clearContent && { clear_fields: ["content"] }),
   };
 }
@@ -131,6 +138,7 @@ export function planNoteTransition(
           title: nextNote.title,
           content: nextNote.content,
           enhancedContent: nextNote.enhanced_content ?? null,
+          ...(nextNote.dssa_local_only && { automaticNotepadBase: nextNote.content }),
         }
       : null,
   };

@@ -12,6 +12,9 @@ async function loadManagerClass(t) {
     cachePrefix: "openwhispr-occurrence-time-test-",
     settingsKey: "__occurrenceTimeSettings",
     settings: { dataRetentionEnabled: true, audioRetentionDays: 0 },
+    mockModules: {
+      "/services/SyncService.js": "export const syncService = { debouncedPush() {} };",
+    },
   });
 }
 
@@ -51,4 +54,31 @@ test("a discarded take carries its recording time past the state reset", async (
   const snapshot = manager.takeDiscardedBatchSnapshot();
 
   assert.equal(snapshot.analyticsOccurredAt, "2026-04-01T09:00:00.000Z");
+});
+
+test("only a finished dictation requests notepad append using the exact final text", async (t) => {
+  const { AudioManager, window } = await loadManagerClass(t);
+  const writes = [];
+  window.electronAPI.recordAnalyticsEvent = async () => ({ success: true });
+  window.electronAPI.saveTranscription = async (...args) => {
+    writes.push(args);
+    return { id: 1 };
+  };
+  window.electronAPI.readClipboard = () => {
+    throw new Error("Clipboard must not be read");
+  };
+  const manager = Object.assign(Object.create(AudioManager.prototype), {
+    lastAudioBlob: null,
+    lastAudioMetadata: null,
+    translationRequested: false,
+  });
+  const final = "Eg møter Åse kl. 14.30 – 12 deltakarar, 3 500 kroner.";
+  assert.equal(
+    await manager.saveTranscription(final, "raw", { clientTranscriptionId: "exact-final" }),
+    true
+  );
+  assert.equal(writes[0][0], final);
+  assert.equal(writes[0][2].appendToNotepad, true);
+  await manager.saveFailedTranscription("failure", null, {});
+  assert.notEqual(writes[1][2].appendToNotepad, true);
 });

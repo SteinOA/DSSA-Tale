@@ -12,7 +12,7 @@ export default function WindowControls() {
   const closeLabel = t("windowControls.close");
 
   return (
-    <div className="flex items-center gap-4 pointer-events-auto">
+    <div className="flex items-center gap-4 pointer-events-auto @max-[520px]:gap-2">
       <Button
         variant="ghost"
         size="icon"

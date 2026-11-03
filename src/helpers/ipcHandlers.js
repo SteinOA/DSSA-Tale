@@ -1102,6 +1102,7 @@ class IPCHandlers {
   }
 
   _asyncMirrorWrite(note) {
+    if (note.dssa_local_only) return;
     if (!this._noteFilesEnabled) {
       debugLogger.debug(
         "Mirror write skipped: note files disabled",
@@ -1833,9 +1834,60 @@ class IPCHandlers {
       ipcMain.handle(`save-${k.base}-key`, saveSecretKey(k.get, k.save, k.storeKey));
     }
 
+    const notepad = (action, transcription) => {
+      const { accessNotepad, notepadStorageAllowed } = require("./automaticNotepad");
+      return accessNotepad(
+        this.databaseManager,
+        notepadStorageAllowed(
+          this._retentionSettingsSynced,
+          this._retentionSettings,
+          this._hasActiveAccountScope()
+        ),
+        action,
+        transcription
+      );
+    };
+    let notepadAppendFailed = false;
+    const notepadChanged = (result) => {
+      if (result.note)
+        broadcastToWindows(result.created ? "note-added" : "note-updated", result.note);
+      broadcastToWindows("automatic-notepad-changed");
+      this.notifyVectorChanges();
+    };
+    for (const action of ["read", "clear", "undo"]) {
+      ipcMain.handle(`automatic-notepad-${action}`, () => {
+        try {
+          const result = notepad(action);
+          if (action !== "read") notepadChanged(result);
+          return {
+            ...result,
+            ...(notepadAppendFailed && {
+              error: "En diktering kunne ikke legges til. Originalteksten ligger i historikken.",
+            }),
+          };
+        } catch {
+          // Never forward SQLite error messages: they may contain user text.
+          return {
+            success: false,
+            enabled: true,
+            error: "Notatblokken kunne ikke lagres. Dikteringen ligger fortsatt i historikken.",
+          };
+        }
+      });
+    }
     ipcMain.handle("db-save-transcription", async (event, text, rawText, options) => {
       const result = this.databaseManager.saveTranscription(text, rawText, options);
       if (result?.success && result?.transcription) {
+        if (options?.appendToNotepad === true) {
+          try {
+            notepadChanged(notepad("append", result.transcription));
+          } catch {
+            // The history write has already committed; an independent notepad
+            // failure cannot reject persistence or interfere with target paste.
+            notepadAppendFailed = true;
+            broadcastToWindows("automatic-notepad-changed", { failed: true });
+          }
+        }
         setImmediate(() => {
           broadcastToWindows("transcription-added", result.transcription);
         });
@@ -2033,6 +2085,7 @@ class IPCHandlers {
         onSettingsChanged: (settings) => {
           this._retentionSettings = settings;
           this._retentionSettingsSynced = true;
+          broadcastToWindows("automatic-notepad-changed");
           this._runRetentionCleanup();
           // First point at which the local-history switch is known to be real.
           // After the sweep, so expired transcripts are gone before they can be

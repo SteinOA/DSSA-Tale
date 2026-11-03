@@ -44,7 +44,7 @@ export default function DssaTeamsRecordingChoices({
     if (!result?.success) throw Error("open failed");
   };
   return (
-    <div className="grid gap-4 max-w-3xl">
+    <div className="grid gap-4 w-full min-w-0">
       <section
         data-brand="teams"
         data-provider-area

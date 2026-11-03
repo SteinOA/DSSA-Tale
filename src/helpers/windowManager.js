@@ -40,10 +40,11 @@ const DRAG_MOVE_TOLERANCE_PX = 2;
 const {
   MAIN_WINDOW_CONFIG,
   CONTROL_PANEL_CONFIG,
+  fitControlPanelToWorkArea,
   ONBOARDING_WINDOW_SIZES,
   NOTIFICATION_WINDOW_CONFIG,
   fitMeetingNotificationWindow,
-  fitAssistantContentWindowToWorkArea,
+  fitLiveTranscriptWindowToWorkArea,
   fitAssistantWindowToWorkArea,
   fitDictationErrorContentWindowToWorkArea,
   fitDictationErrorWindowToWorkArea,
@@ -595,7 +596,7 @@ class WindowManager {
       case "DICTATION_ERROR_WITH_TRANSCRIPT":
         return fitDictationErrorWindowToWorkArea(WINDOW_SIZES[sizeKey], workArea);
       case "ASSISTANT_CONTENT":
-        return fitAssistantContentWindowToWorkArea(request?.surfaceHeight, workArea);
+        return fitLiveTranscriptWindowToWorkArea(request?.surfaceHeight, workArea);
       case "DICTATION_ERROR_CONTENT":
         return fitDictationErrorContentWindowToWorkArea(request?.surfaceHeight, workArea);
       default:
@@ -1511,7 +1512,13 @@ class WindowManager {
       return;
     }
 
-    this.controlPanelWindow = new BrowserWindow(CONTROL_PANEL_CONFIG);
+    const initialBounds =
+      process.platform === "win32"
+        ? fitControlPanelToWorkArea(
+            screen.getDisplayNearestPoint(screen.getCursorScreenPoint()).workArea
+          )
+        : {};
+    this.controlPanelWindow = new BrowserWindow({ ...CONTROL_PANEL_CONFIG, ...initialBounds });
     this._onboardingRestoreBounds = null;
     this._onboardingWindowMode = null;
     this._onboardingWindowState = null;
@@ -2091,7 +2098,7 @@ class WindowManager {
     const nextSize =
       surfaceHeight === null
         ? AGENT_DICTATION_PILL_SIZE
-        : fitAssistantContentWindowToWorkArea(surfaceHeight, display.workArea || display.bounds);
+        : fitLiveTranscriptWindowToWorkArea(surfaceHeight, display.workArea || display.bounds);
     const currentBounds = pillWindow.getBounds();
     const changed =
       currentBounds.width !== nextSize.width || currentBounds.height !== nextSize.height;
@@ -2690,6 +2697,8 @@ class WindowManager {
     if (this._preMeetingBounds) {
       win.setBounds(this._preMeetingBounds);
       this._preMeetingBounds = null;
+    } else if (process.platform === "win32") {
+      win.setBounds(fitControlPanelToWorkArea(screen.getDisplayMatching(win.getBounds()).workArea));
     } else {
       const { width, height } = CONTROL_PANEL_CONFIG;
       win.setSize(width, height);

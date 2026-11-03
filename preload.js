@@ -232,6 +232,16 @@ contextBridge.exposeInMainWorld("electronAPI", {
       spaceId
     ),
   getNote: (id) => ipcRenderer.invoke("db-get-note", id),
+  automaticNotepad: (action) => {
+    if (!["read", "clear", "undo"].includes(action))
+      return Promise.reject(new Error("Invalid action"));
+    return ipcRenderer.invoke(`automatic-notepad-${action}`);
+  },
+  onAutomaticNotepadChanged: (callback) => {
+    const listener = (_event, status) => callback(status);
+    ipcRenderer.on("automatic-notepad-changed", listener);
+    return () => ipcRenderer.removeListener("automatic-notepad-changed", listener);
+  },
   getNotes: (noteType, limit, folderId, spaceId) =>
     ipcRenderer.invoke("db-get-notes", noteType, limit, folderId, spaceId),
   getSpaceNotes: (spaceId, limit) => ipcRenderer.invoke("db-get-space-notes", spaceId, limit),

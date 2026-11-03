@@ -3,6 +3,7 @@ import DssaConnections from "./dssa/DssaConnections";
 import DssaTextSizeSettings from "./dssa/DssaTextSizeSettings";
 import DssaHardwareSettings from "./dssa/DssaHardwareSettings";
 import DssaMeetingSetup from "./dssa/DssaMeetingSetup";
+import DssaVersionChanges from "./dssa/DssaVersionChanges";
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
@@ -4554,7 +4555,7 @@ EOF`,
                       updateStatus.isDevelopment
                         ? t("settingsPage.general.updates.devMode")
                         : !updateStatus.isSupported
-                          ? t("settingsPage.general.updates.managedByPackageManager")
+                          ? "Dette er versjonen som er installert. Nye Windows-pakker installeres manuelt."
                           : isUpdateAvailable
                             ? t("settingsPage.general.updates.newVersionAvailable")
                             : t("settingsPage.general.updates.latestVersion")
@@ -4575,6 +4576,8 @@ EOF`,
                         <Badge variant="success">
                           {t("settingsPage.general.updates.badges.update")}
                         </Badge>
+                      ) : !updateStatus.isSupported ? (
+                        <Badge variant="outline">Installert</Badge>
                       ) : (
                         <Badge variant="outline">
                           {t("settingsPage.general.updates.badges.latest")}
@@ -4710,6 +4713,7 @@ EOF`,
                   </SettingsPanelRow>
                 )}
               </SettingsPanel>
+
               <div className="mt-5 flex justify-end">
                 <Button
                   onClick={async () => {
@@ -4748,6 +4752,8 @@ EOF`,
                 </Button>
               </div>
             </div>
+
+            <DssaVersionChanges installedVersion={currentVersion} />
 
             {/* Developer Tools */}
             <div className="border-t border-border/70 pt-6">

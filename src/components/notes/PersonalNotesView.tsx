@@ -105,6 +105,7 @@ function draftFromNote(note: NoteItem): NoteEditorDraft {
     title: note.title,
     content: note.content,
     enhancedContent: note.enhanced_content ?? null,
+    ...(note.dssa_local_only && { automaticNotepadBase: note.content }),
   };
 }
 
@@ -477,6 +478,7 @@ export default function PersonalNotesView({
         noteId: snapshot.noteId,
         title: snapshot.title,
         content: snapshot.content,
+        automaticNotepadBase: snapshot.automaticNotepadBase,
         ...edits,
         timer: setTimeout(async () => {
           if (pendingDocumentRef.current !== pending) return;
@@ -488,7 +490,25 @@ export default function PersonalNotesView({
               documentSaveUpdates(pending)
             );
             if (result?.success) resyncDraftAfterSave(pending.noteId, result.note);
+            else if (pending.automaticNotepadBase !== undefined) {
+              // Keep the user's buffer on conflict; don't replace it with an
+              // external append or clear. The pending write can be flushed again.
+              if (!pendingDocumentRef.current) pendingDocumentRef.current = pending;
+              toast({
+                title: "Rettelsene er ikke lagret",
+                description: result?.error ?? "Prøv å lagre igjen før du lukker notatet.",
+                variant: "destructive",
+              });
+            }
           } catch (err) {
+            if (pending.automaticNotepadBase !== undefined && !pendingDocumentRef.current) {
+              pendingDocumentRef.current = pending;
+              toast({
+                title: "Rettelsene er ikke lagret",
+                description: "Behold notatet åpent og prøv igjen.",
+                variant: "destructive",
+              });
+            }
             logger.warn("Failed to save note", { error: (err as Error).message }, "notes");
           } finally {
             setIsSaving(false);
@@ -497,7 +517,7 @@ export default function PersonalNotesView({
       };
       pendingDocumentRef.current = pending;
     },
-    [resyncDraftAfterSave]
+    [resyncDraftAfterSave, toast]
   );
 
   const scheduleEnhancedSave = useCallback(

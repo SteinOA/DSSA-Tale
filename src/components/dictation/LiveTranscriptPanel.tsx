@@ -58,7 +58,7 @@ export function LiveTranscriptPanel({
         onMouseEnter={() => onHoldChange?.(true)}
         onMouseLeave={() => onHoldChange?.(false)}
         data-panel-scroll-region
-        className={`agent-chat-scroll min-h-0 flex-auto overflow-y-auto overscroll-contain px-5 pb-3 pt-8 transition-[opacity,transform] duration-200 ease-out ${
+        className={`agent-chat-scroll min-h-0 flex-auto overflow-y-auto overscroll-contain px-3 py-1.5 transition-[opacity,transform] duration-200 ease-out ${
           contentVisible
             ? "translate-y-0 opacity-100 delay-75"
             : "pointer-events-none translate-y-2 opacity-0 delay-0"
@@ -88,7 +88,7 @@ export function LiveTranscriptPanel({
       </main>
 
       <footer
-        className="flex h-16 shrink-0 items-center justify-end px-4"
+        className="flex h-9 shrink-0 items-center justify-end px-3"
         onMouseEnter={() => onHoldChange?.(true)}
         onMouseLeave={() => onHoldChange?.(false)}
       >
@@ -105,7 +105,7 @@ export function LiveTranscriptPanel({
             onClick={() => void handleCopy()}
             disabled={!controlsVisible || !text.trim()}
             tabIndex={controlsVisible ? 0 : -1}
-            className="inline-flex size-9 items-center justify-center rounded-full border border-border/35 bg-surface-1 text-muted-foreground shadow-[var(--shadow-card)] transition-colors hover:border-border/60 hover:text-foreground disabled:pointer-events-none disabled:opacity-35"
+            className="inline-flex size-7 items-center justify-center rounded-full border border-border/35 bg-surface-1 text-muted-foreground shadow-[var(--shadow-card)] transition-colors hover:border-border/60 hover:text-foreground disabled:pointer-events-none disabled:opacity-35"
             aria-label={copied ? t("transcriptionPreview.copied") : t("transcriptionPreview.copy")}
           >
             {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
@@ -115,7 +115,7 @@ export function LiveTranscriptPanel({
             onClick={onCollapse}
             disabled={!controlsVisible}
             tabIndex={controlsVisible ? 0 : -1}
-            className="inline-flex size-9 items-center justify-center rounded-full border border-border/35 bg-surface-1 text-foreground shadow-[var(--shadow-card)] transition-colors hover:border-border/60 hover:bg-surface-2 disabled:pointer-events-none"
+            className="inline-flex size-7 items-center justify-center rounded-full border border-border/35 bg-surface-1 text-foreground shadow-[var(--shadow-card)] transition-colors hover:border-border/60 hover:bg-surface-2 disabled:pointer-events-none"
             aria-label={t("transcriptionPreview.collapse", { defaultValue: "Collapse transcript" })}
           >
             <ChevronDown className="size-4" />
@@ -125,7 +125,7 @@ export function LiveTranscriptPanel({
 
       <div
         data-panel-size-source
-        className="pointer-events-none absolute inset-x-5 top-0 invisible pb-3 pt-8"
+        className="pointer-events-none absolute inset-x-3 top-0 invisible py-1.5"
         aria-hidden="true"
       >
         <p dir="auto" className="whitespace-pre-wrap break-words text-base leading-relaxed">

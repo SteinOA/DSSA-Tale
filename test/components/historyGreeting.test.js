@@ -27,6 +27,7 @@ async function mountHistoryView(t) {
     cachePrefix: "openwhispr-history-greeting-test-",
     noExternal: ["react-i18next"],
     mockModules: {
+      "/AutomaticNotepad": `export default function AutomaticNotepad() { return null; }`,
       // Echo the key and its values, so the test sees which greeting was picked and
       // what went where the name goes.
       "react-i18next": `

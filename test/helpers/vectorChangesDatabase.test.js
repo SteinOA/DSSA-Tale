@@ -23,7 +23,7 @@ function createDatabase(t, { migrate = true, filename = ":memory:" } = {}) {
     CREATE TABLE IF NOT EXISTS notes (
       id INTEGER PRIMARY KEY, title TEXT, content TEXT, enhanced_content TEXT,
       space_id INTEGER, folder_id INTEGER, deleted_at TEXT, account_id TEXT,
-      updated_at TEXT
+      updated_at TEXT, dssa_local_only INTEGER NOT NULL DEFAULT 0
     );
   `);
   sqlite.transaction = (callback) => () => {

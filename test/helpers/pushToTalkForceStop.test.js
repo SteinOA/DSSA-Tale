@@ -51,6 +51,7 @@ Module._load = function loadWindowManagerWithStubs(request, parent, isMain) {
       },
       fitAssistantWindowToWorkArea: (s) => s,
       fitAssistantContentWindowToWorkArea: (h) => ({ width: 466, height: h }),
+      fitLiveTranscriptWindowToWorkArea: (h) => ({ width: 466, height: h }),
       fitDictationErrorWindowToWorkArea: (s) => s,
       fitDictationErrorContentWindowToWorkArea: (h) => ({ width: 466, height: h }),
       resolveHorizontalWindowDirection: () => "right",

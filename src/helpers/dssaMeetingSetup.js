@@ -14,6 +14,25 @@ const PUNKT = {
   sha256: "e57f64187974277726a3417ca6f181ec5403676c717672eef6a748a7b20e0106",
   bytes: 4319076,
 };
+function bundledSileroAvailable(
+  resourcesPath = process.resourcesPath,
+  projectRoot = path.resolve(__dirname, "../..")
+) {
+  const name = "ggml-silero-v5.1.2.bin";
+  return [
+    resourcesPath && path.join(resourcesPath, "bin", "whisper-vad", name),
+    path.join(projectRoot, "resources", "bin", "whisper-vad", name),
+  ]
+    .filter(Boolean)
+    .some((file) => {
+      try {
+        const info = fs.statSync(file);
+        return info.isFile() && info.size > 0;
+      } catch {
+        return false;
+      }
+    });
+}
 class MeetingSetup {
   constructor({ app, net, safeStorage }, { scripts } = {}) {
     Object.assign(this, { app, net, safeStorage });
@@ -30,6 +49,7 @@ class MeetingSetup {
       community: !!require("./dssaCommunityDiarization").readCommunityConfig(this.profile),
       alignment: require("./dssaAlignment").readAlignmentConfig(this.profile)?.models || {},
       credential: fs.existsSync(path.join(this.root, "huggingface.dpapi")),
+      sileroInstalled: bundledSileroAvailable(),
     };
   }
   async credential(token) {
@@ -354,4 +374,4 @@ class MeetingSetup {
     }
   }
 }
-module.exports = { MeetingSetup, PYTHON, PUNKT };
+module.exports = { MeetingSetup, PYTHON, PUNKT, bundledSileroAvailable };

@@ -142,6 +142,7 @@ class MarkdownMirror {
   }
 
   writeNote(note, folderName) {
+    if (note.dssa_local_only) return;
     if (!this._baseRealPath) return;
     try {
       const dirPath = this._resolveFolderPath(folderName, { create: true });

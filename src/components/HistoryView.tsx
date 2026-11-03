@@ -1,9 +1,9 @@
 import { useMemo } from "react";
+import AutomaticNotepad from "./AutomaticNotepad";
 import { useTranslation } from "react-i18next";
 import { cn } from "./lib/utils";
 import { useUiLocale } from "../hooks/useUiLocale";
 import { Button } from "./ui/button";
-import { PAGE_CONTENT_WIDTH_CLASS } from "./ui/pageWidth";
 import { Loader2, Sparkles, X, Trash2, Archive } from "./icons";
 import TranscriptionItem from "./ui/TranscriptionItem";
 import ThemedEmptyIllustration from "./ui/ThemedEmptyIllustration";
@@ -24,6 +24,7 @@ import ToneStyleSetupDialog from "./toneStyle/ToneStyleSetupDialog";
 import { turnOnDictationCleanup } from "./toneStyle/dictationCleanup";
 
 interface HistoryViewProps {
+  onOpenNotepad: (id: number) => void;
   history: TranscriptionItemType[];
   isLoading: boolean;
   hotkey: string;
@@ -43,6 +44,7 @@ interface HistoryViewProps {
 }
 
 export default function HistoryView({
+  onOpenNotepad,
   history,
   isLoading,
   hotkey,
@@ -106,7 +108,16 @@ export default function HistoryView({
   );
 
   return (
-    <div className={cn(PAGE_CONTENT_WIDTH_CLASS, "px-6 pt-4 pb-6")}>
+    <div className="w-full min-w-0 px-6 pt-4 pb-6">
+      <div className="mb-5">
+        <UpcomingMeetings
+          layout="top"
+          events={events}
+          isLoading={eventsLoading}
+          isConnected={isConnected}
+          onConnectCalendar={onOpenIntegrations}
+        />
+      </div>
       {/* Hidden until the first load settles, so a returning user isn't greeted as new. */}
       <h2 className={cn("mb-4 text-xl text-foreground", isLoading && !hasHistory && "invisible")}>
         {firstName ? (
@@ -124,6 +135,7 @@ export default function HistoryView({
           t(hasHistory ? "controlPanel.history.welcomeBack" : "controlPanel.history.welcome")
         )}
       </h2>
+      <AutomaticNotepad onOpenNote={onOpenNotepad} />
       {toneStylePrompt.showBanner && (
         <ToneStyleBanner
           cleanupEnabled={useCleanupModel}
@@ -176,7 +188,7 @@ export default function HistoryView({
         </div>
       )}
 
-      <div className="flex gap-8">
+      <div className="w-full min-w-0">
         <div className="min-w-0 flex-1">
           {!dataRetentionEnabled && (
             <div className="mb-3 rounded-lg border border-amber-500/30 bg-amber-500/5 dark:bg-amber-500/10 px-3.5 py-2.5 flex items-center gap-2.5">
@@ -217,7 +229,7 @@ export default function HistoryView({
                   <div className="sticky -top-1 z-10 -mx-6 px-6 pt-2 pb-2.5 bg-background flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">{group.label}</span>
                     {index === 0 && (
-                      <div className="flex items-center gap-1.5 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200">
+                      <div className="flex flex-wrap items-center gap-2">
                         {discardedToggle}
                         <button
                           onClick={clearAllTranscriptions}
@@ -246,17 +258,6 @@ export default function HistoryView({
               ))}
             </div>
           )}
-        </div>
-
-        {/* With history, drop the day cards by one date row (pt-2 + text-sm line + pb-2.5) so
-            the first one lines up with the first transcription. */}
-        <div className={cn("hidden w-80 shrink-0 md:block", history.length > 0 && "pt-[2.375rem]")}>
-          <UpcomingMeetings
-            events={events}
-            isLoading={eventsLoading}
-            isConnected={isConnected}
-            onConnectCalendar={onOpenIntegrations}
-          />
         </div>
       </div>
     </div>

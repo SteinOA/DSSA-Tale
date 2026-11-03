@@ -34,6 +34,8 @@ const publicDocs = new Set([
   "docs/windows-distribution.md",
   "docs/windows-v31-release.md",
   "docs/windows-v32-selection.md",
+  "docs/windows-v36-notepad.md",
+  "docs/windows-v37-layout.md",
   "docs/community-optional-setup.md",
   "docs/windows-google-sign-in.md",
   "docs/windows-v28-microsoft-setup.md",

@@ -124,3 +124,58 @@ test("copy and the settings hint act on the kept transcript row", async (t) => {
 
   await React.act(async () => root.unmount());
 });
+
+test("completed history exposes commands directly and keeps retry busy state", async (t) => {
+  const TranscriptionItem = await loadTranscriptionItem(t);
+  const item = row({
+    status: "completed",
+    text: "Kari Ås: 42 deltakarar.",
+    raw_text: "Eg møter Kari Ås.",
+  });
+  const html = render(TranscriptionItem, item);
+  for (const key of ["copyText", "retryTranscription", "viewRawTranscript", "deleteItem"]) {
+    assert.match(html, new RegExp(`controlPanel\\.history\\.${key}`));
+  }
+  assert.doesNotMatch(html, /aria-haspopup="menu"|group-hover\/row:opacity-100/);
+  const container = installInteractiveDom(t);
+  const root = createRoot(container);
+  const actions = [];
+  let finish;
+  await React.act(async () =>
+    root.render(
+      React.createElement(TranscriptionItem, {
+        item,
+        onCopy: (text) => actions.push(["copy", text]),
+        onDelete: (id) => actions.push(["delete", id]),
+        onShowAudioInFolder: (id) => actions.push(["folder", id]),
+        onRetryTranscription: (id) => {
+          actions.push(["retry", id]);
+          return new Promise((resolve) => {
+            finish = resolve;
+          });
+        },
+      })
+    )
+  );
+  const button = (suffix) =>
+    findElement(container, (el) => el.tagName === "BUTTON" && el.textContent.includes(suffix));
+  const click = (element) =>
+    React.act(async () =>
+      element.dispatchEvent({ type: "click", bubbles: true, button: 0, preventDefault() {} })
+    );
+  await click(button("history.copyText"));
+  await click(button("history.deleteItem"));
+  await click(button("history.showInFolder"));
+  await click(button("history.viewRawTranscript"));
+  assert.equal(button("history.viewRawTranscript").getAttribute("aria-expanded"), "true");
+  await click(button("history.retryTranscription"));
+  assert.equal(button("history.retryTranscription").getAttribute("disabled"), "");
+  assert.deepEqual(actions, [
+    ["copy", item.text],
+    ["delete", item.id],
+    ["folder", item.id],
+    ["retry", item.id],
+  ]);
+  await React.act(async () => finish());
+  await React.act(async () => root.unmount());
+});

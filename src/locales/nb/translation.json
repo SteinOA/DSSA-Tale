@@ -815,8 +815,8 @@
     "selectModel": "Velg modell",
     "availableModels": "Tilgjengelige modeller",
     "disableThinking": {
-      "label": "Deaktiver tenkeutgang",
-      "help": "Hopper over resonnementsymboler for renere utgang. Anbefales for opprydding. Noen servere ignorerer dette hintet."
+      "label": "Slå av ekstra tenking",
+      "help": "Anbefalt til enkel tekstopprydding. Ber modellen svare uten ekstra resonnement; effekten avhenger av modellen og motoren."
     },
     "selfHosted": {
       "endpointHelp": "Pek på en OpenAI-kompatibel server på ditt lokale nettverk (f.eks. Ollama, LM Studio, vLLM eller llama-server)."
@@ -5710,7 +5710,7 @@
     "communityGuideTitle": "Community-1 – valgfritt tillegg",
     "communityOptional": "Appen har innebygd støtte for Community-1. Du kan installere tillegget her senere uten en ny appoppgradering. Community-1 skiller mellom stemmer i opptak; navn må du angi selv. Sherpa-onnx er alternativet som følger med, og du kan fortsette å bruke det uten dette tillegget.",
     "communityStepsTitle": "Slik installerer du tillegget",
-    "communityStepTools": "Velg CPU eller NVIDIA CUDA nedenfor, og trykk «Installer møteverktøy». Appen laster ned et eget Python-miljø og nødvendige biblioteker. Oppsettet deles med de valgfrie WhisperX-verktøyene; du trenger ikke installere Python selv.",
+    "communityStepTools": "Trykk «Klargjør Community-1». Appen laster ned et eget Python-miljø og nødvendige biblioteker. CPU eller kompatibel NVIDIA CUDA velges automatisk ved første installasjon; ingen dikteringsmodell endres.",
     "communityStepAccess": "Åpne «Hugging Face-tilgang til Community-1» nedenfor. Godta modellvilkårene med din egen konto, opprett en lesetilgangsnøkkel til modellen og lagre den i appens nøkkelfelt.",
     "communityStepModel": "Trykk «Last ned Community-1» etter at møteverktøy og nøkkel er klare. Vent til oppsettet er kontrollert og Community-1 viser «Klar».",
     "communityStepUse": "Åpne Lydimport på nytt, slå på «Skill talere» og velg Community-1. Du kan fortsatt velge sherpa-onnx i stedet.",
@@ -5738,8 +5738,8 @@
     "precise": "Presis",
     "installTools": "Installer møteverktøy",
     "installCommunity": "Last ned Community-1",
-    "installFast": "Last ned rask WhisperX",
-    "installPrecise": "Last ned presis WhisperX",
+    "installFast": "Last ned ordtidsmodell – wav2vec2 300M",
+    "installPrecise": "Last ned ordtidsmodell – wav2vec2 1B",
     "cancel": "Avbryt installasjon",
     "done": "Kontrollert oppsett er aktivert. Åpne Lydimport på nytt for oppdaterte modellvalg. Eksisterende dikteringsmodell er beholdt.",
     "cancelled": "Installasjonen er avbrutt. Tidligere fungerende oppsett er beholdt.",

@@ -4537,6 +4537,7 @@ registerProcessor("pcm-streaming-processor", PCMStreamingProcessor);
 
     try {
       const result = await window.electronAPI.saveTranscription(text, rawText, {
+        appendToNotepad: true,
         clientTranscriptionId: eventId,
         routeKind: this.translationRequested ? "translation" : null,
         analyticsOccurredAt: occurredAt.toISOString(),

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import DssaAlignmentSetup from "../dssa/DssaAlignmentSetup";
 import { formatImportClock, importTiming, type ImportProgress } from "../../utils/dssaImportTiming";
 import { useTranslation } from "react-i18next";
 import {
@@ -248,7 +249,7 @@ export default function UploadAudioView({
   );
   const [alignmentMode, setAlignmentMode] = useState<"off" | "fast" | "precise">(() => {
     const saved = localStorage.getItem("uploadAlignmentMode");
-    return saved === "off" || saved === "precise" ? saved : "fast";
+    return saved === "fast" || saved === "precise" ? saved : "off";
   });
   const [sherpaReady, setSherpaReady] = useState(true);
   const [diarizationDownloading, setDiarizationDownloading] = useState(false);
@@ -1559,6 +1560,12 @@ export default function UploadAudioView({
                   </option>
                 </select>
                 <p className="w-full text-sm text-muted-foreground">{t("dssa.alignmentHint")}</p>
+                {diarizationEngine === "community-1" && (
+                  <DssaAlignmentSetup
+                    language={alignmentLanguage}
+                    onModelsChange={setAlignmentModels}
+                  />
+                )}
               </div>
             )}
             {diarizationEnabled && diarizationModelsReady && (

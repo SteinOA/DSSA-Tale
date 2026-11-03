@@ -794,8 +794,8 @@
     "selectModel": "Select Model",
     "availableModels": "Available Models",
     "disableThinking": {
-      "label": "Disable thinking output",
-      "help": "Skips reasoning tokens for cleaner output. Recommended for cleanup. Some servers ignore this hint."
+      "label": "Turn off extra thinking",
+      "help": "Recommended for simple text cleanup. Requests a response without extra reasoning; the effect depends on the model and engine."
     },
     "keepModelLoaded": {
       "label": "Keep model loaded",
@@ -5540,7 +5540,7 @@
     "communityGuideTitle": "Community-1 – optional add-on",
     "communityOptional": "The app includes support for Community-1. You can install the add-on here later without another app upgrade. Community-1 separates voices in recordings; you assign names yourself. Sherpa-onnx is the included alternative and remains available without this add-on.",
     "communityStepsTitle": "Install the add-on",
-    "communityStepTools": "Choose CPU or NVIDIA CUDA below, then select Install meeting tools. The app downloads its own Python environment and required libraries. This setup is shared with the optional WhisperX tools; you do not need to install Python yourself.",
+    "communityStepTools": "Choose Prepare Community-1 to install its private Python runtime and libraries. CPU or compatible NVIDIA CUDA is selected automatically on first installation; the dictation model is unchanged.",
     "communityStepAccess": "Open Hugging Face access for Community-1 below. Accept the model conditions with your own account, create a read token with model access and save it in the app's token field.",
     "communityStepModel": "Select Download Community-1 once the tools and token are ready. Wait for validation and for Community-1 to show Ready.",
     "communityStepUse": "Reopen Audio import, enable speaker detection and choose Community-1. You can still select sherpa-onnx instead.",
@@ -5568,8 +5568,8 @@
     "precise": "Precise",
     "installTools": "Install meeting tools",
     "installCommunity": "Download Community-1",
-    "installFast": "Download fast WhisperX",
-    "installPrecise": "Download precise WhisperX",
+    "installFast": "Download word timing model – wav2vec2 300M",
+    "installPrecise": "Download word timing model – wav2vec2 1B",
     "cancel": "Cancel installation",
     "done": "Validated setup activated. Reopen Audio import to refresh available models. Your existing dictation model is preserved.",
     "cancelled": "Installation cancelled. The previous working setup is preserved.",

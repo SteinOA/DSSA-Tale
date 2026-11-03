@@ -58,7 +58,7 @@
 
 /* Live Transcript stages its empty surface before buffered text becomes visible. */
 .expanding-panel-surface[data-panel-mode="live-transcript"] {
-  --live-transcript-footer-height: 4rem;
+  --live-transcript-footer-height: 2.25rem;
   --live-transcript-speaking-pill-width: 6.125rem;
   --live-transcript-speaking-pill-height: 2.25rem;
   --live-transcript-footer-inline-padding: 1rem;
@@ -497,19 +497,19 @@
 }
 
 .voice-pill-position-live-transcript-bottom-left {
-  bottom: 1.625rem;
+  bottom: 0.75rem;
   left: 1.75rem;
   transform: none;
 }
 
 .voice-pill-position-live-transcript-encapsulated-bottom-right {
-  bottom: 1.625rem;
+  bottom: 0.75rem;
   left: calc(100% - 1.75rem);
   transform: translateX(-100%);
 }
 
 .voice-pill-position-live-transcript-encapsulated-bottom-left {
-  bottom: 1.625rem;
+  bottom: 0.75rem;
   left: 1.75rem;
   transform: none;
 }

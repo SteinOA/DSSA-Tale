@@ -4,6 +4,23 @@ const test = require("node:test"),
   os = require("node:os"),
   path = require("node:path");
 const { MeetingSetup, PYTHON, PUNKT } = require("../../src/helpers/dssaMeetingSetup");
+
+test("Silero inventory checks bundled files without installing or copying them", (t) => {
+  const { bundledSileroAvailable } = require("../../src/helpers/dssaMeetingSetup");
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "dssa-silero-status-"));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  const resources = path.join(root, "resources");
+  const folder = path.join(resources, "bin", "whisper-vad");
+  assert.equal(bundledSileroAvailable(resources, root), false);
+  assert.equal(fs.existsSync(resources), false);
+  fs.mkdirSync(folder, { recursive: true });
+  const model = path.join(folder, "ggml-silero-v5.1.2.bin");
+  fs.writeFileSync(model, "");
+  assert.equal(bundledSileroAvailable(resources, root), false);
+  fs.writeFileSync(model, "synthetic model fixture");
+  assert.equal(bundledSileroAvailable(resources, root), true);
+  assert.equal(fs.readFileSync(model, "utf8"), "synthetic model fixture");
+});
 test("optional download checks byte count and hash before activating an artifact", async (t) => {
   const root = fs.mkdtempSync(path.join(fs.realpathSync(os.tmpdir()), "dssa-setup-test-"));
   t.after(() => {

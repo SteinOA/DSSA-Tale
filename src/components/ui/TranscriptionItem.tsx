@@ -3,12 +3,6 @@ import { useTranslation } from "react-i18next";
 import { Button } from "./button";
 import { Tooltip } from "./tooltip";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./dropdown-menu";
-import {
   Copy,
   Trash2,
   FileText,
@@ -17,7 +11,6 @@ import {
   Loader2,
   AlertCircle,
   ArchiveRestore,
-  MoreVertical,
 } from "../icons";
 import type {
   TranscriptionItem as TranscriptionItemType,
@@ -28,9 +21,6 @@ import { getCachedPlatform } from "../../utils/platform";
 import { formatMmSs } from "../../utils/formatDuration";
 
 const platform = getCachedPlatform();
-
-const ACTION_BUTTON_CLASS =
-  "h-7 w-7 rounded-full text-muted-foreground/70 hover:text-foreground hover:bg-foreground/6 dark:hover:bg-white/6";
 
 const TRANSCRIPT_TEXT_CLASS =
   "text-base leading-normal wrap-break-word whitespace-pre-wrap text-foreground";
@@ -121,7 +111,7 @@ export default function TranscriptionItem({
       : "controlPanel.history.retryTranscription"
   );
 
-  // Copy stays visible as the one-tap action; everything else lives in the menu.
+  // Every available action stays visible, with labels and wrapping at larger text sizes.
   const candidateActions: (MenuAction | false)[] = [
     isDiscarded &&
       hasAudio && {
@@ -168,64 +158,7 @@ export default function TranscriptionItem({
         item.route_kind === "translation" && "border-s-2 border-s-primary/70 ps-[14px]"
       )}
     >
-      <div className="flex items-center justify-between gap-3">
-        <span className="text-xs tabular-nums text-muted-foreground">{formattedTime}</span>
-        <div
-          className={cn(
-            "-me-1.5 flex items-center gap-1 transition-opacity duration-150",
-            // Actions surface on hover, keyboard focus, or while the menu is open; failed and
-            // discarded rows keep them visible because recovery is the point of the row.
-            isTranscribed &&
-              "opacity-0 group-hover/row:opacity-100 has-[:focus-visible]:opacity-100 has-[[data-state=open]]:opacity-100"
-          )}
-        >
-          {(isTranscribed || hasKeptText) && (
-            <Tooltip content={t("controlPanel.history.copyText")}>
-              <Button
-                size="icon"
-                variant="ghost"
-                onClick={() => onCopy(item.text)}
-                aria-label={t("controlPanel.history.copyText")}
-                className={ACTION_BUTTON_CLASS}
-              >
-                <Copy size={13} />
-              </Button>
-            </Tooltip>
-          )}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                size="icon"
-                variant="ghost"
-                disabled={isRetrying}
-                aria-label={t("controlPanel.history.moreActions")}
-                className={ACTION_BUTTON_CLASS}
-              >
-                {isRetrying ? (
-                  <Loader2 size={13} className="animate-spin" />
-                ) : (
-                  <MoreVertical size={13} />
-                )}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {menuActions.map(({ key, icon: Icon, label, onSelect, destructive }) => (
-                <DropdownMenuItem
-                  key={key}
-                  onSelect={onSelect}
-                  className={cn(
-                    "gap-2.5",
-                    destructive && "text-destructive focus:bg-destructive/8 focus:text-destructive"
-                  )}
-                >
-                  <Icon size={14} className="shrink-0 opacity-70" />
-                  {label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </div>
+      <span className="text-xs tabular-nums text-muted-foreground">{formattedTime}</span>
 
       <div className="mt-1.5">
         {isFailed ? (
@@ -311,6 +244,46 @@ export default function TranscriptionItem({
             {item.text}
           </p>
         )}
+      </div>
+
+      <div
+        className="mt-3 flex flex-wrap items-center gap-2"
+        role="group"
+        aria-label={t("controlPanel.history.moreActions")}
+      >
+        {(isTranscribed || hasKeptText) && (
+          <Button
+            size="sm"
+            variant="outline"
+            className="h-auto min-h-8 max-w-full whitespace-normal text-start"
+            onClick={() => onCopy(item.text)}
+            aria-label={t("controlPanel.history.copyText")}
+          >
+            <Copy size={14} aria-hidden="true" />
+            {t("controlPanel.history.copyText")}
+          </Button>
+        )}
+        {menuActions.map(({ key, icon: Icon, label, onSelect, destructive }) => (
+          <Button
+            key={key}
+            size="sm"
+            variant={destructive ? "destructive" : "outline"}
+            className="h-auto min-h-8 max-w-full whitespace-normal text-start"
+            onClick={onSelect}
+            aria-expanded={key === "raw" ? isExpanded : undefined}
+            disabled={
+              (["retry", "recover"].includes(key) && (isRetrying || !onRetryTranscription)) ||
+              (key === "folder" && !onShowAudioInFolder)
+            }
+          >
+            {isRetrying && ["retry", "recover"].includes(key) ? (
+              <Loader2 size={14} className="animate-spin" aria-hidden="true" />
+            ) : (
+              <Icon size={14} aria-hidden="true" />
+            )}
+            {label}
+          </Button>
+        ))}
       </div>
 
       {isTranscribed && rawText !== null && (

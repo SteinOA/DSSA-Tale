@@ -444,6 +444,14 @@ class DatabaseManager {
         )
       `);
 
+      if (
+        !this.db
+          .prepare("PRAGMA table_info(notes)")
+          .all()
+          .some((column) => column.name === "dssa_local_only")
+      ) {
+        this.db.exec("ALTER TABLE notes ADD COLUMN dssa_local_only INTEGER NOT NULL DEFAULT 0");
+      }
       try {
         this.db.exec("ALTER TABLE notes ADD COLUMN enhanced_content TEXT");
       } catch (err) {
@@ -3472,6 +3480,39 @@ class DatabaseManager {
       const previous = this.getNote(id);
       if (!previous) return { success: false, error: "Note not found" };
       updates = { ...updates };
+      if (previous.dssa_local_only) {
+        if (
+          ["space_id", "folder_id", "cloud_id", "client_note_id", "account_id"].some(
+            (key) => key in updates
+          )
+        ) {
+          return {
+            success: false,
+            error: "Automatisk notatblokk skal forbli lokal og i samme mappe.",
+          };
+        }
+        if (typeof updates.content === "string") {
+          const base = updates.automatic_notepad_base;
+          if (typeof base !== "string" || !previous.content.startsWith(base)) {
+            return {
+              success: false,
+              error:
+                "Notatblokken er endret. Behold rettelsene dine og åpne notatet på nytt før du lagrer.",
+            };
+          }
+          const tail = previous.content.slice(base.length);
+          if (tail) {
+            const { joinParagraphs } = require("./automaticNotepad");
+            updates.content = joinParagraphs(
+              updates.content,
+              tail.startsWith("\n\n") ? tail.slice(2) : tail
+            );
+          }
+          if (tail)
+            updates.clear_fields = updates.clear_fields?.filter((field) => field !== "content");
+        }
+      }
+      delete updates.automatic_notepad_base;
       // An unlink is stored as "" so it syncs: the cloud keeps a NULL as "unchanged".
       if (updates.calendar_event_id === null && previous.calendar_event_id != null) {
         updates.calendar_event_id = "";
@@ -4501,7 +4542,10 @@ class DatabaseManager {
     if (!this.db) throw new Error("Database not initialized");
     // The durable index spans accounts; renderer/search reads still use the
     // scoped getNote API before exposing any indexed result.
-    return this.db.prepare("SELECT * FROM notes WHERE id = ?").get(noteId) || null;
+    return (
+      this.db.prepare("SELECT * FROM notes WHERE id = ? AND dssa_local_only = 0").get(noteId) ||
+      null
+    );
   }
 
   addPendingVectorPurge(spaceId) {
@@ -6037,7 +6081,7 @@ class DatabaseManager {
   updateNoteCloudId(id, cloudId) {
     try {
       if (!this.db) throw new Error("Database not initialized");
-      if (!this.getNote(id)) return null;
+      if (!this.getNote(id) || this.getNote(id).dssa_local_only) return null;
       this.db.prepare("UPDATE notes SET cloud_id = ? WHERE id = ?").run(cloudId, id);
       return this.db.prepare("SELECT * FROM notes WHERE id = ?").get(id);
     } catch (error) {
@@ -6051,7 +6095,7 @@ class DatabaseManager {
   updateNoteShareState(id, { is_shared, share_token }) {
     try {
       if (!this.db) throw new Error("Database not initialized");
-      if (!this.getNote(id)) return null;
+      if (!this.getNote(id) || this.getNote(id).dssa_local_only) return null;
       if (share_token !== undefined) {
         this.db
           .prepare("UPDATE notes SET is_shared = ?, share_token = ? WHERE id = ?")
@@ -6444,7 +6488,7 @@ class DatabaseManager {
         return this.db
           .prepare(
             `SELECT n.* FROM notes n JOIN spaces s ON s.id = n.space_id
-             WHERE n.sync_status IN ('pending', 'error') AND n.deleted_at IS NULL
+             WHERE n.sync_status IN ('pending', 'error') AND n.deleted_at IS NULL AND n.dssa_local_only = 0
                AND ${accountScope.sql} AND (s.kind = ?${leftTeam})`
           )
           .all(...accountScope.params, spaceKind);
@@ -6454,7 +6498,7 @@ class DatabaseManager {
       return this.db
         .prepare(
           `SELECT n.* FROM notes n
-           WHERE n.sync_status IN ('pending', 'error') AND n.deleted_at IS NULL
+           WHERE n.sync_status IN ('pending', 'error') AND n.deleted_at IS NULL AND n.dssa_local_only = 0
              AND ${accountScope.sql}`
         )
         .all(...accountScope.params);

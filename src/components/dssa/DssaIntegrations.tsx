@@ -189,7 +189,7 @@ export default function DssaIntegrations(_props: {
         </div>
         {tab === "teams" && <DssaTeamsRecordingChoices onStartMeeting={_props.onStartMeeting} />}
         {tab === "connection" && (
-          <div className="max-w-2xl space-y-4">
+          <div className="w-full min-w-0 space-y-4">
             <p className="text-sm leading-relaxed">
               {tr(
                 "Valgfri tilkobling for å finne kalenderavtaler, åpne Teams-møter og hente eller lagre filer i OneDrive og SharePoint. Lokal diktering og transkribering krever ingen tilkobling.",

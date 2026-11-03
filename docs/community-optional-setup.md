@@ -25,3 +25,7 @@ These tests do not prove a fresh-machine installation, model authorization or
 full inference. Package server changes can still require maintenance releases;
 the no-new-upgrade promise concerns the normal supported add-on installation,
 not indefinite compatibility with every future external dependency change.
+
+## Windows v38 presentation
+
+System now shows a read-only installed-model inventory and the saved language. Only optional Community-1 provisioning stays there: Prepare Community-1 selects the compatible CPU/CUDA edition automatically on first installation, followed by the user-owned model credential and model download. Model selection and language changes remain under Speech to text / Audio upload. Optional wav2vec2 word-timing model installation is available only beside the corresponding Community-1 import controls, using the import language; it does not change the dictation model or enable alignment by itself.
