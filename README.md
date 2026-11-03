@@ -1,4 +1,6 @@
-# DSSA Tale for Windows
+# DSSA Tale for Windows – basert på OpenWhispr og Nasjonalbibliotekets NB-Whisper
+
+DSSA Tale bygger på **OpenWhispr**. **NB-Whisper** kommer fra **Nasjonalbiblioteket** og bygger på **OpenAIs Whisper-modell**, videre trent for norsk. Dette er en uoffisiell tilpasning, ikke utgitt eller godkjent av disse prosjektene.
 
 Gratis lokal norsk diktering, møteopptak og lydimport. Offentlig betaversjon: **1.10.4-dssa.38**, Windows x64.
 
@@ -46,6 +48,7 @@ Dette repositoriet inneholder kildeeksporten til v38 med en offentlig README. De
 Utviklere trenger Node.js 24 eller nyere. Kjør `npm ci`, og klargjør native avhengigheter som beskrevet i distribusjonsdokumentasjonen og kildearkivene før bygging. Modellvekter og nedlastede binærfiler inngår ikke i Git-kilden. Brukere av installasjonsfilen trenger ikke utviklingsverktøy.
 
 Mac-versjonen omfattes ikke av denne Windows-utgivelsen.
+
 
 
 
