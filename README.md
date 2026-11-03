@@ -37,7 +37,7 @@ Se [CREDITS.md](CREDITS.md), [LICENSE](LICENSE), [distribusjon og kilder](docs/w
 
 ## Kildekode og bygging
 
-Dette repositoriet inneholder kildeeksporten til v35 med en offentlig README. Den private utviklingshistorikken følger ikke med. Installasjonsfilen og begge kildearkivene ligger i samme utgivelse:
+Dette repositoriet inneholder kildeeksporten til v38 med en offentlig README. Den private utviklingshistorikken følger ikke med. Installasjonsfilen og begge kildearkivene ligger i samme utgivelse:
 
 - `DSSA-Tale-public-source.zip`: kildeeksporten som installasjonsfilen er bygget fra.
 - `DSSA-Tale-corresponding-source.zip`: tilhørende medieverktøykilder, avhengigheter, patcher og byggeoppskrift.
@@ -46,5 +46,6 @@ Dette repositoriet inneholder kildeeksporten til v35 med en offentlig README. De
 Utviklere trenger Node.js 24 eller nyere. Kjør `npm ci`, og klargjør native avhengigheter som beskrevet i distribusjonsdokumentasjonen og kildearkivene før bygging. Modellvekter og nedlastede binærfiler inngår ikke i Git-kilden. Brukere av installasjonsfilen trenger ikke utviklingsverktøy.
 
 Mac-versjonen omfattes ikke av denne Windows-utgivelsen.
+
 
 
