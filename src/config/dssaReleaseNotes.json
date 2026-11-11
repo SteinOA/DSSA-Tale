@@ -2,6 +2,7 @@
   {
     "version": "1.10.4-dssa.41",
     "changes": [
+      "Rettet oppstartsfeil på Windows: lokale innstillinger sikkerhetskopieres før Chromium låser LevelDB. En helt ny profil opprettes trygt før sikkerhetskopimarkøren skrives.",
       "Førstegangsoppsettet leder gjennom språk, modellnedlasting, mikrofontest og første opptak med forklaring ved hvert trinn.",
       "Oppsettet kontrollerer faktisk installert talemodell, viser nedlastingsframdrift og hindrer fullføring uten modell og kontrollert mikrofon.",
       "Valgt lokal modell brukes til diktering, møteopptak og lydimport. Ingen konto eller API-nøkkel kreves. Valgfri tekstopprydding er av i grunnoppsettet.",

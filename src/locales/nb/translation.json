@@ -99,7 +99,7 @@
   },
   "startup": {
     "error": {
-      "title": "OpenWhispr Oppstartsfeil",
+      "title": "DSSA Tale – Oppstartsfeil",
       "message": "Kunne ikke starte programmet:\n\n{{error}}\n\nVennligst rapporter dette problemet."
     },
     "globeHotkey": {

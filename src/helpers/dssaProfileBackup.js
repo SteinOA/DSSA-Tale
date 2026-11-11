@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 async function backupBeforeMigration(profile) {
+  fs.mkdirSync(profile, { recursive: true });
   const marker = path.join(profile, ".dssa-windows-backup-v1");
   if (fs.existsSync(marker)) return;
   const existing = [

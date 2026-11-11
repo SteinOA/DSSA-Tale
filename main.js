@@ -270,6 +270,17 @@ if (!gotSingleInstanceLock) {
   app.exit(0);
 }
 
+// Snapshot settings before Chromium opens and locks Local Storage/leveldb.
+// A second instance must never touch the running instance's profile.
+const dssaProfileBackup = gotSingleInstanceLock
+  ? require("./src/helpers/dssaProfileBackup")
+      .backupBeforeMigration(app.getPath("userData"))
+      .then(
+        () => null,
+        (error) => error
+      )
+  : Promise.resolve(null);
+
 const isLiveWindow = (window) => window && !window.isDestroyed();
 
 // Ensure macOS menus use the proper casing for the app name
@@ -1157,7 +1168,8 @@ async function checkStartupHold() {
 
 // Main application startup
 async function startApp() {
-  await require("./src/helpers/dssaProfileBackup").backupBeforeMigration(app.getPath("userData"));
+  const profileBackupError = await dssaProfileBackup;
+  if (profileBackupError) throw profileBackupError;
   // Await so a stale sidecar is confirmed dead before new ones can spawn and
   // contend for its port or storage lock.
   await reapStaleSidecars();

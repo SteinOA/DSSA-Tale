@@ -11,3 +11,7 @@ Fullføring krever installert valgt modell og en avsluttet mikrofontest som regi
 Automatisk funksjonstest går gjennom tom modelliste, manglende modell, nektet mikrofontilgang, lydregistrering, stopp/opprydding, modell som slettes før fullføring, og korrekt lokal konfigurasjon i alle tre lydkontekster. Typekontroll og relaterte komponenttester kjøres før pakking.
 
 Mikrofontesten registrerer lydnivå uten å lagre lyd. Den er ikke en transkripsjonstest og kontrollerer ikke systemlyd eller talerfordeling. Første virkelige opptak må fortsatt prøves av brukeren. Installer og faktisk installert versjon kontrolleres fra GitHub-nedlasting med SHA-256. En tom profil på denne PC-en tilsvarer ikke testing på alle Windows-maskiner.
+
+## Oppstartsrettelse funnet ved GitHub-installasjonen
+
+Den nedlastede pakken avdekket EACCES ved kopiering av Local Storage/leveldb etter at Chromium hadde åpnet mappen. Sikkerhetskopien startes nå etter at enkeltinstanslåsen er tatt, før app.whenReady og før Chromium sin standardsesjon opprettes. En andre appinstans sikkerhetskopierer ikke profilen. En manglende profilmappe opprettes før markøren skrives. Reelle sikkerhetskopifeil stopper fortsatt migrering, slik at eksisterende data ikke overskrives uten sikkerhetskopi. Tester dekker ny profil, bevaring av tidligere innstillinger og feil uten fullført markør.
