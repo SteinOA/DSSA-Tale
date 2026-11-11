@@ -3189,6 +3189,11 @@ class IPCHandlers {
       }
     });
 
+    require("./dssaFolderImport").registerFolderImport(ipcMain, {
+      dialog: require("electron").dialog,
+      approveAudioPath,
+    });
+
     ipcMain.handle("select-audio-file", async (event, options = {}) => {
       const { dialog } = require("electron");
       if (options.libraryId) {
@@ -9002,11 +9007,17 @@ class IPCHandlers {
         try {
           if (dssaSpool) {
             spoolLocalBuffers();
-            await dssaSpool.drain(async ({ source, buffer, timestamp }) => {
-              dssaChunkTimestamp = timestamp;
-              meetingLocalBuffers[source] = [buffer];
-              await transcribeLocalMeetingChunk(source);
-            });
+            await dssaSpool.drain(
+              async ({ source, buffer, timestamp }) => {
+                dssaChunkTimestamp = timestamp;
+                meetingLocalBuffers[source] = [buffer];
+                await transcribeLocalMeetingChunk(source);
+              },
+              (progress) => {
+                if (meetingLocalWin && !meetingLocalWin.isDestroyed())
+                  meetingLocalWin.webContents.send("dssa-meeting-progress", progress);
+              }
+            );
             dssaChunkTimestamp = null;
           } else {
             await transcribeLocalMeetingChunk("system");

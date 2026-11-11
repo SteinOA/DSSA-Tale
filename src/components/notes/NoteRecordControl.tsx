@@ -70,12 +70,7 @@ export default function NoteRecordControl({
   const elapsed = isRecording && startedAt != null ? Math.floor((now - startedAt) / 1000) : 0;
 
   return (
-    <div
-      className={cn(
-        "h-[30px] shrink-0 overflow-hidden transition-[width] duration-500 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)]",
-        isRecording ? "w-40" : "w-[30px]"
-      )}
-    >
+    <div className={cn("min-h-[30px] shrink-0", isRecording ? "w-52" : "w-auto")}>
       {isRecording ? (
         <button
           type="button"
@@ -100,6 +95,7 @@ export default function NoteRecordControl({
             <Square size={8} fill="currentColor" />
           </span>
           <LiveWaveform readLevel={readMeetingMicLevel} bars={10} className="h-3.5 flex-1" />
+          <span className="text-xs font-medium">{t("dssaRecording.stop")}</span>
           <span className="shrink-0 text-xs font-medium tabular-nums text-foreground/85">
             {formatMmSs(elapsed)}
           </span>
@@ -109,10 +105,10 @@ export default function NoteRecordControl({
           type="button"
           onClick={onStart}
           disabled={disabled || isProcessing}
-          aria-label={t("notes.editor.transcribe")}
+          aria-label={t(isProcessing ? "dssaRecording.processing" : "dssaRecording.start")}
           title={disabled ? t("common.managedByOrg") : undefined}
           className={cn(
-            "flex h-[30px] w-[30px] items-center justify-center rounded-full",
+            "flex min-h-[30px] items-center justify-center gap-2 rounded-full px-3 text-xs font-medium",
             GRADIENT_CIRCLE,
             "transition-[filter,transform] duration-150 hover:brightness-110 active:scale-95",
             "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30",
@@ -125,6 +121,7 @@ export default function NoteRecordControl({
           ) : (
             <Mic size={15} />
           )}
+          <span>{t(isProcessing ? "dssaRecording.processingShort" : "dssaRecording.start")}</span>
         </button>
       )}
     </div>

@@ -1,5 +1,25 @@
 [
   {
+    "version": "1.10.4-dssa.40",
+    "changes": [
+      "Møteopptak har synlige Start opptak- og Stopp opptak-knapper og trinnvis hjelp i notatet.",
+      "Etter stopp viser notatet at lyden transkriberes og lagres. Statusen følger den faktiske stoppebehandlingen og beholdes til den er ferdig.",
+      "Ved lokal transkribering etter møtet vises behandlet og gjenstående lyd, prosent og et anslag for resttid etter to ferdige lydbiter. Mikrofon og møtelyd telles separat.",
+      "Lydkøens tekstfase skilles fra etterfølgende lagring og talerfordeling. Feilede lydbiter telles ikke som fullført."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.39",
+    "changes": [
+      "Mappeimport finner støttede lyd- og videofiler med valgfri gjennomgang av undermapper. Filene legges i kø og lagres som separate notater etter transkripsjon. Originalene beholdes.",
+      "Mappeimport kan avbrytes og viser filer som hoppes over eller ikke kan leses. Samme filsti legges ikke i kø flere ganger ved mappevalg.",
+      "Bruksanvisningen er utvidet til 28 kapitler med direkte knapper til funksjoner og innstillinger. Generelt har en egen oversikt for å finne oppsett og funksjoner.",
+      "Veiledningen forklarer automatisk notatblokk, lokal importgjenopptakelse, direkte Google Disk, stemmeskille, møteopptak, lagring og modellvalg.",
+      "Community-1-oppsettet har lenker til Hugging Face-konto, modellvilkår og tilgangsnøkkel, med trinnvis forklaring av lesetilgang.",
+      "OpenWhispr-support er fjernet fra Hjelp. Feilrapporter åpner det offentlige DSSA Tale-prosjektet. Google Disk-hjelp og opplastingsnavn er rettet."
+    ]
+  },
+  {
     "version": "1.10.4-dssa.38",
     "changes": [
       "System viser installerte tale- og tekstmodeller, valgt dikteringsmodell, lagret språk og status for Silero VAD, sherpa-onnx, Community-1 og ordtidsmodeller.",

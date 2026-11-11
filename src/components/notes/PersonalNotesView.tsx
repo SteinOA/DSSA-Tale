@@ -281,6 +281,7 @@ export default function PersonalNotesView({
   const [showStructureIntro, setShowStructureIntro] = useState(false);
 
   const isTranscribing = useMeetingRecordingStore((s) => s.isRecording);
+  const processingNoteId = useMeetingRecordingStore((s) => s.processingNoteId);
   const diarizationSessionId = useMeetingRecordingStore((s) => s.diarizationSessionId);
   const recordingNoteId = useMeetingRecordingStore((s) => s.recordingNoteId);
   const sessionDiarizationEnabled = useMeetingRecordingStore((s) => s.sessionDiarizationEnabled);
@@ -901,7 +902,7 @@ export default function PersonalNotesView({
               onContentChange={handleContentChange}
               isSaving={isSaving}
               isRecording={isActiveNoteRecording}
-              isProcessing={false}
+              isProcessing={processingNoteId != null && processingNoteId === editorNote.id}
               recordingAllowed={meetingRecordingAllowed}
               onStartRecording={startRecording}
               onStopRecording={stopRecording}

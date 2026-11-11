@@ -1289,7 +1289,7 @@
       "label": "Note"
     },
     "sharing": {
-      "footer": "Logs do not contain API keys or sensitive data",
+      "footer": "Check the log for private information before attaching it to a DSSA Tale issue.",
       "steps": {
         "0": "Reproduce the issue while debug mode is enabled",
         "1": "Click \"Open Logs Folder\" above",
@@ -5423,7 +5423,7 @@
     "dismiss": "Click outside or press Escape to close.",
     "google": {
       "title": "Google Drive",
-      "text": "Choose audio from the Google Drive folder on this PC. Set a fixed folder in Settings → Connections. Drive for desktop must be signed in, and online-only files must be available to download when opened."
+      "text": "Use direct Google Drive in the app with its own Google sign-in, or choose a file from a local Google Drive folder. Connections has separate setup for both. Direct access requires Google app configuration and authorization; local cloud folders require working synchronization."
     },
     "microsoft": {
       "title": "OneDrive / SharePoint",
@@ -5451,7 +5451,7 @@
     },
     "connections": {
       "title": "Fixed connections",
-      "text": "Choose and remember a folder for each cloud service. Sign-in opens with the provider; use a passkey when offered. This uses folders accessible through Windows. Optional direct Microsoft 365 access has separate configuration."
+      "text": "Find direct Google Drive and Microsoft connections, calendar setup and local cloud folders here. Direct connections require app configuration and authorization with the provider. Signing in to a website alone does not give the app file access."
     }
   },
   "dssaTextSize": {
@@ -5523,7 +5523,7 @@
     "back": "Back",
     "pin": "Use as pinned folder",
     "pinSaved": "Pinned folder saved",
-    "upload": "Save document to this folder",
+    "upload": "Upload document to this folder",
     "uploaded": "New file saved",
     "disconnect": "Disconnect Google Drive",
     "folderLink": "Open a Google Drive folder by link or folder ID",
@@ -5586,6 +5586,47 @@
     "phase_packages": "Installing and validating meeting tools …",
     "phase_community": "Downloading and validating Community-1 …",
     "phase_alignment": "Downloading and validating alignment models …",
-    "phase_punkt": "Downloading and validating language resources …"
+    "phase_punkt": "Downloading and validating language resources …",
+    "hfAccountStep": "Create or sign in to your own Hugging Face account. You do not need an OpenAI key or your own API server.",
+    "hfTermsStep": "Open the Community-1 model and terms. Read and accept the conditions with the same account that will own the token. The model publisher requests account information when you accept these conditions.",
+    "hfTokenStep": "Open access tokens and choose New token. Give it a name such as DSSA Tale. Choose Read, or a Fine-grained token with read access to the model you have been granted access to. Write access is not required.",
+    "hfSaveStep": "Copy the token starting with hf_. Prepare the Community-1 environment first, paste the token into the Hugging Face token field below and choose Save encrypted token. Then choose Download Community-1.",
+    "hfAccountLink": "Create a Hugging Face account",
+    "hfTokensLink": "Create a Hugging Face access token",
+    "hfTokenHelpLink": "Access token help",
+    "hfTroubleshooting": "If access is denied, check that the model conditions were accepted with the same account, the token has read access and it has not expired or been revoked. The token is used to download models; recordings are then processed locally. Do not paste the token into a chat or issue report."
+  },
+  "dssaFolderImport": {
+    "title": "Import a folder",
+    "description": "Find supported audio and video files and add them to the queue. Each file becomes a separate note when you start transcription.",
+    "recursive": "Include subfolders",
+    "choose": "Choose recording folder",
+    "cancel": "Cancel folder scan",
+    "cancelled": "Folder scan cancelled. No files were added.",
+    "scanning": "Choose a folder in the file dialog. The app will then search for recordings …",
+    "result": "Found {{found}} files. {{added}} added to the queue, {{duplicates}} already queued, {{skipped}} skipped and {{warnings}} read errors.",
+    "failed": "Could not read the folder.",
+    "warnings": "Show files or folders that could not be read (up to 20)",
+    "hint": "Check the queue and destination folder, then click Transcribe. Originals are preserved. Empty files, other file types and symbolic links are skipped. The queue list is not saved when the app exits."
+  },
+  "dssaRecording": {
+    "start": "Start recording",
+    "stop": "Stop recording",
+    "processingShort": "Transcribing …",
+    "helpTitle": "Record audio into this note",
+    "stepStart": "Click Start recording at the top of the note. Speak into your microphone. For online meetings, the app also attempts to capture meeting audio playing on this PC.",
+    "stepStop": "When finished, click Stop recording. You do not need to hold a key during a meeting recording.",
+    "stepResult": "Wait while the audio is transcribed and saved. The finished text appears in Transcript in this note. Check it before generating a summary.",
+    "autoStart": "A new note may start recording automatically. Check the recording status before clicking. Transcribe after meeting processes audio after you stop; Transcribe live shows text during recording.",
+    "recording": "Recording – click Stop recording when finished.",
+    "processing": "Transcribing and saving the recording … Wait until processing finishes.",
+    "diarizing": "Assigning speech to speakers …",
+    "idle": "Not recording. Click Start recording to add more audio to this note.",
+    "progressTitle": "Transcription progress",
+    "progress": "Audio transcribed: {{processed}} of {{total}} ({{percent}}%)",
+    "remainingAudio": "Audio remaining: {{time}}",
+    "remainingTime": "Estimated time remaining in transcription: about {{time}}",
+    "textComplete": "The audio queue is transcribed. Saving and speaker assignment may still be running.",
+    "progressHint": "Microphone and meeting audio count as separate tracks, so combined audio length can exceed meeting duration. Progress updates when a chunk finishes. Remaining time is an estimate."
   }
 }

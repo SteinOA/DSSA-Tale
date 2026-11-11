@@ -1333,7 +1333,7 @@
       "label": "Merk"
     },
     "sharing": {
-      "footer": "Logger inneholder ikke API-nøkler eller sensitive data",
+      "footer": "Kontroller loggen for private opplysninger før du legger den ved en feilrapport til DSSA Tale.",
       "steps": {
         "0": "Gjengi problemet mens feilsøkingsmodus er aktivert",
         "1": "Klikk \"Åpne loggmappe\" ovenfor",
@@ -3293,7 +3293,7 @@
     },
     "structureIntro": {
       "title": "Her finner du notatene dine",
-      "description": "Notater lagres lokalt på denne Mac-en. Du kan organisere dem i mapper.",
+      "description": "Notater lagres lokalt på denne PC-en. Du kan organisere dem i mapper.",
       "personal": {
         "title": "Personlig område",
         "description": "Her ligger dine lokale mapper og notater."
@@ -3498,7 +3498,7 @@
       "restartFailed": "Kunne ikke starte møteopptaket på nytt.",
       "systemAudioSilent": {
         "title": "Ingen møtelyd registrert ennå",
-        "description": "Foreløpig er det bare registrert lyd fra mikrofonen. I et nettmøte: kontroller at møtelyden spilles på denne Mac-en og ikke er dempet. Ved et fysisk møte kan mikrofonen ta opp lyden i rommet."
+        "description": "Foreløpig er det bare registrert lyd fra mikrofonen. I et nettmøte: kontroller at møtelyden spilles på denne PC-en og ikke er dempet. Ved et fysisk møte kan mikrofonen ta opp lyden i rommet."
       },
       "systemAudioInterrupted": {
         "title": "Møtelyden ble avbrutt",
@@ -3747,7 +3747,7 @@
     "overview": {
       "subtitle": {
         "team": "Notater er synlige for alle i dette rommet.",
-        "private": "Disse notatene lagres lokalt på Mac-en."
+        "private": "Disse notatene lagres lokalt på denne PC-en."
       },
       "meta": {
         "folders_one": "{{count}} mappe",
@@ -5593,7 +5593,7 @@
     "dismiss": "Klikk utenfor boksen eller trykk Escape for å lukke.",
     "google": {
       "title": "Google Disk",
-      "text": "Velg en lydfil fra Google Disk-mappen på PC-en. Angi fast mappe under Innstillinger → Tilkoblinger. Google Disk for datamaskin må være innlogget, og filer som bare ligger i skyen, må kunne hentes ved åpning."
+      "text": "Bruk direkte Google Disk i appen med egen Google-innlogging, eller velg en fil fra en lokal Google Disk-mappe. Tilkoblinger har eget oppsett for begge. Direkte tilkobling krever Google-appoppsett og godkjenning; lokale skymapper krever fungerende synkronisering."
     },
     "microsoft": {
       "title": "OneDrive / SharePoint",
@@ -5621,7 +5621,7 @@
     },
     "connections": {
       "title": "Faste tilkoblinger",
-      "text": "Velg og behold en fast mappe for hver skytjeneste. Innlogging åpnes hos leverandøren; bruk passkey når den tilbyr det. Dette bruker Windows-tilgjengelige mapper. Valgfri direkte Microsoft 365-tilkobling har eget oppsett."
+      "text": "Her finner du direkte Google Disk- og Microsoft-tilkobling, kalenderoppsett og lokale skymapper. Direkte tilkoblinger krever eget appoppsett og godkjenning hos leverandøren. En vanlig nettleserinnlogging gir ikke automatisk appen filtilgang."
     }
   },
   "dssaTextSize": {
@@ -5693,7 +5693,7 @@
     "back": "Tilbake",
     "pin": "Bruk denne som fast mappe",
     "pinSaved": "Fast mappe er lagret",
-    "upload": "Lagre dokument i denne mappen",
+    "upload": "Last opp dokument til denne mappen",
     "uploaded": "Ny fil er lagret",
     "disconnect": "Koble fra Google Disk",
     "folderLink": "Åpne en Google Disk-mappe fra lenke eller mappe-ID",
@@ -5756,6 +5756,47 @@
     "phase_packages": "Installerer og kontrollerer møteverktøy …",
     "phase_community": "Laster ned og kontrollerer Community-1 …",
     "phase_alignment": "Laster ned og kontrollerer justeringsmodeller …",
-    "phase_punkt": "Laster ned og kontrollerer språkressurser …"
+    "phase_punkt": "Laster ned og kontrollerer språkressurser …",
+    "hfAccountStep": "Opprett eller logg inn på din egen Hugging Face-konto. Du trenger ingen OpenAI-nøkkel eller egen API-server.",
+    "hfTermsStep": "Åpne modell og vilkår for Community-1. Les og godta vilkårene med samme konto som nøkkelen skal tilhøre. Modellutgiveren ber om kontoopplysninger når du gir denne godkjenningen.",
+    "hfTokenStep": "Åpne tilgangsnøkler og velg New token. Gi nøkkelen et navn, for eksempel DSSA Tale. Velg Read, eller en Fine-grained-nøkkel med lesetilgang til modellen du har fått tilgang til. Skrivetilgang trengs ikke.",
+    "hfSaveStep": "Kopier nøkkelen som begynner med hf_. Klargjør Community-1-miljøet først, lim nøkkelen inn i Hugging Face-nøkkel nedenfor og velg Lagre nøkkelen kryptert. Velg deretter Last ned Community-1.",
+    "hfAccountLink": "Opprett Hugging Face-konto",
+    "hfTokensLink": "Opprett tilgangsnøkkel hos Hugging Face",
+    "hfTokenHelpLink": "Hjelp om tilgangsnøkler",
+    "hfTroubleshooting": "Ved manglende tilgang: kontroller at modellvilkårene er godtatt med samme konto, at nøkkelen har lesetilgang og at den ikke er utløpt eller tilbakekalt. Nøkkelen brukes til modellnedlasting; opptaket behandles lokalt etterpå. Ikke lim nøkkelen inn i en chat eller feilrapport."
+  },
+  "dssaFolderImport": {
+    "title": "Importer en mappe",
+    "description": "Finn støttede lyd- og videofiler og legg dem i kø. Hver fil blir et eget notat når du starter transkripsjonen.",
+    "recursive": "Ta med undermapper",
+    "choose": "Velg mappe med opptak",
+    "cancel": "Avbryt mappesøk",
+    "cancelled": "Mappesøket er avbrutt. Ingen filer ble lagt til.",
+    "scanning": "Velg mappe i filvinduet. Deretter søker appen etter opptak …",
+    "result": "Fant {{found}} filer. {{added}} lagt i kø, {{duplicates}} allerede i køen, {{skipped}} hoppet over og {{warnings}} lesefeil.",
+    "failed": "Mappen kunne ikke leses.",
+    "warnings": "Vis filer eller mapper som ikke kunne leses (opptil 20)",
+    "hint": "Kontroller køen og målmappe, og trykk Transkriber. Originalfilene beholdes. Tomme filer, andre filtyper og mappekoblinger hoppes over. Kølisten lagres ikke ved avslutning."
+  },
+  "dssaRecording": {
+    "start": "Start opptak",
+    "stop": "Stopp opptak",
+    "processingShort": "Transkriberer …",
+    "helpTitle": "Slik tar du opp lyd i dette notatet",
+    "stepStart": "Trykk Start opptak øverst i notatet. Snakk i mikrofonen. Ved nettmøte forsøker appen også å ta inn møtelyden som spilles på PC-en.",
+    "stepStop": "Når du er ferdig, trykk Stopp opptak. Du trenger ikke holde en tast inne under møteopptaket.",
+    "stepResult": "Vent mens lyden transkriberes og lagres. Den ferdige teksten vises i Utskrift i dette notatet. Kontroller teksten før du lager referat.",
+    "autoStart": "Et nytt notat kan starte opptak automatisk. Se på opptaksstatusen før du trykker. Transkriber etter møtet venter med tekstbehandlingen til du stopper; Transkriber underveis viser tekst mens opptaket går.",
+    "recording": "Opptak pågår – trykk Stopp opptak når du er ferdig.",
+    "processing": "Transkriberer og lagrer opptaket … Vent til behandlingen er ferdig.",
+    "diarizing": "Fordeler utsagn på talere …",
+    "idle": "Ikke opptak nå. Trykk Start opptak for å ta opp mer lyd i dette notatet.",
+    "progressTitle": "Framdrift for transkribering",
+    "progress": "Transkribert lyd: {{processed}} av {{total}} ({{percent}} %)",
+    "remainingAudio": "Lyd igjen å behandle: {{time}}",
+    "remainingTime": "Anslått tid igjen i tekstfasen: ca. {{time}}",
+    "textComplete": "Lydkøen er transkribert. Lagring og eventuell talerfordeling kan fortsatt pågå.",
+    "progressHint": "Mikrofon og møtelyd telles som separate lydspor. Derfor kan samlet lydlengde overstige møtets varighet. Framdriften oppdateres når en lydbit er ferdig. Resttid er et anslag, ikke et løfte."
   }
 }

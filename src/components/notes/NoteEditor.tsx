@@ -20,6 +20,7 @@ import {
 import ShareNoteDialog, { type NoteExportOption } from "./ShareNoteDialog";
 import DssaExportDialog from "../dssa/DssaExportDialog";
 import DssaMeetingMode from "../dssa/DssaMeetingMode";
+import DssaRecordingHelp from "../dssa/DssaRecordingHelp";
 import { reconcileLocalShareState } from "./shareNoteRules";
 import {
   canOrganizeNote,
@@ -1400,6 +1401,14 @@ export default function NoteEditor({
 
         <div className="flex-1 relative min-h-0">
           <div ref={contentScrollRef} className="h-full overflow-y-auto">
+            {canEditNote && (
+              <DssaRecordingHelp
+                noteId={note.id}
+                isRecording={isRecording}
+                isProcessing={isProcessing}
+                isDiarizing={isDiarizing}
+              />
+            )}
             {viewMode === "transcript" && (hasChatSegments || isRecording) ? (
               isRecording ? (
                 <LiveMeetingTranscriptChat

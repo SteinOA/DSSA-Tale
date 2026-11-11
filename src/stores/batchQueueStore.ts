@@ -79,6 +79,26 @@ export function addFiles(files: Array<{ name: string; path: string; sizeBytes: n
   return items;
 }
 
+export function addFolderFiles(files: Array<{ name: string; path: string; sizeBytes: number }>) {
+  // This entry point is Windows-only. Compare against the current queue after
+  // the asynchronous scan, so selecting a folder twice cannot duplicate it.
+  const key = (value: string) => value.replace(/\\/g, "/").toLowerCase();
+  const seen = new Set(
+    useBatchQueueStore
+      .getState()
+      .queue.filter((item) => item.source === "file")
+      .map((item) => key(item.path))
+  );
+  const fresh = files.filter((file) => {
+    const pathKey = key(file.path);
+    if (seen.has(pathKey)) return false;
+    seen.add(pathKey);
+    return true;
+  });
+  addFiles(fresh);
+  return fresh.length;
+}
+
 export function addUrls(urls: string[]) {
   const items: QueueItem[] = urls.map((url) => ({
     id: crypto.randomUUID(),

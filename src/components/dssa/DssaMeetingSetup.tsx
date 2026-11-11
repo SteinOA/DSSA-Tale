@@ -161,6 +161,17 @@ export default function DssaMeetingSetup() {
             <summary className="cursor-pointer text-sm font-medium">{tr("hfTitle")}</summary>
             <div className="mt-3 space-y-3">
               <p className="text-sm text-muted-foreground">{tr("hfHint")}</p>
+              <ol className="list-decimal space-y-2 ps-5 text-sm">
+                {["hfAccountStep", "hfTermsStep", "hfTokenStep", "hfSaveStep"].map((key) => (
+                  <li key={key}>{tr(key)}</li>
+                ))}
+              </ol>
+              <Button
+                variant="outline"
+                onClick={() => void window.electronAPI.openExternal("https://huggingface.co/join")}
+              >
+                {tr("hfAccountLink")}
+              </Button>
               <Button
                 data-brand="link"
                 onClick={() =>
@@ -171,6 +182,25 @@ export default function DssaMeetingSetup() {
               >
                 {tr("terms")}
               </Button>
+              <Button
+                variant="outline"
+                onClick={() =>
+                  void window.electronAPI.openExternal("https://huggingface.co/settings/tokens")
+                }
+              >
+                {tr("hfTokensLink")}
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() =>
+                  void window.electronAPI.openExternal(
+                    "https://huggingface.co/docs/hub/security-tokens"
+                  )
+                }
+              >
+                {tr("hfTokenHelpLink")}
+              </Button>
+              <p className="text-sm text-muted-foreground">{tr("hfTroubleshooting")}</p>
               <label className="block text-sm">
                 {tr("token")}
                 <input

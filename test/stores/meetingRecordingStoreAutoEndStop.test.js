@@ -129,6 +129,45 @@ test("a stop that rejects still reports the recording ended", async (t) => {
   assert.equal((await store.stopRecording()).stopped, true);
 });
 
+test("processing status belongs to the stopped note until final transcription resolves", async (t) => {
+  let release;
+  let reached;
+  let reportProgress;
+  const entered = new Promise((resolve) => {
+    reached = resolve;
+  });
+  const pending = new Promise((resolve) => {
+    release = resolve;
+  });
+  t.after(() => release({ success: true }));
+  const { api } = createElectronAPI({
+    stopResult: () => {
+      reached();
+      return pending;
+    },
+  });
+  api.onMeetingProgress = (callback) => {
+    reportProgress = callback;
+    return () => {};
+  };
+  const store = await loadStore(t, api);
+  await store.startRecording(START_ARGS);
+  const stop = store.stopRecording();
+  await entered;
+  assert.equal(store.useMeetingRecordingStore.getState().isRecording, false);
+  assert.equal(store.useMeetingRecordingStore.getState().processingNoteId, START_ARGS.noteId);
+  reportProgress({ noteId: 999, totalSeconds: 20, processedSeconds: 10 });
+  assert.equal(store.useMeetingRecordingStore.getState().processingProgress, null);
+  reportProgress({ noteId: START_ARGS.noteId, totalSeconds: 20, processedSeconds: 10 });
+  assert.equal(store.useMeetingRecordingStore.getState().processingProgress.processedSeconds, 10);
+  release({ success: true });
+  await stop;
+  assert.equal(store.useMeetingRecordingStore.getState().processingNoteId, null);
+  assert.equal(store.useMeetingRecordingStore.getState().processingProgress, null);
+  reportProgress({ noteId: START_ARGS.noteId, totalSeconds: 20, processedSeconds: 20 });
+  assert.equal(store.useMeetingRecordingStore.getState().processingProgress, null);
+});
+
 test("stopping when nothing is recording reports no stop happened", async (t) => {
   const { api } = createElectronAPI({ stopResult: () => ({ success: true }) });
   const store = await loadStore(t, api);

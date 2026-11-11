@@ -4,6 +4,7 @@ import DssaTextSizeSettings from "./dssa/DssaTextSizeSettings";
 import DssaHardwareSettings from "./dssa/DssaHardwareSettings";
 import DssaMeetingSetup from "./dssa/DssaMeetingSetup";
 import DssaVersionChanges from "./dssa/DssaVersionChanges";
+import DssaFeatureLinks from "./dssa/DssaFeatureLinks";
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "./ui/button";
@@ -3091,6 +3092,9 @@ export default function SettingsPage({
       case "general":
         return (
           <div className="space-y-6">
+            <DssaFeatureLinks
+              onSettings={(section) => onNavigateToSection?.(section as SettingsSectionType)}
+            />
             {/* Appearance */}
             <div>
               <SectionHeader

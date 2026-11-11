@@ -1333,7 +1333,7 @@
       "label": "Merk"
     },
     "sharing": {
-      "footer": "Loggar inneheld ikkje API-nøklar eller sensitive data",
+      "footer": "Kontroller loggen for private opplysningar før du legg han ved ein feilrapport til DSSA Tale.",
       "steps": {
         "0": "Gi att problemet medan feilsøkingsmodus er aktivert",
         "1": "Klikk \"Åpne loggmappe\" ovanfor",
@@ -3293,7 +3293,7 @@
     },
     "structureIntro": {
       "title": "Her finn du notata dine",
-      "description": "Notat blir lagra lokalt på denne Mac-en. Du kan organisera dei i mapper.",
+      "description": "Notat blir lagra lokalt på denne PC-en. Du kan organisera dei i mapper.",
       "personal": {
         "title": "Personleg område",
         "description": "Her ligg dei lokale mappene og notata dine."
@@ -3498,7 +3498,7 @@
       "restartFailed": "Kunne ikkje starta møteopptaket på nytt.",
       "systemAudioSilent": {
         "title": "Ingen møtelyd registrert enno",
-        "description": "Førebels er det berre registrert lyd frå mikrofonen. I eit nettmøte: kontroller at møtelyden blir spelt på denne Mac-en og ikkje er dempa. Ved eit fysisk møte kan mikrofonen ta opp lyden i rommet."
+        "description": "Førebels er det berre registrert lyd frå mikrofonen. I eit nettmøte: kontroller at møtelyden blir spelt på denne PC-en og ikkje er dempa. Ved eit fysisk møte kan mikrofonen ta opp lyden i rommet."
       },
       "systemAudioInterrupted": {
         "title": "Møtelyden vart avbroten",
@@ -3747,7 +3747,7 @@
     "overview": {
       "subtitle": {
         "team": "Notat er synlege for alle i dette rommet.",
-        "private": "Desse notata blir lagra lokalt på Mac-en."
+        "private": "Desse notata blir lagra lokalt på denne PC-en."
       },
       "meta": {
         "folders_one": "{{count}} mappe",
@@ -4598,7 +4598,46 @@
     "speakerAudioFailed": "Lydutdraget kunne ikkje spelast av.",
     "speakerNoTime": "Denne talaren manglar eit langt nok utdrag med kontrollerbar lydtid.",
     "hardwareCleanupTest": "Avgrensa norsk teksttest: {{rejected}} av {{cases}} svar endra innhald og vart avviste. Ikkje tilrådd utan streng kontroll og bevart original. Dette er ikkje ei generell kvalitetsmåling.",
-    "recoveryStage": "lagra trinn"
+    "recoveryStage": "lagra trinn",
+    "asrFamilyTitle": "Talemodellar etter utviklar",
+    "asrFamilyHint": "«NVIDIA-modellar» viser NVIDIA sine eigne talemodellar, mellom anna Parakeet. Fana vel ikkje skjermkort eller GPU-akselerasjon. Klikk på ein modell for å aktivere han. Når du opnar sida igjen, blir familien til den valde modellen vist.",
+    "nvidiaModelFamily": "NVIDIA-modellar",
+    "cleanupChoiceFirst": "Tekstopprydding: førsteval å teste. Moderat modellstorleik. Ikkje samanlikna på dei norske tekstane dine enno.",
+    "cleanupVisibleTitle": "Tekstopprydding – valfritt",
+    "cleanupTimeHint": "Eit ekstra handsamingstrinn før teksten blir sett inn. Det tek lengre tid; tida avheng av modellen og PC-en. Blir berre slått på når du vel det.",
+    "cleanupVisibleOn": "På – opprydding er vald for diktering. Ein tilgjengeleg oppryddingsmodell må vere konfigurert.",
+    "cleanupVisibleOff": "Av – teksten blir sett inn utan tekstopprydding.",
+    "cleanupChooseModel": "Vel oppryddingsmodell",
+    "cleanupChoiceSmall": "Tekstopprydding: alternativ med lågare minnebruk. Vel denne dersom ein liten modell er viktigast; kontroller resultatet.",
+    "cleanupChoiceCompare": "Tekstopprydding: samanlikningsalternativ til Qwen3 4B, i om lag same storleiksklasse. Ikkje dokumentert betre på norsk.",
+    "cleanupChoiceLarge": "Større modell med høgare minnebehov. Ikkje førstevalet vårt for lett tekstopprydding; start heller med Qwen3 4B.",
+    "nationalLibraryOrigin": "Frå Nasjonalbiblioteket – NB-Whisper",
+    "nbWhisperLineage": "Byggjer på OpenAI sin Whisper-modell, vidare trena og tilpassa norsk av Nasjonalbiblioteket.",
+    "nationalLibraryGroup": "Nasjonalbiblioteket – norske NB-Whisper-modellar",
+    "openaiWhisperGroup": "OpenAI – andre Whisper-modellar",
+    "modelSpeechLanguage": "Språket du snakkar",
+    "modelSpeechLanguageHint": "Dette er talespråket, ikkje språket du vil omsetje til. Vel engelsk for å vise engelske og fleirspråklege alternativ under Oruk, NVIDIA-modellar og Cohere. For engelsk tale til norsk tekst: bruk Andre språkmodellar → Omsetjing og vel Engelsk → norsk. Omsetjinga krev ein språkmodell; NB-Whisper åleine omset ikkje teksten til norsk.",
+    "englishNorwegianPreset": "Set opp engelsk tale → norsk tekst",
+    "englishNorwegianHint": "Hurtigoppsett for diktering: Set talespråket til engelsk og omsetjingsmålet til norsk, og slår på dikteringsomsetjing. Vel ein talemodell med engelskstøtte og ein språkmodell for omsetjing nedanfor. Bruk omsetjingssnarvegen; vanleg diktering blir ikkje omsett automatisk. Oppsettet gjeld ikkje automatisk omsetjing av lydopplastingar.",
+    "translationPresetFull": "Fjern eitt omsetjingsspråk først for å gi plass til norsk. Dei eksisterande språkvala dine blir ikkje sletta automatisk.",
+    "vadTitle": "Silero VAD – oppdag tale og stille",
+    "vadIndependentHint": "Felles tilleggsinnstillingar for lokal Whisper-/NB-Whisper-transkripsjon, synlege under Diktering, Merknadsopptak og Lydopplasting. Dei gjeld ikkje skytenester eller Oruk-, Cohere- og NVIDIA-modellane i denne utgåva. VAD finn tale og stille; han vel ikkje talemodell eller skjermkort. Innstillingane blir tekne vare på når du byter fane.",
+    "vadNotesUploadTitle": "Silero VAD for notatopptak og lydopplasting",
+    "vadNotesUploadDescription": "Felles på/av-val for taledeteksjon når lokale notatopptak og opplasta filer blir transkriberte med Whisper / NB-Whisper.",
+    "cohereFamilyHint": "Cohere er ein utviklar av talemodellar. Denne fana viser Cohere Transcribe for lokal transkripsjon. Det er eit alternativ til Whisper, ikkje ei GPU-innstilling eller ei forbetring av NB-Whisper.",
+    "orukFamilyHint": "Oruk viser Orukeet, ein lokal talemodell basert på Parakeet. Det er ein annan modell enn Cohere Transcribe og NB-Whisper. Den tilgjengelege Orukeet-modellen har ikkje norskstøtte i denne appen.",
+    "nvidiaFamilyHint": "Dette er NVIDIA sine eigne talemodellar, mellom anna Parakeet. Du treng ikkje velje eller laste ned desse for å bruke NVIDIA-skjermkortet med NB-Whisper.",
+    "noNorwegianFamilyModels": "Ingen av dei tilgjengelege modellane under {{family}} har norskstøtte i denne appen. Difor er lista tom når talespråket er norsk. Bruk Whisper / NB-Whisper for norsk. Dette seier ingenting om skjermkortet ditt eller om GPU-akselerasjon er aktiv.",
+    "noFamilyModels": "Ingen tilgjengelege modellar i {{family}} for dette valet.",
+    "showWhisperModels": "Vis Whisper / NB-Whisper",
+    "nvidiaGpuTitle": "NVIDIA-akselerasjon på denne PC-en",
+    "whisperModelsHint": "Tiny, Base, Small, Medium, Large og Turbo er alternative, fleirspråklege Whisper-modellar som òg støttar norsk. Dei mindre modellane krev mindre plass og er ofte raskare; større modellar krev meir minne. Turbo er laga for raskare transkripsjon. NB-Whisper er særleg tilpassa norsk av Nasjonalbiblioteket. Du treng ikkje laste ned dei andre for å bruke NB-Whisper.",
+    "whisperGpuTitle": "GPU-akselerasjon for Whisper og NB-Whisper",
+    "whisperGpuHint": "Med ein kompatibel drivar kan DSSA Tale bruke skjermkortet til å handsame tale med Whisper og NB-Whisper. Aktiveringsknappen lastar ned GPU-utgåva av Whisper og nødvendige utrekningsbibliotek (CUDA for NVIDIA). Dette er ei stor tilleggspakke som blir teken vare på til ho blir oppdatert eller fjerna. Ho byter ikkje talemodell og installerer ikkje skjermkortdrivar. Statusen nedanfor gjeld Whisper-motoren, uavhengig av modellfanene.",
+    "whisperGpuActive": "Whisper-motoren køyrer med GPU-akselerasjon",
+    "whisperGpuReady": "GPU-støtte installert – ikkje aktiv i ein køyrande Whisper-motor no",
+    "sherpaDiarizationDescription": "Skil mellom stemmer lokalt på PC-en og merkar dei som Talar 1, Talar 2 osv. Finn ikkje namn automatisk.",
+    "communityDiarizationDescription": "Skil mellom stemmer lokalt på PC-en med Community-1. Kan bruke skjermkort og lèt deg oppgi kjent tal på talarar eller eit intervall. Finn ikkje namn automatisk."
   },
   "insights": {
     "title": "Innsikt",
@@ -5554,7 +5593,7 @@
     "dismiss": "Klikk utanfor boksen eller trykk Escape for å lukke.",
     "google": {
       "title": "Google Disk",
-      "text": "Vel ei lydfil frå Google Disk-mappa på PC-en. Vel fast mappe under Innstillingar → Tilkoplingar. Google Disk for datamaskin må vere innlogga, og filer som berre ligg i skya, må kunne hentast når dei blir opna."
+      "text": "Bruk direkte Google Disk i appen med eiga Google-innlogging, eller vel ei fil frå ei lokal Google Disk-mappe. Tilkoplingar har eige oppsett for begge. Direkte tilkopling krev Google-appoppsett og godkjenning; lokale skymapper krev fungerande synkronisering."
     },
     "microsoft": {
       "title": "OneDrive / SharePoint",
@@ -5582,7 +5621,7 @@
     },
     "connections": {
       "title": "Faste tilkoplingar",
-      "text": "Vel og ta vare på ei fast mappe for kvar skyteneste. Innlogging blir opna hjå leverandøren; bruk passkey når han tilbyr det. Dette brukar mapper som Windows har tilgang til. Valfri direkte Microsoft 365-tilkopling har eige oppsett."
+      "text": "Her finn du direkte Google Disk- og Microsoft-tilkopling, kalenderoppsett og lokale skymapper. Direkte tilkoplingar krev eige appoppsett og godkjenning hjå leverandøren. Ei vanleg nettlesarinnlogging gir ikkje automatisk appen filtilgang."
     }
   },
   "dssaTextSize": {
@@ -5654,7 +5693,7 @@
     "back": "Tilbake",
     "pin": "Bruk denne som fast mappe",
     "pinSaved": "Fast mappe er lagra",
-    "upload": "Lagre dokument i denne mappa",
+    "upload": "Last opp dokument til denne mappa",
     "uploaded": "Ny fil er lagra",
     "disconnect": "Kople frå Google Disk",
     "folderLink": "Opne ei Google Disk-mappe frå lenkje eller mappe-ID",
@@ -5701,6 +5740,63 @@
     "phase_packages": "Installerer og kontrollerer møteverktøy …",
     "phase_community": "Lastar ned og kontrollerer Community-1 …",
     "phase_alignment": "Lastar ned og kontrollerer justeringsmodellar …",
-    "phase_punkt": "Lastar ned og kontrollerer språkressursar …"
+    "phase_punkt": "Lastar ned og kontrollerer språkressursar …",
+    "hfAccountStep": "Opprett eller logg inn på din eigen Hugging Face-konto. Du treng ingen OpenAI-nøkkel eller eigen API-tenar.",
+    "hfTermsStep": "Opne modell og vilkår for Community-1. Les og godta vilkåra med same konto som nøkkelen skal høyre til. Modellutgivaren ber om kontoopplysningar når du gir denne godkjenninga.",
+    "hfTokenStep": "Opne tilgangsnøklar og vel New token. Gi nøkkelen eit namn, til dømes DSSA Tale. Vel Read, eller ein Fine-grained-nøkkel med lesetilgang til modellen du har fått tilgang til. Skrivetilgang trengst ikkje.",
+    "hfSaveStep": "Kopier nøkkelen som byrjar med hf_. Klargjer Community-1-miljøet først, lim nøkkelen inn i Hugging Face-nøkkel nedanfor og vel Lagre nøkkelen kryptert. Vel deretter Last ned Community-1.",
+    "hfAccountLink": "Opprett Hugging Face-konto",
+    "hfTokensLink": "Opprett tilgangsnøkkel hjå Hugging Face",
+    "hfTokenHelpLink": "Hjelp om tilgangsnøklar",
+    "hfTroubleshooting": "Ved manglande tilgang: kontroller at modellvilkåra er godtekne med same konto, at nøkkelen har lesetilgang og at han ikkje er utgått eller tilbakekalla. Nøkkelen blir brukt til modellnedlasting; opptaket blir handsama lokalt etterpå. Ikkje lim nøkkelen inn i ein chat eller feilrapport.",
+    "communityGuideTitle": "Community-1 – valfritt tillegg",
+    "communityOptional": "Appen har innebygd støtte for Community-1. Du kan installere tillegget her seinare utan ei ny appoppgradering. Community-1 skil mellom stemmer i opptak; namn må du oppgi sjølv. Sherpa-onnx er alternativet som følgjer med, og du kan halde fram med det utan dette tillegget.",
+    "communityStepsTitle": "Slik installerer du tillegget",
+    "communityStepTools": "Trykk «Klargjer Community-1». Appen lastar ned eit eige Python-miljø og nødvendige bibliotek. CPU eller kompatibel NVIDIA CUDA blir vald automatisk ved første installasjon; ingen dikteringsmodell blir endra.",
+    "communityStepAccess": "Opne «Hugging Face-tilgang til Community-1» nedanfor. Godta modellvilkåra med din eigen konto, opprett ein lesetilgangsnøkkel til modellen og lagre han i nøkkelfeltet i appen.",
+    "communityStepModel": "Trykk «Last ned Community-1» etter at møteverktøy og nøkkel er klare. Vent til oppsettet er kontrollert og Community-1 viser «Klar».",
+    "communityStepUse": "Opne Lydimport på nytt, slå på «Skil talarar» og vel Community-1. Du kan framleis velje sherpa-onnx i staden.",
+    "communityRequirementsTitle": "Før du startar",
+    "communityDisk": "Oppsettet krev minst 12 GB ledig diskplass ved installasjonsstart. Bibliotek og modellar blir lasta ned separat og kan bruke fleire GB. Tida avheng av nettilkopling og PC.",
+    "communityCpu": "CPU verkar utan eit NVIDIA-kort, men lange opptak kan ta lang tid og bruke mykje minne og prosessor. PC-en kan bli varm, vifta kan støye og andre program kan bli tregare. Det er ikkje målt ei garantert handsamingstid.",
+    "communityGpu": "NVIDIA CUDA krev kompatibelt NVIDIA-kort og drivar samt nok ledig skjermkortminne. Automatisk val vel CUDA-pakker når eit NVIDIA-kort finst; det garanterer ikkje at drivaren er kompatibel. AMD og Intel bruker CPU i dette oppsettet. Vel CPU dersom du er usikker; oppsettet installerer ikkje skjermkortdrivarar.",
+    "communityNetwork": "Nedlastinga krev internett og tilgang til Python-, pakke- og modelltenarar. Brannmur, mellomtenar, manglande modelltilgang eller endra bibliotekversjonar kan stoppe oppsettet. Etter modellnedlasting køyrer Community-1 lokalt på opptaket.",
+    "communityUpdatesTitle": "Oppdatering og problem",
+    "communityUpdates": "Ei appoppdatering oppgraderer ikkje automatisk dei separat installerte møteverktøya. CPU/CUDA-valet blir låst når miljøet er installert; byte krev eit separat oppsett og blir ikkje støtta med eitt klikk her. Ved feil: les feilmeldinga, kontroller diskplass, nett og modelltilgang, og behald sherpa-onnx som alternativ. Ikkje slett miljøet manuelt; det kan òg bli brukt av WhisperX. Du kan avbryte ein installasjon med knappen nedanfor.",
+    "installedDevice": "Installert miljø",
+    "unknownDevice": "Ukjend CPU/GPU-utgåve"
+  },
+  "dssaFolderImport": {
+    "title": "Importer ei mappe",
+    "description": "Finn støtta lyd- og videofiler og legg dei i kø. Kvar fil blir eit eige notat når du startar transkripsjonen.",
+    "recursive": "Ta med undermapper",
+    "choose": "Vel mappe med opptak",
+    "cancel": "Avbryt mappesøk",
+    "cancelled": "Mappesøket er avbrote. Ingen filer vart lagde til.",
+    "scanning": "Vel mappe i filvindauget. Deretter søkjer appen etter opptak …",
+    "result": "Fann {{found}} filer. {{added}} lagde i kø, {{duplicates}} allereie i køen, {{skipped}} hoppa over og {{warnings}} lesefeil.",
+    "failed": "Mappa kunne ikkje lesast.",
+    "warnings": "Vis filer eller mapper som ikkje kunne lesast (opptil 20)",
+    "hint": "Kontroller køen og målmappa, og trykk Transkriber. Originalfilene blir tekne vare på. Tomme filer, andre filtypar og mappekoplingar blir hoppa over. Kølista blir ikkje lagra ved avslutning."
+  },
+  "dssaRecording": {
+    "start": "Start opptak",
+    "stop": "Stopp opptak",
+    "processingShort": "Transkriberer …",
+    "helpTitle": "Slik tek du opp lyd i dette notatet",
+    "stepStart": "Trykk Start opptak øvst i notatet. Snakk i mikrofonen. Ved nettmøte prøver appen òg å ta inn møtelyden som blir spelt på PC-en.",
+    "stepStop": "Når du er ferdig, trykk Stopp opptak. Du treng ikkje halde ein tast inne under møteopptaket.",
+    "stepResult": "Vent medan lyden blir transkribert og lagra. Den ferdige teksten blir vist i Utskrift i dette notatet. Kontroller teksten før du lagar referat.",
+    "autoStart": "Eit nytt notat kan starte opptak automatisk. Sjå på opptaksstatusen før du trykkjer. Transkriber etter møtet ventar med teksthandsaminga til du stoppar; Transkriber undervegs viser tekst medan opptaket går.",
+    "recording": "Opptak går føre seg – trykk Stopp opptak når du er ferdig.",
+    "processing": "Transkriberer og lagrar opptaket … Vent til handsaminga er ferdig.",
+    "diarizing": "Fordeler utsegner på talarar …",
+    "idle": "Ikkje opptak no. Trykk Start opptak for å ta opp meir lyd i dette notatet.",
+    "progressTitle": "Framdrift for transkribering",
+    "progress": "Transkribert lyd: {{processed}} av {{total}} ({{percent}} %)",
+    "remainingAudio": "Lyd att å handsame: {{time}}",
+    "remainingTime": "Anslått tid att i tekstfasen: om lag {{time}}",
+    "textComplete": "Lydkøen er transkribert. Lagring og eventuell talarfordeling kan framleis gå føre seg.",
+    "progressHint": "Mikrofon og møtelyd blir talde som separate lydspor. Difor kan samla lydlengd vere lengre enn møtet. Framdrifta blir oppdatert når ein lydbit er ferdig. Resttid er eit overslag, ikkje ein lovnad."
   }
 }

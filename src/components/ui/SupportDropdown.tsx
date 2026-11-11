@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DssaUserGuide from "../dssa/DssaUserGuide";
 import { useTranslation } from "react-i18next";
 import { Button } from "./button";
-import { HelpCircle, Mail, Bug, BookOpen } from "../icons";
+import { HelpCircle, Bug, BookOpen } from "../icons";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -54,20 +54,7 @@ export default function SupportDropdown({ className, trigger }: SupportDropdownP
             Norsk bruksanvisning
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={async () => {
-              const result = await window.electronAPI?.openExternal(
-                "mailto:support@openwhispr.com"
-              );
-              if (!result?.success) {
-                openExternal("https://mail.google.com/mail/?view=cm&to=support@openwhispr.com");
-              }
-            }}
-          >
-            <Mail className="me-2 h-4 w-4" />
-            {t("support.contactSupport")}
-          </DropdownMenuItem>
-          <DropdownMenuItem
-            onClick={() => openExternal("https://github.com/SteinOA/openwhispr-nb-whisper/issues")}
+            onClick={() => openExternal("https://github.com/SteinOA/DSSA-Tale/issues")}
           >
             <Bug className="me-2 h-4 w-4" />
             {t("support.submitBug")}

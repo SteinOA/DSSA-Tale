@@ -1,4 +1,5 @@
 import React, { Suspense, useState, useEffect, useRef, useCallback } from "react";
+import { isDssaSettingsTarget } from "../utils/dssaFeatureNavigation";
 import { useTranslation } from "react-i18next";
 import { useShallow } from "zustand/react/shallow";
 import { Button } from "./ui/button";
@@ -182,10 +183,24 @@ export default function ControlPanel({ initialSettingsSection }: ControlPanelPro
   useEffect(() => {
     const navigate = (event: Event) => {
       const view = (event as CustomEvent).detail;
-      if (["home", "personal-notes", "upload", "integrations"].includes(view)) setActiveView(view);
+      if (["home", "personal-notes", "upload", "integrations", "dictionary"].includes(view)) {
+        setShowSettings(false);
+        setActiveView(view);
+      }
+    };
+    const openSettings = (event: Event) => {
+      const section = (event as CustomEvent).detail;
+      if (!isDssaSettingsTarget(section)) return;
+      setSettingsSection(section);
+      setSettingsRequest((count) => count + 1);
+      setShowSettings(true);
     };
     window.addEventListener("dssa-navigate", navigate);
-    return () => window.removeEventListener("dssa-navigate", navigate);
+    window.addEventListener("dssa-open-settings", openSettings);
+    return () => {
+      window.removeEventListener("dssa-navigate", navigate);
+      window.removeEventListener("dssa-open-settings", openSettings);
+    };
   }, []);
   const recordingNoteId = useMeetingRecordingStore((s) => s.recordingNoteId);
   const recordingFolderId = useMeetingRecordingStore((s) => s.recordingFolderId);

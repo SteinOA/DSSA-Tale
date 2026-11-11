@@ -1930,6 +1930,16 @@ declare global {
         filePaths?: string[];
       }>;
       getFileSize?: (filePath: string) => Promise<number>;
+      selectAudioFolder: (options?: { recursive?: boolean }) => Promise<{
+        canceled: boolean;
+        error?: string;
+        folderPath?: string;
+        files?: Array<{ name: string; path: string; sizeBytes: number }>;
+        skippedCount?: number;
+        warningCount?: number;
+        warnings?: Array<{ name: string; code: string }>;
+      }>;
+      cancelAudioFolderScan: () => Promise<void>;
       transcribeAudioFile: (
         filePath: string,
         options?: {
@@ -3386,6 +3396,9 @@ declare global {
         callback: (config: { enabled: boolean; expectedCount: number }) => void
       ) => () => void;
       onMeetingTranscriptionError?: (callback: (error: string) => void) => () => void;
+      onMeetingProgress?: (
+        callback: (progress: import("./meetingProgress").MeetingProgress) => void
+      ) => () => void;
       onMeetingTranscriptionFatalError?: (callback: (error: string) => void) => () => void;
       onMeetingSystemAudioSilent?: (
         callback: (data: { systemAudioStrategy: SystemAudioStrategy }) => void

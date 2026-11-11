@@ -317,6 +317,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 
   // Audio file operations
   selectAudioFile: (options) => ipcRenderer.invoke("select-audio-file", options),
+  selectAudioFolder: (options) => ipcRenderer.invoke("select-audio-folder", options),
+  cancelAudioFolderScan: () => ipcRenderer.invoke("cancel-audio-folder-scan"),
   getFileSize: (filePath) => ipcRenderer.invoke("get-file-size", filePath),
   transcribeAudioFile: (filePath, options) =>
     ipcRenderer.invoke("transcribe-audio-file", filePath, options),
@@ -947,6 +949,10 @@ contextBridge.exposeInMainWorld("electronAPI", {
   meetingTranscriptionStop: (expectedSessionId) =>
     ipcRenderer.invoke("meeting-transcription-stop", expectedSessionId),
   meetingTranscriptionCancel: () => ipcRenderer.invoke("meeting-transcription-cancel"),
+  onMeetingProgress: registerListener(
+    "dssa-meeting-progress",
+    (callback) => (_event, data) => callback(data)
+  ),
   onMeetingTranscriptionSegment: registerListener(
     "meeting-transcription-segment",
     (callback) => (_event, data) => callback(data)

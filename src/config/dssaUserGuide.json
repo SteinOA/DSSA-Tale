@@ -1,6 +1,6 @@
 {
   "title": "Bruksanvisning for DSSA Tale",
-  "intro": "Norsk veiledning for Windows-utgaven. Denne bruksanvisningen følger med appen og kan leses uten internett. Funksjoner som bruker skytjenester, krever fortsatt nett og nødvendige tilganger.",
+  "intro": "Norsk veiledning for Windows-utgaven. Denne bruksanvisningen følger med appen og kan leses uten internett. Funksjoner som bruker skytjenester, krever fortsatt nett og nødvendige tilganger. DSSA Tale er en selvstendig tilpasning av OpenWhispr. OpenWhispr tilbyr ikke brukerstøtte for denne utgaven.",
   "sections": [
     {
       "id": "start",
@@ -8,12 +8,14 @@
       "paragraphs": [
         "DSSA Tale kan skrive det du sier ved markøren, ta opp møter, transkribere lydfiler og lagre dokumenter. Lokal bruk krever ikke abonnement eller OpenWhispr-konto. Dette er en lokal testutgave; kontroller viktige utskrifter mot opptaket.",
         "Bruk én utgave av appen om gangen. To åpne dikteringsapper kan reagere på samme hurtigtast.",
-        "Under Innstillinger → Generelt → Bokstavstørrelse kan du endre menyer og knapper uavhengig av innholdet i notater og utskrifter. Valgene huskes på PC-en. Dette endrer visningen i appen, ikke skriftstørrelsen i eksporterte dokumenter."
+        "Under Innstillinger → Generelt → Bokstavstørrelse kan du endre menyer og knapper uavhengig av innholdet i notater og utskrifter. Valgene huskes på PC-en. Dette endrer visningen i appen, ikke skriftstørrelsen i eksporterte dokumenter.",
+        "Denne veiledningen gjelder Windows x64-utgaven. Modellvekter lastes ned separat og følger ikke med installasjonsfilen. Første modellnedlasting og valgfrie tillegg krever internett og ledig diskplass. Lokal diktering trenger ingen ekstra språkmodell.",
+        "Installer en ny DSSA Windows-pakke manuelt ved oppdatering. Under System ser du installert versjon og endringene som følger med den. Ikke kjør gammel og ny dikteringsapp samtidig."
       ],
       "steps": [
         "Velg mikrofon under Innstillinger → Generelt. Gjør et kort prøveopptak.",
         "Velg grensesnittspråk og transkripsjonsspråk hver for seg under Generelt.",
-        "Kontroller modellen under Tale til tekst. Diktering, møteopptak og lydimport kan ha ulike modellvalg.",
+        "Last ned og velg talemodell under Tale til tekst før første transkripsjon. Diktering, møteopptak og lydimport kan ha ulike modeller og språkvalg.",
         "Kontroller hurtigtasten under Hurtigtaster. Et eksisterende oppsett beholdes; bruk kombinasjonen som vises hos deg."
       ]
     },
@@ -22,8 +24,30 @@
       "title": "Finn fram i menyene",
       "paragraphs": [
         "Hjem viser dikteringshistorikk og snarveier. Møter og notater samler notater, utskrifter og bearbeidede referater. Lydimport brukes for lyd- og videofiler. Ordliste brukes til egne navn og faguttrykk. Teams og filer samler møteveiledning og valgfri Microsoft-tilkobling.",
-        "Innstillinger inneholder Generelt, Hurtigtaster, Tone og stil, Tilkoblinger, Tale til tekst, Språkmodeller, Personvern og data og System. Hjelp → Norsk bruksanvisning åpner denne veiledningen. Søkefeltet øverst i appen finner møter, notater og utskrifter.",
-        "Små spørsmålstegn ved knapper og overskrifter åpner hjelp for akkurat det området. Klikk utenfor boksen eller trykk Escape for å lukke den."
+        "Innstillinger inneholder Generelt, Hurtigtaster, Tone og stil, Tilkoblinger, Tale til tekst, Andre språkmodeller, Personvern og data og System. Hjelp → Norsk bruksanvisning åpner denne veiledningen. Søkefeltet øverst i appen finner møter, notater og utskrifter.",
+        "Små spørsmålstegn ved knapper og overskrifter åpner hjelp for akkurat det området. Klikk utenfor boksen eller trykk Escape for å lukke den.",
+        "Generelt har oversikten Finn funksjoner og oppsett. Knappene åpner riktig side for blant annet notatblokk, lokal historikk, gjenopptakelse, Google Disk, modeller og hurtigtaster. Bruksanvisningens kapitler har også direkte knapper til relevante sider. Å åpne en side aktiverer ikke en tjeneste eller starter en nedlasting."
+      ]
+    },
+    {
+      "id": "generelt",
+      "title": "Utseende, oppstart, lyd og innliming",
+      "paragraphs": [
+        "Under Generelt velger du lyst, mørkt eller automatisk tema. Bokstavstørrelse har egne valg for menyer/knapper og innhold i notater og utskrifter, med forhåndsvisning og tilbakestilling. Dokumenteksport får ikke automatisk samme skriftstørrelse.",
+        "Her kan du også velge dikteringslyder, pause av medieavspilling under opptak, varsler, møteoppdagelse og kalenderpåminnelser. Kalenderpåminnelser krever tilgjengelige kalenderavtaler. Møteoppdagelse er ikke et løfte om at alle møter oppdages eller at Teams sitt eget opptak startes.",
+        "Velg automatisk innliming og om den ferdige teksten skal beholdes i utklippstavlen. Hvis automatisk innliming ikke virker i målprogrammet, bruk Kopier fra historikken og lim inn med Ctrl + V. Test først i et vanlig tomt tekstfelt.",
+        "Du kan starte appen ved Windows-innlogging, starte minimert og endre det flytende dikteringsikonets plassering og automatiske skjuling. Å skjule et ikon eller lukke et vindu er ikke nødvendigvis det samme som å avslutte appen.",
+        "Velg mikrofon i mikrofoninnstillingene. Hvis en valgt enhet er koblet fra eller lyd ikke registreres, kontroller tilkoblingen og Windows sine mikrofontillatelser. Mac-valg for Metal, CoreML og macOS-tilgjengelighet gjelder ikke Windows.",
+        "Lydimport har eget valg for å ta med undermapper ved mappeimport. Valget huskes på PC-en. Det endrer ikke opptaksmodell, talervalg eller målmappe for notatene."
+      ]
+    },
+    {
+      "id": "hurtigtaster",
+      "title": "Velg og test hurtigtaster",
+      "paragraphs": [
+        "Åpne Innstillinger → Hurtigtaster og klikk i feltet for funksjonen du vil endre. Trykk ønsket kombinasjon og kontroller at den blir registrert. Diktering har en påkrevd snarvei. Egne valg finnes for taleassistent, oversettelse og møtemodus; valgfrie snarveier kan fjernes.",
+        "Trykk-modus starter og stopper med hvert sitt trykk. Hold inne tar opp mens snarveien holdes og stopper når du slipper. Møtesnarveien har også valg for sidepanel eller full bredde.",
+        "Bruk en snarvei som ikke kolliderer med skriving eller andre apper. På norsk Windows-oppsett brukes AltGr + 2 til @. Apple-tastaturets høyre Option kan fungere som AltGr. Unngå å tilordne denne kombinasjonen til en funksjon. Dersom en annen app åpnes eller tar et skjermbilde, må dens globale snarvei også kontrolleres."
       ]
     },
     {
@@ -41,6 +65,24 @@
       ]
     },
     {
+      "id": "notatblokk",
+      "title": "Automatisk notatblokk på Hjem",
+      "paragraphs": [
+        "Åpne Hjem. Ferdig diktering legges til som nye avsnitt i Automatisk notatblokk. Samme ferdige tekst brukes uten en ekstra transkripsjon eller språkmodell. Eldre dikteringshistorikk fylles ikke inn automatisk.",
+        "Notatblokken forutsetter at lokal historikk er tillatt og aktivert under Personvern og data. Når lagring er deaktivert eller blokkert, viser notatblokken at den er av. Du trenger ikke slå på tekstopprydding eller koble til en skytjeneste.",
+        "Kopier notatet legger teksten i utklippstavlen. Rediger under Notater åpner det personlige notatet. Tøm notatblokken kan angres med Angre tømming; diktering som er kommet til etter tømmingen beholdes. Tømming er ikke det samme som å slette hele dikteringshistorikken."
+      ]
+    },
+    {
+      "id": "historikk",
+      "title": "Historikk og søk",
+      "paragraphs": [
+        "Hjem viser lagret dikteringshistorikk når lokal historikk er på. Bruk Kopier tekst for å hente et resultat som ikke ble limt inn. Flere handlinger gir blant annet visning av rå utskrift og sletting. Handlinger som krever lagret lyd, er bare nyttige når lydkopien finnes.",
+        "Rå utskrift er resultatet før eventuell KI-behandling. Ved feil i et senere behandlingstrinn kan denne hjelpe deg å hente teksten. Mislykkede eller forkastede opptak kan ha egne handlinger avhengig av hva som er lagret. Sletting av én post og sletting av all historikk er forskjellige valg.",
+        "Søkefeltet øverst, også tilgjengelig med Ctrl + K, finner lagrede møter, notater og utskrifter. Det er ikke et søk i alle filene på PC-en eller i alle skykontoene."
+      ]
+    },
+    {
       "id": "sprak",
       "title": "Bokmål, nynorsk og engelsk",
       "paragraphs": [
@@ -50,43 +92,90 @@
       ]
     },
     {
+      "id": "ordliste",
+      "title": "Ordliste og tekstsnutter",
+      "paragraphs": [
+        "Åpne Ordliste for navn og faguttrykk som ofte blir feil. Du kan legge til, søke etter, redigere og fjerne ord, importere flere ord fra innlimt tekst og eksportere ordlisten. Importen godtar skilletegn og linjeskift; kontroller forhåndsvisningen før du legger til.",
+        "En lang ordliste kan overskride talemotorens plass til hint. Følg eventuelt varsel om dette. Ordlisten hjelper modellen, men garanterer ikke riktig stavemåte. Automatisk læring av rettelser har eget valg under Generelt.",
+        "Under fanen Tekstsnutter kan du lagre en kort uttalt frase og teksten som skal erstatte den, for eksempel en e-postavslutning. Opprett, rediger eller slett snutter der. Prøv frasen i et kort diktat før du bruker den i viktig tekst."
+      ]
+    },
+    {
       "id": "modeller",
       "title": "Talemodell, språkmodell og GPU",
       "paragraphs": [
-        "Tale til tekst velger modellen som hører lyden og lager utskriften. NB-Whisper er et norsk alternativ. En kvantisert modell bruker vanligvis mindre minne enn utgaven med full presisjon. Nedlastede modeller er tilgjengelige på PC-en; kontroller hvilket valg som er merket Aktiv.",
+        "Under Innstillinger → Tale til tekst velger du talemotor og modell separat for Diktering, Møteopptak og Lydopplasting. Last ned ønsket lokal modell og velg den for oppgaven. Installerte modeller er ikke nødvendigvis aktive. NB-Whisper fra Nasjonalbiblioteket bygger på Whisper og er videre trent for norsk. En kvantisert utgave bruker vanligvis mindre minne enn full presisjon.",
         "Språkmodeller brukes til blant annet tekstopprydding og referat. De er noe annet enn talemodellen. Du trenger ikke aktivere tekstopprydding for å få en vanlig utskrift. Valg av en skyleverandør kan sende innhold til den leverandøren; lokal modell behandler innholdet på PC-en.",
-        "GPU-akselerasjon kan gi raskere lokal transkripsjon når maskinvaren og den valgte modellen støttes. Den retter ikke språkfeil i seg selv. Behandlingstiden avhenger av lydlengde, modell, minne og annen aktivitet på PC-en."
+        "GPU-akselerasjon kan gi raskere lokal transkripsjon når maskinvaren og den valgte modellen støttes. Den retter ikke språkfeil i seg selv. Behandlingstiden avhenger av lydlengde, modell, minne og annen aktivitet på PC-en.",
+        "Andre språkmodeller har egne oppsett for tekstopprydding, assistent, oversettelse og notatformatering. Velg en installert lokal tekstmodell eller konfigurer leverandøren som skal brukes. Kontroller modell og tilkobling ved feil om manglende modell. En talemodell kan ikke brukes som tekstmodell.",
+        "Lokalt behandler lyd på PC-en etter at modellene er lastet ned. Leverandørvalg med egen API-nøkkel og egendefinerte servere krever fungerende oppsett og kan ha kostnader eller sende innhold ut av PC-en. OpenWhispr Cloud er ikke nødvendig for DSSA Tale og inngår ikke som en lovet tjeneste eller supportordning.",
+        "NVIDIA-modeller er en modellfamilie; NVIDIA CUDA er maskinvareakselerasjon. De er ulike ting. Modellens språkstøtte og maskinvarens støtte må kontrolleres hver for seg. Modellforslag under System velger ikke automatisk en modell."
+      ]
+    },
+    {
+      "id": "assistent",
+      "title": "Taleassistent og oversettelse",
+      "paragraphs": [
+        "Andre språkmodeller har egne faner for assistent, tekstopprydding, taleassistent, oversettelse og notatformatering. Velg en fungerende lokal modell eller en leverandør med nødvendig tilgang for funksjonen du skal bruke. Egne instrukser kan redigeres i promptinnstillingene.",
+        "Taleassistent har egen aktivering, navn og hurtigtast. Bruk den for instruksjoner om tekst, og vanlig diktering når ordene bare skal skrives ned. Valgfri skjermkontekst kan ta med skjerminnhold når valgt leverandør og modell støtter bilder. Den er ikke nødvendig for diktering og gir ikke automatisk kontroll over andre programmer.",
+        "For oversettelse: aktiver dikteringsoversettelse, velg talespråk, legg til målspråk og velg aktivt målspråk. Konfigurer tekstmodellen og bruk oversettelseshurtigtasten under Hurtigtaster. Vanlig transkripsjonsspråk og oversettelsesmålspråk er ulike innstillinger. Kontroller oversettelsen før du bruker den."
       ]
     },
     {
       "id": "moter",
       "title": "Ta opp et møte eller en Teams-samtale",
       "steps": [
-        "Åpne Møter og notater og opprett et nytt notat. Gi møtet en tydelig tittel.",
-        "Velg møteopptak og ønsket behandling: transkribering underveis eller etter møtet.",
-        "Start Teams-samtalen som vanlig. DSSA Tale tar opp mikrofonen og møtelyden på PC-en; den deltar ikke som en bot.",
-        "Gjør et kort prøveopptak og kontroller at både du og motparten høres. Stopp opptaket når møtet er ferdig, og vent på behandlingen.",
-        "Les utskriften og korriger talernavn før du lager og eksporterer referatet."
+        "Informer deltakerne og åpne Teams-møtet som vanlig.",
+        "I DSSA Tale: åpne Teams og filer → Teams → Start lokalt møteopptak. Appen oppretter et notat og forsøker å starte opptak av mikrofon og systemlyd. Microsoft-innlogging er ikke nødvendig for dette lokale opptaket.",
+        "Kontroller at opptaksindikatoren og tiden viser at opptaket går. Hvis du får varsel om manglende mikrofon eller systemlyd, må problemet løses; et åpent notat er ikke bevis på at begge lydkilder tas opp.",
+        "Stopp med opptaksknappen i notatet når møtet er ferdig, og vent på behandlingen. Kontroller at motpartens tale er med i utskriften.",
+        "Kontroller talerfordeling og navn før du lager og eksporterer referatet."
       ],
       "paragraphs": [
+        "Nytt notat i Møter og notater forsøker også å starte opptak automatisk dersom ingen opptak allerede går og innstillingene tillater det. Vil du bare skrive egne notater, stopp opptaket. For å endre møtebehandling: stopp først, velg Transkriber underveis eller Transkriber etter møtet ved opptaksknappen og start igjen. Valget gjelder videre møteopptak; det endrer ikke et allerede ferdig opptak.",
         "Informer møtedeltakerne om opptaket og følg rutinene som gjelder for møtet. Teams-opptak som allerede finnes, kan også åpnes gjennom Lydimport. Automatisk møteoppdagelse er valgfri under Generelt.",
-        "Teams-siden skiller mellom lokalt opptak og Teams sitt eget skyopptak. Knappen for lokalt opptak oppretter et notat og starter opptak i DSSA Tale uten automatisk Teams-varsel. For varslet opptak åpner du møtet og starter Teams sin egen opptaksfunksjon i Teams. Direkte start av Teams-skyopptak fra DSSA Tale er ikke implementert."
+        "Teams-siden skiller mellom lokalt opptak og Teams sitt eget skyopptak. Knappen for lokalt opptak oppretter et notat og starter opptak i DSSA Tale uten automatisk Teams-varsel. For varslet opptak åpner du møtet og starter Teams sin egen opptaksfunksjon i Teams. Direkte start av Teams-skyopptak fra DSSA Tale er ikke implementert.",
+        "Notatet viser Start opptak og Stopp opptak med tekst og en trinnvis forklaring. Etter stopp vises Transkriberer og lagrer opptaket mens behandlingen pågår. Ved lokal transkribering etter møtet vises behandlet lyd, samlet lydlengde, prosent og lyd som gjenstår. Mikrofon og systemlyd telles som separate spor. Resttid er et anslag basert på fullførte lydbiter og vises først når minst to biter er behandlet. Tekstfasens 100 % betyr ikke at lagring eller talerfordeling er ferdig."
+      ]
+    },
+    {
+      "id": "notater",
+      "title": "Notater, mapper, maler og KI-spørsmål",
+      "paragraphs": [
+        "Under Møter og notater kan du opprette et notat, gi det tittel, skrive egne notater og organisere notater i mapper. Nytt notat forsøker å starte opptak automatisk når opptak er tillatt og ingen opptak allerede går; stopp dersom du bare vil skrive. Notatet viser når det lagres. Velg riktig notat før opptak eller eksport.",
+        "Fanene Utskrift, Mine notater og Bearbeidet referat viser ulike typer innhold. Referat vises når det finnes. Deltakere og talernavn kan redigeres; utsagn kan markeres og få korrigert navn. Navngiving bekrefter ikke automatisk personens identitet.",
+        "Maler og handlinger åpner valg for referatmaler og andre teksthandlinger. Velg en mal og bruk handlingen for å lage referat når utskriften finnes. Dette krever en fungerende tekstmodell under Andre språkmodeller → Notatformatering.",
+        "Spørsmålsfeltet i notatet kan brukes til spørsmål om innholdet og tilgjengelige teksthandlinger. Konfigurer assistentens tekstmodell under Andre språkmodeller. Hvis en skyleverandør er valgt, kan relevant notatinnhold bli sendt til den. KI-svar må kontrolleres mot opptak og utskrift.",
+        "Lokale notater er ikke automatisk publiserte dokumenter eller delte skyområder. Bruk Lagre dokument for en selvstendig fil du kan åpne og dele. Konto-, betalings- og arbeidsområdesider fra OpenWhispr er skjult i DSSA-innstillingene."
       ]
     },
     {
       "id": "lydimport",
       "title": "Importer og transkriber lydfiler",
       "steps": [
-        "Åpne Lydimport. Slipp en fil i feltet, eller klikk for å velge fra PC-en.",
+        "Åpne Lydimport. Slipp én eller flere støttede filer i feltet, eller klikk for å velge filer fra PC-en.",
         "Du kan også bruke en fast skymappe, et opptaksbibliotek eller en støttet direkte lyd-/videolenke.",
         "Kontroller modellen på knappen under Lydfiler. Klikk knappen for å åpne innstillingene for lydimport.",
         "Velg om appen skal skille talere. Start transkripsjonen og følg status, tidsbruk og framdrift.",
         "Når behandlingen er ferdig, åpner du resultatet som notat og kontrollerer utskriften."
       ],
       "paragraphs": [
-        "Støttede lydformater omfatter MP3, WAV, M4A, WebM, OGG, FLAC, AAC og Opus. Filstørrelse alene sier lite om behandlingstiden: et møte på halvannen time inneholder like mye tale selv om MP3-filen er liten.",
-        "Du kan navigere til andre sider i appen mens importen arbeider og gå tilbake til Lydimport. Ikke avslutt selve appen. Navigering er ikke det samme som Avbryt. Hvis en jobb faktisk feiler eller avbrytes, les meldingen; ikke anta at alt er ferdig eller at en omstart alltid kan fortsette fra samme punkt.",
-        "Prosent gjelder behandlingsfasen som vises. Slutten kan også omfatte talerskille, etterbehandling og lagring. Ved en feil som ECONNRESET ble forbindelsen til den lokale motoren brutt. Behold originalfilen og noter feilmeldingen før du prøver igjen."
+        "Støttede formater omfatter MP3, WAV, M4A, WebM, OGG, FLAC, AAC, Opus og flere lyd- og videobeholdere, blant annet MP4, MOV og MKV. Videofiler transkriberes fra lyden. Filtypen alene garanterer ikke at lydsporet kan leses. Behandlingstiden avhenger først og fremst av lydlengde, modell og maskinvare.",
+        "Du kan navigere til andre sider mens importen arbeider og gå tilbake til Lydimport. En pågående jobb vises også utenfor importsiden. La appen være åpen mens køen kjører. Navigering er ikke Avbryt. Gjenopptakelse etter omstart gjelder lagrede lokale importjobber, ikke en garanti om at hele kølisten eller alle nettlenker gjenopprettes.",
+        "Prosent gjelder behandlingsfasen som vises. Slutten kan også omfatte talerskille, etterbehandling og lagring. Ved en feil som ECONNRESET ble forbindelsen til den lokale motoren brutt. Behold originalfilen og noter feilmeldingen før du prøver igjen.",
+        "Ved flere filer brukes en kø med behandling og lagring av hvert resultat. Velg eventuell målmappe for notatene og kontroller hver fils status. Nettlenker kan legges inn én om gangen eller som flere linjer. En støttet YouTube-lenke kan behandles; private delingslenker og tjenester som krever innlogging virker ikke nødvendigvis.",
+        "Importer en mappe finner støttede lyd- og videofiler automatisk. Ta med undermapper er på som standard og kan slås av. Velg mappen, kontroller antall filer og kølisten, velg målmappe for notatene og trykk Transkriber. Hver fil lagres som et eget notat før neste fil behandles. Originalfilene endres ikke.",
+        "Filene sorteres etter relativ filsti, med naturlig tallrekkefølge. Undermappen vises i filnavnet i køen slik at like filnavn kan skilles. Filer som allerede finnes i køen legges ikke til på nytt ved mappevalg. Tomme filer, ustøttede filtyper og symbolske lenker/mappekoblinger hoppes over. Lesefeil vises, og et mappesøk kan avbrytes før filer legges i kø."
+      ]
+    },
+    {
+      "id": "gjenopptakelse",
+      "title": "Gjenoppta en avbrutt lokal lydimport",
+      "paragraphs": [
+        "Åpne Lydimport etter en avbrutt lokal import. Når appen har en lagret importjobb, vises den med antall fullførte behandlingstrinn og valg for å gjenoppta, finne originalfilen eller skjule oppføringen. Det er ingen egen bryter du må aktivere.",
+        "Velg gjenopptakelse for riktig fil. Dersom filen er flyttet, bruk valget for å finne originalfilen. Kontroller den valgte jobben og start transkripsjonen fra importvisningen. Lagrede fullførte deler kan brukes videre; manglende eller ugyldige deler må behandles på nytt.",
+        "Behold originalopptaket. En jobb som fortsatt arbeider kan ikke gjenopptas samtidig. Dette er ikke automatisk gjenoppretting av alle køer, nettlenker eller møteopptak. Les statusen før du starter en ny import av samme fil.",
+        "Lagring av gjenopptakelsesdata krever at lokal historikk er på og tillatt. Deaktivering av historikk kan derfor gjøre at en jobb ikke finnes etter omstart. Appen kontrollerer at originalfil og modelloppsett passer til den lagrede jobben."
       ]
     },
     {
@@ -96,7 +185,21 @@
         "Talermerking forsøker å gruppere utsagnet etter stemme. Den vet ikke automatisk hvem personen er. Kontroller og gi riktige navn til talernumrene i utskriften.",
         "Nødvendige modeller må være tilgjengelige før lokal talermerking virker. Noen motorer krever egen modelltilgang. Et aktivert valg er ikke bevis på at alle stemmene er skilt riktig; les eventuelle varsler om manglende talermerking.",
         "Overlappende tale, korte svar, støy og mange deltakere gjør oppgaven vanskeligere. Tolv møtedeltakere gir ingen garanti for tolv korrekte grupper. Kontroller viktige utsagn mot lyd og tidsstempel.",
-        "Velg Taler og navn ved Legg til deltakere. Velg for eksempel Taler 3, skriv navnet og lagre. Navnet brukes i både utskriften og Notater. Ukjente partier blir ikke automatisk navngitt."
+        "Velg Taler og navn ved Legg til deltakere. Velg for eksempel Taler 3, skriv navnet og lagre. Navnet brukes i både utskriften og Notater. Ukjente partier blir ikke automatisk navngitt.",
+        "Ved lokal lydimport kan du velge sherpa-onnx eller det valgfrie Community-1-tillegget. Antall talere kan settes til Automatisk, Øvre grense, Intervall eller Kjent antall, med opptil 15. Kjent antall påvirker beregningen, men bekrefter ikke at fordelingen er riktig.",
+        "Ved navngiving kan du lytte til et tidsfestet lydutdrag for valgt taler og velge mellom tilgjengelige utdrag. Dersom lydfilen mangler, bruk knappen for å koble til originalopptaket. Uten gyldige ord-/segmenttider kan det mangle utdrag. Kontroller stemmen før du lagrer navnet.",
+        "For møteopptak finnes også stemmebasert talerfordeling i møteflyten, med mikrofon og systemlyd som lydkilder. Dette er ikke samme motorvalg som ved lydimport: Community-1-valget er koblet til lydimport. Kontroller talerinnstilling og resultat for det aktuelle notatet. En deltakerliste med navn er ikke bevis på at alle stemmene er identifisert."
+      ]
+    },
+    {
+      "id": "community",
+      "title": "Installer valgfri Community-1",
+      "paragraphs": [
+        "Åpne Innstillinger → System → Valgfritt: installer Community-1 for stemmeutskillelse. Les kravene før du starter. Sherpa-onnx er et separat alternativ; vanlig diktering trenger ikke Community-1.",
+        "Velg Klargjør Community-1 for å installere eget Python-miljø og biblioteker. Oppsettet krever minst 12 GB ledig diskplass ved start og internett. Første installasjon velger CPU eller NVIDIA CUDA automatisk. Det installeres ingen grafikkdriver, og et NVIDIA-kort alene garanterer ikke at CUDA virker.",
+        "Åpne Hugging Face-tilgang til Community-1, godta modellvilkårene med egen konto og lagre en lesetilgangsnøkkel i appens nøkkelfelt. Velg Last ned Community-1 når miljø og nøkkel er klare. Vent til status viser Klar, åpne Lydimport på nytt, slå på Skill talere og velg Community-1.",
+        "Tilgangsnøkkelen opprettes hos https://huggingface.co/settings/tokens med New token. Velg Read, eller en Fine-grained-nøkkel med lesetilgang til modellen. Godta først vilkårene på https://huggingface.co/pyannote/speaker-diarization-community-1 med samme konto. Ingen OpenAI-nøkkel, skrivetilgang eller egen API-server er nødvendig. Installasjonsområdet har direkte knapper til konto, vilkår, nøkkel og nøkkelhjelp.",
+        "Installasjonen kan avbrytes. Appoppdatering oppgraderer ikke automatisk dette separate miljøet. CPU/CUDA-bytte er ikke en vanlig bryter for et allerede installert miljø. Tidsjustering med WhisperX har egen installasjon ved Lydimport. Ingen av disse tilleggene velger en ny dikteringsmodell."
       ]
     },
     {
@@ -104,18 +207,19 @@
       "title": "Tidsjustering med WhisperX",
       "steps": [
         "Velg lokal transkripsjon og Community-1 under Lydimport.",
-        "Velg Av, Rask lokal tidsjustering eller Grundig lokal tidsjustering. Krever nedlastet justeringsmodell for bokmål eller nynorsk.",
+        "Velg Av, Rask lokal tidsjustering eller Grundig lokal tidsjustering. Åpne den valgfrie installasjonen rett under valget for å laste ned modellen for bokmål eller nynorsk. Nedlasting alene slår ikke på behandlingen.",
         "Følg den egne fremdriften for tidsjustering etter at teksten er transkribert. Du kan bruke andre deler av appen mens jobben pågår."
       ],
       "paragraphs": [
         "Tidsjusteringen gir nye ordtider uten å skrive om teksten. Vanlig diktering bruker fortsatt modellen du har valgt der.",
         "Rask bruker mindre tid og minne. Grundig bruker en større modell. GPU brukes når CUDA og nok GPU-minne er tilgjengelig. Ved minnemangel eller CUDA-feil fortsetter tidsjusteringen på CPU. Dette ekstra trinnet kan forlenge behandlingstiden for et langt møte.",
-        "Hvis noen partier ikke kan justeres, beholdes originaltekst og tilgjengelige tider. Kontroller varsler og talernavn før du bruker referatet. Et talernummer bekrefter ikke personens identitet."
+        "Hvis noen partier ikke kan justeres, beholdes originaltekst og tilgjengelige tider. Kontroller varsler og talernavn før du bruker referatet. Et talernummer bekrefter ikke personens identitet.",
+        "Justeringsmodellene er Nasjonalbibliotekets wav2vec2 via WhisperX, med 300M som raskere/lavere-minne-alternativ og 1B som større alternativ. De er tillegg for ordtider og erstatter ikke talemodellen. Installeres fra Lydimport, ikke fra modelloversikten under System."
       ]
     },
     {
       "id": "skymapper",
-      "title": "Google Disk, OneDrive, SharePoint og iCloud Drive",
+      "title": "Lokale skymapper: Google Disk, OneDrive, SharePoint og iCloud Drive",
       "steps": [
         "Åpne Innstillinger → Tilkoblinger.",
         "Bruk en funnet mappe, eller velg en fast mappe for Google Disk, OneDrive / SharePoint eller iCloud Drive.",
@@ -123,9 +227,20 @@
         "Gå til Lydimport og bruk den tilsvarende skyknappen for å velge opptaket. Den faste mappen huskes også etter omstart."
       ],
       "paragraphs": [
-        "Disse snarveiene bruker mapper som Windows har tilgang til, vanligvis gjennom leverandørens synkroniseringsapp. De er ikke en egen fullstendig nettbasert filbehandler for Google eller Apple. En fil som bare ligger i skyen, må kunne hentes av synkroniseringsappen før lokal behandling.",
+        "De lokale mappesnarveiene bruker mapper Windows har tilgang til, vanligvis gjennom leverandørens synkroniseringsapp. En fil som bare ligger i skyen, må kunne hentes før lokal behandling. Direkte Google Disk og Microsoft-filtilgang er separate valg med egen innlogging; de beskrives i egne kapitler.",
         "Innlogging i en nettside gir ikke automatisk DSSA Tale filtilgang. Appen henter ikke nettleserens påloggingskapsler. SharePoint-biblioteker som allerede er synkronisert til Windows, kan brukes som mapper. En privat delingslenke er ikke nødvendigvis en direkte nedlastingslenke.",
         "Hvis en fast mappe blir utilgjengelig, kontroller konto, synkronisering og mappevalg under Tilkoblinger. Appen skal ikke stille velge en annen konto. Å fjerne en mappekobling fjerner koblingen, ikke innholdet i skytjenesten."
+      ]
+    },
+    {
+      "id": "googledisk",
+      "title": "Direkte Google Disk i appen",
+      "paragraphs": [
+        "Åpne Innstillinger → Tilkoblinger → Google Disk i appen. Dette er en direkte kontotilkobling og krever ingen lokal synkroniseringsmappe. Logg inn med Google og velg konto. Mangler appoppsettet, kan en Google OAuth-JSON for skrivebordsapp importeres under Avansert oppsett; dette er ikke passordet ditt.",
+        "Google Disk har egen godkjenning, separat fra kalender. Appen ber om å lese filer på Google Disk og om tilgang til filer den oppretter eller åpner. Innlogging i nettleseren eller tilkobling av kalender alene erstatter ikke denne godkjenningen.",
+        "Etter tilkobling kan du bla i mapper, gå til Min disk eller tilbake, oppdatere og vise flere filer. Bruk denne som fast mappe husker mappen. Du kan også åpne og huske en tilgjengelig mappe fra Google Disk-lenke eller mappe-ID.",
+        "Under Lydimport → Google Disk kan du velge en støttet lyd-/videofil og hente den til importvalget. Under Tilkoblinger vises mapper og filer, mens selve lydimporten startes fra Lydimport. Last opp dokument til denne mappen lar deg velge en lokal Word-, PDF-, tekst- eller Markdown-fil på opptil 50 MB. Du bekrefter opplastingen før filen sendes som en ny fil til Google Disk; knappen lager ikke automatisk et nytt referat.",
+        "Koble fra Google Disk fjerner appens lagrede tilkobling. Filene på Google Disk slettes ikke. Originale filer blir ikke automatisk synkronisert eller sikkerhetskopiert bare fordi mappen vises. Virkelig innlogging, lesing og opplasting må kontrolleres med kontoen du bruker."
       ]
     },
     {
@@ -147,7 +262,19 @@
       "paragraphs": [
         "Teams og filer har egne områder for Teams, Kalender, Filer og SharePoint og Tilkobling. Microsoft-tilkoblingen kan brukes til kalender og filtilgang når den er konfigurert. Lokal diktering og møteopptak krever ikke denne innloggingen.",
         "Direkte Microsoft-tilkobling krever en offentlig klient-ID fra en Entra-appregistrering og nødvendige tillatelser. Organisasjonens regler kan kreve administratorgodkjenning selv om du allerede kan åpne området i nettleseren. Bruk eksisterende synkroniserte mapper dersom det dekker behovet ditt.",
-        "Kalender- og filhandlinger må bekreftes gjennom fungerende innlogging. De er ikke ferdig kontrollert mot alle kontotyper i denne testutgaven. En synlig knapp eller tilkoblingsside betyr ikke at kontoen allerede er koblet til."
+        "Kalender- og filhandlinger må bekreftes gjennom fungerende innlogging. De er ikke ferdig kontrollert mot alle kontotyper i denne testutgaven. En synlig knapp eller tilkoblingsside betyr ikke at kontoen allerede er koblet til.",
+        "Under Filer og SharePoint kan du bla i tilgjengelige lagringsområder og mapper, søke etter SharePoint-områder, vise flere resultater og laste ned en fil. Under Teams og filer vises hvor nedlastingen er lagret; åpne lydfilen gjennom Lydimport. Der kan Microsoft-kilden også hente en støttet lydfil direkte til importvalget.",
+        "Last opp fil sender filen du velger fra PC-en til den åpne Microsoft-mappen. Det er en egen handling og skjer ikke automatisk når du bare åpner siden. Oppdater henter listen på nytt. Koble fra avslutter appens tilkobling, uten å slette filer i Microsoft-kontoen."
+      ]
+    },
+    {
+      "id": "kalendere",
+      "title": "Google Kalender, Microsoft Kalender og Apple Kalender",
+      "paragraphs": [
+        "Under Kalender vises Google og Apple sammen med Microsoft-kalenderen. Google Kalender bruker appens eksisterende OAuth-flyt med lesetilgang og fornyelse av tilgang. Før første tilkobling må en gyldig Google OAuth-skrivebordsapp være konfigurert. Importer oppsettets JSON fra Google Cloud gjennom oppsettknappen; ikke lim inn kontoens passord. Nytt oppsett lagres kryptert på PC-en. Innlogging kan bruke passkey når Google tilbyr det.",
+        "Du kan koble flere Google-kontoer og velge å ta med alle tilgjengelige kalendere. Avtalelisten kan oppdateres og møtelenker åpnes. Dette er lesetilgang; redigering av kalenderavtaler er ikke lagt til. Microsoft-kalenderen bruker den valgfrie Microsoft 365-tilkoblingen.",
+        "Google Meet åpnes via møtelenke. Opptak med automatisk varsel må startes i Meet og krever riktig tilgang. Apple Kalender åpnes i iCloud i nettleseren; det er ikke intern Apple-kalendersynkronisering på Windows. FaceTime krever en lenke fra en Apple-enhet og en støttet nettleser. DSSA Tale starter ikke varslet FaceTime-opptak.",
+        "Pålogging og tilgang huskes når leverandøren tillater det. Passkey er en innloggingsmetode hos leverandøren, ikke et passord DSSA Tale lagrer. Nye tillatelser, utløpt eller tilbakekalt tilgang kan likevel kreve ny godkjenning."
       ]
     },
     {
@@ -156,7 +283,9 @@
       "paragraphs": [
         "Utskriften er talegjenkjenningens resultat. Mine notater er teksten du skriver selv. Bearbeidet referat er et forslag laget fra møtematerialet med en språkmodell. Behold utskriften slik at du kan kontrollere referatet.",
         "Den strenge automatiske tekstoppryddingen skal bevare ordene og målformen og bare tillate forsiktige rettelser i blant annet tegnsetting. Hvis resultatet endrer innholdet for mye, brukes originalteksten som reserve. Den kan ikke gjenopprette ord som talemodellen allerede har hørt feil.",
-        "Referatkontrollen krever kildegrunnlag for strukturerte beslutninger og oppgaver i den kontrollerte referatflyten. Fri referattekst kan være merket som et ubekreftet utkast. Dette er ingen garanti for at språkmodellen har forstått møtet riktig. Kontroller alltid beslutninger, navn, ansvar, frister og tall før dokumentet deles."
+        "Referatkontrollen krever kildegrunnlag for strukturerte beslutninger og oppgaver i den kontrollerte referatflyten. Fri referattekst kan være merket som et ubekreftet utkast. Dette er ingen garanti for at språkmodellen har forstått møtet riktig. Kontroller alltid beslutninger, navn, ansvar, frister og tall før dokumentet deles.",
+        "Tekstopprydding er av som standard ved nytt DSSA-oppsett. Under Tale til tekst → Diktering kan du slå den av eller på og åpne modellvalget. Nedlasting eller valg av en modell slår ikke alene på oppryddingen. Eksisterende valg kan være beholdt fra tidligere bruk. Ekstra tekstbehandling kan øke ventetiden.",
+        "Tone og stil lar deg velge skrivestil for ulike appkategorier og lagre valgene. Funksjonen trenger aktiv tekstopprydding for å forme dikteringsteksten. Den er ikke nødvendig for vanlig transkripsjon. Kontroller at ønsket formulering og innhold er bevart."
       ]
     },
     {
@@ -174,13 +303,23 @@
       ]
     },
     {
-      "id": "vad",
-      "title": "Silero VAD og taleaktivitet",
+      "id": "lagring",
+      "title": "Historikk, lydlagring og notatfiler",
       "paragraphs": [
-        "Silero VAD finner sannsynlige talepartier før lokal Whisper-transkripsjon. Den lager ikke teksten, identifiserer ikke personer og fjerner ikke støy inne i talen. For strenge verdier kan kutte korte eller svake ord. Under Tale til tekst finnes en egen forklaringsboks og i-symboler ved alle verdiene.",
-        "VAD-terskel: lavere verdi kan slippe gjennom svak tale, men også mer støy. Minimum talevarighet: korte lydpartier under grensen kan falle bort. Minimum stillhetsvarighet: hvor lang pause som kan avslutte et taleparti.",
-        "Maksimal talevarighet deler lange talepartier; den stopper ikke hele møtet etter for eksempel 30 sekunder. Taleutfylling legger litt lyd rundt et taleparti. Lydoverlapp gir sammenheng mellom lydsegmenter, men mer lyd å behandle.",
-        "1000 ms er ett sekund. Endre én verdi om gangen og sammenlign med samme korte opptak. Behold fungerende verdier dersom du ikke har et konkret problem å løse. Bryterne for diktering, møteopptak og møter er separate."
+        "Under Personvern og data kan du slå lokal historikk av eller på, velge oppbevaringstid for utskrifter og velge om forkastede opptak skal beholdes. Automatisk notatblokk er avhengig av at historikk er aktivert og lagring tillatt.",
+        "Lydlagring har eget valg med av eller et antall dager. Lydfiler og utskrift har derfor ikke nødvendigvis samme levetid. Slett all lyd fjerner appens lagrede lydkopier; det er noe annet enn å slette utskrifter. Behold originalfiler og eksporter viktige dokumenter før opprydding.",
+        "Generelt → Lagre notater som filer kan skrive notater og transkripsjoner til en mappe på disk. Slå på funksjonen og velg plassering. Bygg alle filer på nytt skriver ut filene på nytt. Dette er en annen funksjon enn den automatiske notatblokken og Word/PDF-eksporten.",
+        "En fil i en synkronisert mappe kan lastes opp av leverandørens klient. Lokal lagring betyr ikke at eksterne sikkerhetskopier, nettskykopier eller fullstendig lydarkiv er kontrollert. Kontroller lagrede dokumenter i mappen du har valgt."
+      ]
+    },
+    {
+      "id": "systemvalg",
+      "title": "System, modelloversikt og feillogger",
+      "paragraphs": [
+        "Under System vises maskinvare, minne og forslag til tale- og tekstmodeller. Forslagene er anslag og endrer ikke valgene dine. Installerte modeller og bruk viser hva som er lastet ned, hvilken modell som er valgt for diktering eller opprydding, og status for VAD, talerverktøy og ordtidsjustering.",
+        "Modellvalg og språk endres ved Tale til tekst eller Lydimport. System er en oversikt, med valgfritt Community-1-oppsett. Under versjonsnummeret kan du lese Endringer i installert versjon og tidligere versjonsendringer. Nye DSSA Windows-pakker installeres manuelt.",
+        "Utviklerverktøy har feilsøkingslogging, visning/kopiering av loggsti og åpning av loggmappen. Slå bare på detaljert logging når du trenger det, og kontroller at logger ikke inneholder privat innhold før du deler dem.",
+        "Åpne modellmappe viser lagringen for talemodeller. Tøm modellbuffer fjerner nedlastede modeller og kan kreve ny nedlasting. Tilbakestill appdata er et eget destruktivt valg med bekreftelse og omstart. Les bekreftelsen og ta vare på viktige notater og opptak først."
       ]
     },
     {
@@ -188,20 +327,10 @@
       "title": "Ressursbruk, lagring og feilsøking",
       "paragraphs": [
         "Nederst vises Appens CPU og Appens RAM for DSSA Tale med underprosesser, også lokal transkripsjon. CPU-prosenten er andel av hele PC-ens kapasitet. RAM vises mot total installert tilgjengelig fysisk hukommelse. Delte minnesider kan telles i flere prosesser.",
-        "GPU og GPU-minne er merket hele PC-en. De omfatter også andre programmer og er ikke en egen måling av bare DSSA Tale.",
+        "GPU og GPU-minne i bunnlinjen gjelder appens identifiserte prosesser, ikke hele PC-ens samlede GPU-bruk. Dedikert GPU-minne kan vises mot skjermkortets totale minne. En strek betyr at målingen mangler, ikke nødvendigvis null forbruk. Skjul ressurser skjuler tallene og stopper oppdateringen til du viser dem igjen.",
         "Personvern og data styrer blant annet historikk og lagring av dikteringslyd. Ikke anta at alle møteopptak finnes som en varig lydkopi fordi utskriften finnes. Behold originalfilene du importerer, og lagre viktige dokumenter selv.",
         "Hvis dikteringen er treg: kontroller at riktig modell er aktiv, at GPU-akselerasjonen fungerer og at andre jobber ikke bruker opp minnet. Hvis en import feiler: noter filtype, lydlengde, modell, fase, tidsbruk og feilmelding. Ikke legg private møteopptak eller passord i en feilrapport.",
-        "Send inn feil under Hjelp åpner prosjektets GitHub-side i nettleseren. Det sender ingen rapport automatisk. GitHub krever normalt innlogging for å opprette en sak, og siden må være tilgjengelig for kontoen din. Denne appen og endringene publiseres ikke ved at du åpner hjelpen."
-      ]
-    },
-    {
-      "id": "kalendere",
-      "title": "Google Kalender, Microsoft Kalender og Apple Kalender",
-      "paragraphs": [
-        "Under Kalender vises Google og Apple sammen med Microsoft-kalenderen. Google Kalender bruker appens eksisterende OAuth-flyt med lesetilgang og fornyelse av tilgang. Før første tilkobling må en gyldig Google OAuth-skrivebordsapp være konfigurert. Importer oppsettets JSON fra Google Cloud gjennom oppsettknappen; ikke lim inn kontoens passord. Nytt oppsett lagres kryptert på PC-en. Innlogging kan bruke passkey når Google tilbyr det.",
-        "Du kan koble flere Google-kontoer og velge å ta med alle tilgjengelige kalendere. Google-avtaler kan oppdateres og møtelenker åpnes. Dette er lesetilgang; redigering av kalenderavtaler er ikke lagt til. Microsoft-kalenderen bruker den valgfrie Microsoft 365-tilkoblingen.",
-        "Google Meet åpnes via møtelenke. Opptak med automatisk varsel må startes i Meet og krever riktig tilgang. Apple Kalender åpnes i iCloud i nettleseren; det er ikke intern Apple-kalendersynkronisering på Windows. FaceTime krever en lenke fra en Apple-enhet og en støttet nettleser. DSSA Tale starter ikke varslet FaceTime-opptak.",
-        "Pålogging og tilgang huskes når leverandøren tillater det. Passkey er en innloggingsmetode hos leverandøren, ikke et passord DSSA Tale lagrer. Nye tillatelser, utløpt eller tilbakekalt tilgang kan likevel kreve ny godkjenning."
+        "Hjelp → Send inn feil åpner prosjektets GitHub-side i nettleseren og sender ingen rapport automatisk. GitHub krever normalt innlogging for å opprette en sak. OpenWhispr tilbyr ikke brukerstøtte for DSSA Tale. Bruk DSSA-prosjektets feilside, og kontroller hvem som kan lese opplysningene før du sender dem."
       ]
     }
   ]

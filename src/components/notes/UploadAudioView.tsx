@@ -59,7 +59,8 @@ import {
   selectResolvedUploadTranscription,
   getSettings,
 } from "../../stores/settingsStore";
-import { useBatchQueue } from "../../stores/batchQueueStore";
+import { useBatchQueue, addFolderFiles } from "../../stores/batchQueueStore";
+import DssaFolderImport from "../dssa/DssaFolderImport";
 import type { TranscribeOptions } from "../../stores/batchQueueStore";
 import {
   transcribeFileWithSpeakers,
@@ -1264,6 +1265,13 @@ export default function UploadAudioView({
               </div>
             )}
           </>
+        )}
+
+        {state === "idle" && (
+          <DssaFolderImport
+            disabled={!uploadAllowedByPolicy || providerReady === false || batch.isProcessing}
+            onFiles={addFolderFiles}
+          />
         )}
 
         {skippedNotice && <p className="mt-2 text-center text-xs text-warning">{skippedNotice}</p>}

@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 class DssaMeetingSpool {
   constructor(root, noteId) {
+    this.noteId = noteId;
     this.root = path.resolve(root);
     fs.mkdirSync(root, { recursive: true });
     this.directory = fs.mkdtempSync(path.join(root, "meeting-"));
@@ -29,21 +30,41 @@ class DssaMeetingSpool {
     if (!buffer.length) return;
     const file = path.join(this.directory, `${this.sequence++}-${source}.pcm`);
     fs.writeFileSync(file, buffer, { flag: "wx" });
-    const item = { file, source, timestamp };
+    const item = { file, source, timestamp, bytes: buffer.length };
     fs.appendFileSync(
       path.join(this.directory, "chunks.jsonl"),
       JSON.stringify({ ...item, file: path.basename(file), bytes: buffer.length }) + "\n"
     );
     this.queue.push(item);
   }
-  drain(consume) {
+  drain(consume, onProgress = () => {}) {
     if (this.pending) return this.pending;
+    let processedBytes = 0, completedChunks = 0;
+    const startedAt = Date.now();
+    const report = () => {
+      const remainingBytes = this.queue.reduce((sum, item) => sum + item.bytes, 0);
+      const elapsedSeconds = (Date.now() - startedAt) / 1000;
+      onProgress({
+        noteId: this.noteId,
+        processedSeconds: processedBytes / 48000,
+        totalSeconds: (processedBytes + remainingBytes) / 48000,
+        completedChunks,
+        totalChunks: completedChunks + this.queue.length,
+        elapsedSeconds,
+        remainingSeconds: completedChunks >= 2 && processedBytes > 0 && remainingBytes > 0
+          ? Math.max(1, Math.ceil(elapsedSeconds * remainingBytes / processedBytes)) : null,
+      });
+    };
     this.pending = (async () => {
+      report();
       while (this.queue.length) {
         const item = this.queue[0];
         await consume({ ...item, buffer: fs.readFileSync(item.file) });
         fs.unlinkSync(item.file);
         this.queue.shift();
+        processedBytes += item.bytes;
+        completedChunks++;
+        report();
       }
     })().finally(() => {
       this.pending = null;

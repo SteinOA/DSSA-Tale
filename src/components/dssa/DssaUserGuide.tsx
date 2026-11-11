@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../ui/dialog";
 import guide from "../../config/dssaUserGuide.json";
+import { Button } from "../ui/button";
+import { DSSA_GUIDE_LINKS, openDssaFeature } from "../../utils/dssaFeatureNavigation";
 
 export default function DssaUserGuide({
   open,
@@ -62,6 +64,23 @@ export default function DssaUserGuide({
                 {section.paragraphs?.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
+                {DSSA_GUIDE_LINKS[section.id] && (
+                  <div className="flex flex-wrap gap-3">
+                    {DSSA_GUIDE_LINKS[section.id]!.map((link) => (
+                      <Button
+                        key={link.target}
+                        variant="outline"
+                        className="h-auto min-h-9 max-w-full whitespace-normal text-start"
+                        onClick={() => {
+                          onOpenChange(false);
+                          openDssaFeature(link.target);
+                        }}
+                      >
+                        {link.label}
+                      </Button>
+                    ))}
+                  </div>
+                )}
               </div>
             </details>
           ))}
