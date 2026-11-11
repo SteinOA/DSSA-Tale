@@ -8,7 +8,7 @@ Lokal diktering, møteopptak og lydimport. Uavhengig tilpasning av OpenWhispr, m
 
 ## Første start
 
-Veiviseren viser deg gjennom språk, modellnedlasting, mikrofontest og ditt første opptak. Den forklarer hva du skal trykke på og venter til modell og mikrofon er kontrollert. Modellene lastes ned separat. Small er et plassbesparende startvalg; NB-Whisper er spesielt trent for norsk.
+Veiviseren viser deg gjennom språk, modellnedlasting, mikrofontest og ditt første opptak. Den forklarer hva du skal trykke på og venter til modell og mikrofon er kontrollert. Modellene lastes ned separat. NB-Whisper Large med full presisjon (3,1 GB) er forhåndsvalgt og anbefalt for norsk; mindre modeller kan velges ved behov.
 
 Ingen konto, abonnement eller API-nøkkel kreves. Valgt lokal modell brukes til diktering, møter og lydimport. Tekstopprydding er valgfritt og av i grunnoppsettet. Under Innstillinger → Generelt kan du starte oppsettsveiviseren igjen.
 

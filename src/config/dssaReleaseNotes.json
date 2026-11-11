@@ -2,6 +2,7 @@
   {
     "version": "1.10.4-dssa.41",
     "changes": [
+      "NB-Whisper Large med full presisjon (3,1 GB) er forhåndsvalgt og står øverst i førstegangsoppsettet. Mindre modeller er alternativer.",
       "Windows-vinduet åpnes på hovedskjermen, uavhengig av hvor musepekeren lå ved oppstart. Dette hindrer at veiviseren havner på en utilgjengelig skjermflate.",
       "Rettet oppstartsfeil på Windows: lokale innstillinger sikkerhetskopieres før Chromium låser LevelDB. En helt ny profil opprettes trygt før sikkerhetskopimarkøren skrives.",
       "Førstegangsoppsettet leder gjennom språk, modellnedlasting, mikrofontest og første opptak med forklaring ved hvert trinn.",

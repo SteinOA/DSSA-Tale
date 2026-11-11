@@ -129,7 +129,7 @@ test("fresh setup blocks missing models and untested microphone, rechecks disk, 
   assert.equal(localStorage.getItem("onboardingCompleted"), null);
   await click("Neste");
   assert.equal(button("Neste").props.disabled, true);
-  inventory = ["small"];
+  inventory = ["nb-large-full"];
   await click("Kontroller på nytt");
   await click("Neste");
   assert.equal(button("Neste").props.disabled, true);
@@ -148,7 +148,7 @@ test("fresh setup blocks missing models and untested microphone, rechecks disk, 
   assert.equal(completed, 0);
   assert.equal(localStorage.getItem("skipAuth"), null);
   assert.equal(button("Neste").props.disabled, true);
-  inventory = ["small"];
+  inventory = ["nb-large-full"];
   await click("Kontroller på nytt");
   await click("Neste");
   await click("Neste");
@@ -160,7 +160,7 @@ test("fresh setup blocks missing models and untested microphone, rechecks disk, 
     const key = (k) => (prefix ? prefix + k[0].toUpperCase() + k.slice(1) : k);
     assert.equal(s[key("useLocalWhisper")], true);
     assert.equal(s[key("localTranscriptionProvider")], "whisper");
-    assert.equal(s[key("whisperModel")], "small");
+    assert.equal(s[key("whisperModel")], "nb-large-full");
     assert.equal(s[key("transcriptionMode")], "local");
   }
   assert.equal(s.useCleanupModel, false);

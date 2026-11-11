@@ -16,7 +16,7 @@ export default function DssaOnboarding({
   const { uiLanguage, setUiLanguage } = useSettingsStore();
   const tr = createDssaTranslator(i18n);
   const [step, setStep] = useState(0);
-  const [model, setModel] = useState("small");
+  const [model, setModel] = useState("nb-large-full");
   const [installed, setInstalled] = useState<string[]>([]);
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState("");
@@ -188,15 +188,15 @@ export default function DssaOnboarding({
               onChange={(e) => setModel(e.target.value)}
               className="w-full rounded border bg-background p-2"
             >
-              <option value="small">Whisper Small · 466 MB</option>
-              <option value="medium">Whisper Medium · 1,5 GB</option>
+              <option value="nb-large-full">NB-Whisper Large · 3,1 GB · anbefalt</option>
               <option value="nb-large">NB-Whisper Large · 1,08 GB</option>
-              <option value="nb-large-full">NB-Whisper Large · 3,1 GB</option>
+              <option value="medium">Whisper Medium · 1,5 GB</option>
+              <option value="small">Whisper Small · 466 MB</option>
             </select>
             <p className="text-sm">
               {tr(
-                "Small bruker mindre plass og passer til å komme i gang. Større modeller bruker mer minne og tid. NB-Whisper er spesielt trent for norsk. Modellen du velger brukes til diktering, møter og lydimport. Tekstopprydding er slått av i dette grunnoppsettet og kan aktiveres senere.",
-                "Small uses less space and is a good starting point. Larger models need more memory and time. NB-Whisper is trained for Norwegian. The selected model is used for dictation, meetings and audio import. Text cleanup is disabled in this basic setup and can be enabled later."
+                "NB-Whisper Large med full presisjon (3,1 GB) er forhåndsvalgt og anbefalt for norsk. Den krever mer plass, minne og behandlingstid. Du kan velge en mindre modell ved behov. Modellen du velger brukes til diktering, møter og lydimport. Tekstopprydding er slått av i dette grunnoppsettet og kan aktiveres senere.",
+                "NB-Whisper Large at full precision (3.1 GB) is selected by default and recommended for Norwegian. It needs more disk space, memory and processing time. You can choose a smaller model if needed. The selected model is used for dictation, meetings and audio import. Text cleanup is disabled in this basic setup and can be enabled later."
               )}
             </p>
             <p role="status">
