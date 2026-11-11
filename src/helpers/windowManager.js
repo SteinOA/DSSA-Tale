@@ -1514,9 +1514,7 @@ class WindowManager {
 
     const initialBounds =
       process.platform === "win32"
-        ? fitControlPanelToWorkArea(
-            screen.getDisplayNearestPoint(screen.getCursorScreenPoint()).workArea
-          )
+        ? fitControlPanelToWorkArea(screen.getPrimaryDisplay().workArea)
         : {};
     this.controlPanelWindow = new BrowserWindow({ ...CONTROL_PANEL_CONFIG, ...initialBounds });
     this._onboardingRestoreBounds = null;

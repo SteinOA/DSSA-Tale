@@ -15,3 +15,5 @@ Mikrofontesten registrerer lydnivå uten å lagre lyd. Den er ikke en transkrips
 ## Oppstartsrettelse funnet ved GitHub-installasjonen
 
 Den nedlastede pakken avdekket EACCES ved kopiering av Local Storage/leveldb etter at Chromium hadde åpnet mappen. Sikkerhetskopien startes nå etter at enkeltinstanslåsen er tatt, før app.whenReady og før Chromium sin standardsesjon opprettes. En andre appinstans sikkerhetskopierer ikke profilen. En manglende profilmappe opprettes før markøren skrives. Reelle sikkerhetskopifeil stopper fortsatt migrering, slik at eksisterende data ikke overskrives uten sikkerhetskopi. Tester dekker ny profil, bevaring av tidligere innstillinger og feil uten fullført markør.
+
+Windows åpner nå kontrollpanelet på hovedskjermen. Tidligere ble skjermen nærmest musepekeren valgt; i testoppsettet kunne dette plassere veiviseren på en skjermflate over brukerens synlige skjerm. Vinduet tilpasses hovedskjermens tilgjengelige arbeidsområde. 20 relaterte vindustester består.
