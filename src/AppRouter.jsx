@@ -60,6 +60,16 @@ function MainApp() {
 
   const isControlPanel = isControlPanelWindow();
   const isDictationPanel = !isControlPanel;
+  useEffect(() => {
+    if (!isControlPanel) return;
+    const restartSetup = () => {
+      localStorage.removeItem("onboardingCompleted");
+      setNeedsReauth(false);
+      setShowOnboarding(true);
+    };
+    window.addEventListener("dssa-start-setup", restartSetup);
+    return () => window.removeEventListener("dssa-start-setup", restartSetup);
+  }, [isControlPanel]);
   // Covers every surface this window hosts: onboarding, reauth, the panel.
   useControlPanelWindowDrag(isControlPanel);
 

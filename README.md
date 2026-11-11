@@ -1,40 +1,31 @@
 # DSSA Tale for Windows
 
-Gratis lokal norsk diktering, møteopptak og lydimport, basert på OpenWhispr og Nasjonalbibliotekets NB-Whisper. Dette er en uavhengig tilpasning.
+Lokal diktering, møteopptak og lydimport. Uavhengig tilpasning av OpenWhispr, med støtte for Nasjonalbibliotekets NB-Whisper. Ingen konto eller abonnement er nødvendig for lokal tale til tekst.
 
-Offentlig testutgave: **1.10.4-dssa.40**, Windows x64.
+## Last ned v41
 
-## Last ned
+[GitHub-utgivelsen](https://github.com/SteinOA/DSSA-Tale/releases/tag/v1.10.4-dssa.41) inneholder **DSSA-Tale-1.10.4-dssa.41-Windows-x64.exe**, kilder, kontrollsummer og veiledning. v40 er trukket fra offentlig nedlasting og erstattes av v41.
 
-[Utgivelsen av v40](https://github.com/SteinOA/DSSA-Tale/releases/tag/v1.10.4-dssa.40) har installasjonsfilen **DSSA-Tale-1.10.4-dssa.40-Windows-x64.exe**, kildepakker, kontrollsummer og installasjonsveiledning. Avslutt opptak og transkripsjon og lukk appen før installasjon. Ikke slett brukerprofilen eller modellene.
+## Første start
 
-Lokal diktering trenger ingen konto eller abonnement. Last ned talemodell separat under Innstillinger → Tale til tekst. Under Hurtigtaster velger du Trykk eller Hold inne. Denne pakken har ikke eget DSSA-kodesigneringssertifikat. Ikke slå av Windows-beskyttelsen.
+Veiviseren viser deg gjennom språk, modellnedlasting, mikrofontest og ditt første opptak. Den forklarer hva du skal trykke på og venter til modell og mikrofon er kontrollert. Modellene lastes ned separat. Small er et plassbesparende startvalg; NB-Whisper er spesielt trent for norsk.
 
-## Nytt i v40
+Ingen konto, abonnement eller API-nøkkel kreves. Valgt lokal modell brukes til diktering, møter og lydimport. Tekstopprydding er valgfritt og av i grunnoppsettet. Under Innstillinger → Generelt kan du starte oppsettsveiviseren igjen.
 
-- Tydelige opptaksknapper, møtehjelp og transkripsjonsstatus etter stopp.
-- Målt framdrift og gjenstående lyd for lokal transkripsjon etter møtet. Resttid er et anslag; mikrofon og møtelyd telles separat.
-- Mappeimport med undermapper, kø og et notat per fil. Kølisten lagres ikke ved avslutning.
-- Bruksanvisning med 28 kapitler og innganger til funksjoner og oppsett.
-- Community-1-veiledning med lenker til modelltilgang og Hugging Face-nøkkel.
-- Rettet PC-tekst, Google Disk-hjelp og offentlig feilrapportering. Ingen OpenWhispr-support for DSSA Tale.
+## Funksjoner og hjelp
 
-Les [bruksanvisningen](docs/BRUKSANVISNING-WINDOWS.txt), [møteframdrift og testgrenser](docs/windows-v40-meeting-progress.md) og [Community-1-oppsett](docs/community-optional-setup.md).
+- Diktering, lokale notater og møteopptak med mikrofon/systemlyd.
+- Synlige opptaksknapper og status under transkripsjon etter stopp.
+- Målt behandlet og gjenstående lyd ved lokal etterbehandling, med estimert resttid.
+- Lydimport og mappeimport med undermapper og et notat per fil.
+- Valgfri stemmeutskillelse, tekstopprydding, Google Disk og Microsoft-tilkobling.
 
-## Møteopptak og data
+Les [bruksanvisningen](docs/BRUKSANVISNING-WINDOWS.txt) og [oppsett og testgrenser](docs/windows-v41-first-run.md). Mikrofontesten kontrollerer ikke Teams-systemlyden. Test et kort opptak før viktige møter. Stemmegrupper er ikke automatisk bekreftede personnavn. Importkøen lagres ikke ved avslutning.
 
-DSSA Tale er en separat app ved siden av Teams. Lokalt møteopptak forsøker å ta inn mikrofon og systemlyd; det starter ikke Teams sitt skyopptak eller sender automatisk Teams-varsel. Informer deltakerne og gjør en kort prøve. Stemmegrupper er ikke automatisk bekreftede personnavn.
+## Oppdatering og kilder
 
-Automatisk notatblokk og gjenopptakelse av lokale importer krever tillatt lokal historikk. Google Disk, Microsoft og kalender er valgfrie tilkoblinger med eget oppsett og samtykke. Tekstopprydding er valgfri og kan øke ventetiden.
+Lukk appen når opptak og transkripsjon er ferdig. Installer ny pakke manuelt. Vanlig oppdatering sletter ikke brukerdata. Windows x64-testutgaven har ikke eget DSSA-kodesigneringssertifikat; ikke slå av Windows-beskyttelsen. Se kontrollsummer og teststatus i utgivelsen.
 
-## Teststatus og kilder
+Se [CREDITS.md](CREDITS.md), [LICENSE](LICENSE) og [distribusjon og kilder](docs/windows-distribution.md). Offentlig kildeeksport og tilhørende komponentkilder følger utgivelsen. Privat historikk og brukerprofiler følger ikke med. Appen er MIT; komponenter og modeller har egne vilkår. Mac er ikke endret.
 
-Typekontroll, målrettede funksjons-/språkprøver og pakketester med syntetiske data er gjennomført. Ren PC-installasjon, alle konto-OAuth-flyter, fersk Community-1-installasjon og den nye framdriftsvisningen under et virkelig Teams-møte er ikke ende-til-ende-verifisert. Ingen garantert hastighet eller feilfri talerfordeling.
-
-Se [CREDITS.md](CREDITS.md), [LICENSE](LICENSE) og [distribusjon og kilder](docs/windows-distribution.md). App/tilpasninger er MIT; komponenter og modeller har egne vilkår. NB-Whisper bygger på OpenAIs Whisper og er videre trent for norsk av Nasjonalbiblioteket.
-
-Offentlig kildeeksport og tilhørende medieverktøykilder følger utgivelsen. Den private utviklingshistorikken følger ikke med. Sluttbrukeren trenger ikke utviklingsverktøy; byggeoppskriften følger kildepakken.
-
-Meld feil under [Issues](https://github.com/SteinOA/DSSA-Tale/issues). Unngå private opptak, dokumenter og tilgangsnøkler.
-
-Mac-versjonen omfattes ikke av Windows-utgivelsen.
+Meld feil under [Issues](https://github.com/SteinOA/DSSA-Tale/issues). Ikke legg ved private data eller nøkler. OpenWhispr gir ikke brukerstøtte for DSSA Tale.

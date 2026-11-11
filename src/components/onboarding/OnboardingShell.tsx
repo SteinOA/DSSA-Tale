@@ -49,7 +49,7 @@ interface CompactOnboardingFrameProps {
  * Close hides to the tray; the persisted session resumes the flow on reopen,
  * so this is never a way to lose progress.
  */
-function OnboardingWindowControls() {
+export function OnboardingWindowControls() {
   const { t } = useTranslation();
   const { isMaximized, minimize, toggleMaximize, close } = useWindowControls();
 

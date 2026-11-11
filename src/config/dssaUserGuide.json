@@ -13,10 +13,12 @@
         "Installer en ny DSSA Windows-pakke manuelt ved oppdatering. Under System ser du installert versjon og endringene som følger med den. Ikke kjør gammel og ny dikteringsapp samtidig."
       ],
       "steps": [
-        "Velg mikrofon under Innstillinger → Generelt. Gjør et kort prøveopptak.",
-        "Velg grensesnittspråk og transkripsjonsspråk hver for seg under Generelt.",
-        "Last ned og velg talemodell under Tale til tekst før første transkripsjon. Diktering, møteopptak og lydimport kan ha ulike modeller og språkvalg.",
-        "Kontroller hurtigtasten under Hurtigtaster. Et eksisterende oppsett beholdes; bruk kombinasjonen som vises hos deg."
+        "Følg oppsettsveiviseren ved første start: velg språk, last ned og kontroller en talemodell, og test mikrofonen. Hvert trinn forklarer hva du skal trykke på.",
+        "Veiviseren viser nedlastingsframdrift. Neste blir tilgjengelig når valgt modell finnes på disken. Eksisterende modeller kan velges og brukes videre.",
+        "Trykk Test mikrofon og snakk. Stopp testen etter at lydmåleren reagerer. Ingen lyd lagres i denne testen. Ved manglende lyd får du veiledning om Windows-lyd og mikrofontilgang.",
+        "Les forklaringen om nytt notat, Stopp opptak og transkripsjon, og trykk Åpne DSSA Tale. Grunnoppsettet bruker samme lokale modell til diktering, møter og lydimport, med valgfri tekstopprydding av.",
+        "Veiviseren kan åpnes igjen under Innstillinger → Generelt → Finn funksjoner og oppsett → Start oppsettsveiviseren. Dette sletter ikke notater. Modellvalgene du bekrefter brukes til alle tre lydfunksjonene.",
+        "Gjør et kort prøveopptak før et viktig møte. Mikrofontesten kontrollerer ikke systemlyden. Hurtigtaster, andre modeller og valgfrie skytjenester kan settes opp senere under Innstillinger."
       ]
     },
     {
