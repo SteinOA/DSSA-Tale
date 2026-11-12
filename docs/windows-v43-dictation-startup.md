@@ -2,6 +2,12 @@
 
 Knappen som startet oppsettsveiviseren på nytt er fjernet fra «Finn funksjoner og oppsett». Modell, mikrofon og hurtigtaster endres direkte under Innstillinger. Førstegangsveiviseren beholdes for nye brukere.
 
+## Bokmål, nynorsk og Teams-møter
+
+- Appen støtter transkripsjon på både bokmål og nynorsk. Velg ønsket transkripsjonsspråk før opptaket.
+- DSSA Tale kan ta opp og transkribere lyd fra Teams-møter. Systemlyd tar med de andre deltakerne, og mikrofonen tar med din egen stemme.
+- Start under **Teams og filer → Teams → Start lokalt møteopptak**, og kontroller opptaksindikatoren. Opptaket gjøres lokalt i DSSA Tale ved siden av Teams og krever ikke Microsoft-innlogging. Informer deltakerne om opptaket.
+
 ## Installer eller oppdater
 
 Last ned **DSSA-Tale-1.10.4-dssa.43-Windows-x64.exe** nedenfor. Avslutt opptak og vent til transkripsjonen er ferdig før du lukker appen og installerer oppdateringen. Vanlig oppdatering beholder notater, innstillinger og nedlastede modeller.

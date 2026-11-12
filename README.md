@@ -1,6 +1,6 @@
 # DSSA Tale for Windows
 
-Lokal diktering, møteopptak og lydimport. Uavhengig tilpasning av OpenWhispr, med støtte for Nasjonalbibliotekets NB-Whisper. Ingen konto eller abonnement er nødvendig for lokal tale til tekst.
+Lokal diktering, møteopptak og lydimport med transkripsjon på både bokmål og nynorsk. Uavhengig tilpasning av OpenWhispr, med støtte for Nasjonalbibliotekets NB-Whisper. Ingen konto eller abonnement er nødvendig for lokal tale til tekst.
 
 ## Last ned v43
 
@@ -18,11 +18,15 @@ Ingen konto, abonnement eller API-nøkkel kreves. Valgt lokal modell brukes til 
 
 ## Funksjoner og hjelp
 
-- Diktering, lokale notater og møteopptak med mikrofon/systemlyd.
+- Transkripsjon på bokmål og nynorsk. Velg ønsket transkripsjonsspråk før opptaket.
+- Opptak og transkripsjon av Teams-møter: systemlyd tar med de andre deltakerne, og mikrofonen tar med din egen stemme.
+- Diktering og lokale notater.
 - Synlige opptaksknapper og status under transkripsjon etter stopp.
 - Målt behandlet og gjenstående lyd ved lokal etterbehandling, med estimert resttid.
 - Lydimport og mappeimport med undermapper og et notat per fil.
 - Valgfri stemmeutskillelse, tekstopprydding, Google Disk og Microsoft-tilkobling.
+
+For Teams: åpne **Teams og filer → Teams → Start lokalt møteopptak** i DSSA Tale og kontroller at opptaket går. Opptaket gjøres lokalt i DSSA Tale ved siden av Teams. Microsoft-innlogging er ikke nødvendig for dette opptaket.
 
 Les [bruksanvisningen](docs/BRUKSANVISNING-WINDOWS.txt) og [oppsett og testgrenser](docs/windows-v43-dictation-startup.md). Mikrofontesten kontrollerer ikke Teams-systemlyden. Test et kort opptak før viktige møter. Stemmegrupper er ikke automatisk bekreftede personnavn. Importkøen lagres ikke ved avslutning.
 
