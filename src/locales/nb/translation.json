@@ -757,8 +757,8 @@
     },
     "loading": "Laster ...",
     "gpu": {
-      "bannerTitle": "GPU-akselerasjon tilgjengelig",
-      "bannerDescription": "Aktiver GPU-akselerasjon for raskere ytelse.",
+      "bannerTitle": "Aktiver GPU – anbefales",
+      "bannerDescription": "GPU-akselerasjon kan redusere behandlingstiden, særlig med NB-Whisper Large 3,1 GB. Trykk Aktiver GPU for å åpne oppsettet.",
       "enableButton": "Aktiver GPU",
       "dismissButton": "Ikke nå"
     },
@@ -3926,7 +3926,7 @@
     "addButton": "legge til"
   },
   "gpu": {
-    "transcriptionBanner": "Få fart på transkripsjon med GPU-akselerasjon",
+    "transcriptionBanner": "Aktiver GPU – anbefales",
     "reasoningBanner": "Få fart på AI-behandling med GPU-akselerasjon",
     "enableButton": "Aktiver GPU",
     "active": "GPU akselerasjon aktiv",

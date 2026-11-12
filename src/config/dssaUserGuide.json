@@ -18,7 +18,8 @@
         "Trykk Test mikrofon og snakk. Stopp testen etter at lydmåleren reagerer. Ingen lyd lagres i denne testen. Ved manglende lyd får du veiledning om Windows-lyd og mikrofontilgang.",
         "Les forklaringen om nytt notat, Stopp opptak og transkripsjon, og trykk Åpne DSSA Tale. Grunnoppsettet bruker samme lokale modell til diktering, møter og lydimport, med valgfri tekstopprydding av.",
         "Veiviseren kan åpnes igjen under Innstillinger → Generelt → Finn funksjoner og oppsett → Start oppsettsveiviseren. Dette sletter ikke notater. Modellvalgene du bekrefter brukes til alle tre lydfunksjonene.",
-        "Gjør et kort prøveopptak før et viktig møte. Mikrofontesten kontrollerer ikke systemlyden. Hurtigtaster, andre modeller og valgfrie skytjenester kan settes opp senere under Innstillinger."
+        "Gjør et kort prøveopptak før et viktig møte. Mikrofontesten kontrollerer ikke systemlyden. Hurtigtaster, andre modeller og valgfrie skytjenester kan settes opp senere under Innstillinger.",
+        "Aktiver GPU anbefales for NB-Whisper Large 3,1 GB dersom PC-en støtter det. Anbefalingen vises i rødt. Etter oppsettet åpner Aktiver GPU på Hjem de relevante innstillingene; GPU-pakken lastes ned der. CPU kan brukes uten GPU-pakken."
       ]
     },
     {

@@ -1272,7 +1272,7 @@ export default function ControlPanel({ initialSettingsSection }: ControlPanelPro
                           <Zap size={16} className="text-primary" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-medium text-foreground mb-0.5">
+                          <p className="text-xs font-semibold text-red-700 dark:text-red-300 mb-0.5">
                             {t("controlPanel.gpu.bannerTitle")}
                           </p>
                           <p className="text-xs text-muted-foreground mb-2">

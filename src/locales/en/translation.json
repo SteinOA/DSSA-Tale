@@ -721,8 +721,8 @@
     },
     "loading": "Loading...",
     "gpu": {
-      "bannerTitle": "GPU acceleration available",
-      "bannerDescription": "Enable GPU acceleration for faster performance.",
+      "bannerTitle": "Enable GPU – recommended",
+      "bannerDescription": "GPU acceleration can reduce processing time, especially with NB-Whisper Large 3.1 GB. Click Enable GPU to open setup.",
       "enableButton": "Enable GPU",
       "dismissButton": "Not now"
     },
@@ -3957,7 +3957,7 @@
     "addButton": "add"
   },
   "gpu": {
-    "transcriptionBanner": "Speed up transcription with GPU acceleration",
+    "transcriptionBanner": "Enable GPU – recommended",
     "reasoningBanner": "Speed up AI processing with GPU acceleration",
     "enableButton": "Enable GPU",
     "active": "GPU acceleration active",

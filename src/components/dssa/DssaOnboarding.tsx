@@ -199,6 +199,12 @@ export default function DssaOnboarding({
                 "NB-Whisper Large at full precision (3.1 GB) is selected by default and recommended for Norwegian. It needs more disk space, memory and processing time. You can choose a smaller model if needed. The selected model is used for dictation, meetings and audio import. Text cleanup is disabled in this basic setup and can be enabled later."
               )}
             </p>
+            <p className="font-semibold text-red-700 dark:text-red-300">
+              {tr(
+                "Aktiver GPU – anbefales for NB-Whisper Large 3,1 GB hvis PC-en støtter det. GPU kan redusere behandlingstiden. Etter oppsettet finner du Aktiver GPU på Hjem når kompatibel GPU er tilgjengelig.",
+                "Enable GPU – recommended for NB-Whisper Large 3.1 GB if your PC supports it. GPU acceleration can reduce processing time. After setup, Enable GPU appears on Home when a compatible GPU is available."
+              )}
+            </p>
             <p role="status">
               {ready
                 ? tr("Modellen er installert og klar.", "Model installed and ready.")

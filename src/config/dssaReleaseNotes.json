@@ -2,6 +2,7 @@
   {
     "version": "1.10.4-dssa.41",
     "changes": [
+      "Rød anbefaling om GPU i førstegangsoppsettet og ved tilgjengelig GPU på Hjem og under Tale til tekst, med forklaring for NB-Whisper Large 3,1 GB.",
       "NB-Whisper Large med full presisjon (3,1 GB) er forhåndsvalgt og står øverst i førstegangsoppsettet. Mindre modeller er alternativer.",
       "Windows-vinduet åpnes på hovedskjermen, uavhengig av hvor musepekeren lå ved oppstart. Dette hindrer at veiviseren havner på en utilgjengelig skjermflate.",
       "Rettet oppstartsfeil på Windows: lokale innstillinger sikkerhetskopieres før Chromium låser LevelDB. En helt ny profil opprettes trygt før sikkerhetskopimarkøren skrives.",

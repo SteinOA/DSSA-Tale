@@ -19,3 +19,5 @@ Den nedlastede pakken avdekket EACCES ved kopiering av Local Storage/leveldb ett
 Windows åpner nå kontrollpanelet på hovedskjermen. Tidligere ble skjermen nærmest musepekeren valgt; i testoppsettet kunne dette plassere veiviseren på en skjermflate over brukerens synlige skjerm. Vinduet tilpasses hovedskjermens tilgjengelige arbeidsområde. 20 relaterte vindustester består.
 
 NB-Whisper Large med full presisjon (nb-large-full, 3,1 GB) er forhåndsvalgt og står øverst i veiviseren. Mindre modeller er alternativer. Valget settes for diktering, møte og lydimport når veiviseren fullføres.
+
+GPU anbefales i rød tekst ved modellvalget, med forbehold om kompatibel maskinvare. Hjem og Tale til tekst viser også rød anbefaling når GPU kan aktiveres. Knappen på Hjem åpner GPU-oppsettet i modellinnstillingene; den starter ikke automatisk en nedlasting. GPU er ikke nødvendig for å fullføre veiviseren.

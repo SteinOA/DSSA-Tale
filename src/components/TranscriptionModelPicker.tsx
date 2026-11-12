@@ -1774,7 +1774,7 @@ export default function TranscriptionModelPicker({
                   <div className="flex items-start gap-2.5">
                     <Zap size={13} className="text-primary shrink-0 mt-0.5" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-medium text-foreground">
+                      <p className="text-xs font-semibold text-red-700 dark:text-red-300">
                         {t("gpu.transcriptionBanner")}
                       </p>
                       <div className="flex items-center gap-2 mt-1.5">

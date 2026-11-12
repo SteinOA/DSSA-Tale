@@ -10,6 +10,7 @@ Kom i gang
 4. Les forklaringen om nytt notat, Stopp opptak og transkripsjon, og trykk Åpne DSSA Tale. Grunnoppsettet bruker samme lokale modell til diktering, møter og lydimport, med valgfri tekstopprydding av.
 5. Veiviseren kan åpnes igjen under Innstillinger → Generelt → Finn funksjoner og oppsett → Start oppsettsveiviseren. Dette sletter ikke notater. Modellvalgene du bekrefter brukes til alle tre lydfunksjonene.
 6. Gjør et kort prøveopptak før et viktig møte. Mikrofontesten kontrollerer ikke systemlyden. Hurtigtaster, andre modeller og valgfrie skytjenester kan settes opp senere under Innstillinger.
+7. Aktiver GPU anbefales for NB-Whisper Large 3,1 GB dersom PC-en støtter det. Anbefalingen vises i rødt. Etter oppsettet åpner Aktiver GPU på Hjem de relevante innstillingene; GPU-pakken lastes ned der. CPU kan brukes uten GPU-pakken.
 
 DSSA Tale kan skrive det du sier ved markøren, ta opp møter, transkribere lydfiler og lagre dokumenter. Lokal bruk krever ikke abonnement eller OpenWhispr-konto. Dette er en lokal testutgave; kontroller viktige utskrifter mot opptaket.
 
