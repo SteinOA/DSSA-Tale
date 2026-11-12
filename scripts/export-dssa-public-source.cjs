@@ -31,6 +31,7 @@ const rootFiles = new Set([
   "electron-builder.dssa-win.cjs",
 ]);
 const publicDocs = new Set([
+  "docs/windows-v42-dictation-startup.md",
   "docs/windows-v41-first-run.md",
   "docs/windows-distribution.md",
   "docs/windows-v31-release.md",

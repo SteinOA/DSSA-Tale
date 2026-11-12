@@ -146,7 +146,6 @@ test("fresh setup blocks missing models and untested microphone, rechecks disk, 
   inventory = [];
   await click("Åpne DSSA Tale");
   assert.equal(completed, 0);
-  assert.equal(localStorage.getItem("skipAuth"), null);
   assert.equal(button("Neste").props.disabled, true);
   inventory = ["nb-large-full"];
   await click("Kontroller på nytt");

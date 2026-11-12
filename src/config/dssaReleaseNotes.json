@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.10.4-dssa.42",
+    "changes": [
+      "Rettet feil ved første oppstart: DSSA sine lokale standardvalg brukes før innstillingslageret opprettes, også i det skjulte dikteringsvinduet.",
+      "Første diktering skal bruke lokal NB-Whisper Large 3,1 GB uten å kreve OpenWhispr Cloud-innlogging.",
+      "Test dekker opprettelse av ferskt dikteringsvindu uten at hovedmenyen eller veiviseren først har lastet standardvalgene."
+    ]
+  },
+  {
     "version": "1.10.4-dssa.41",
     "changes": [
       "Rød anbefaling om GPU i førstegangsoppsettet og ved tilgjengelig GPU på Hjem og under Tale til tekst, med forklaring for NB-Whisper Large 3,1 GB.",

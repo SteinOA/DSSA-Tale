@@ -2,9 +2,9 @@
 
 Lokal diktering, møteopptak og lydimport. Uavhengig tilpasning av OpenWhispr, med støtte for Nasjonalbibliotekets NB-Whisper. Ingen konto eller abonnement er nødvendig for lokal tale til tekst.
 
-## Last ned v41
+## Last ned v42
 
-[GitHub-utgivelsen](https://github.com/SteinOA/DSSA-Tale/releases/tag/v1.10.4-dssa.41) inneholder **DSSA-Tale-1.10.4-dssa.41-Windows-x64.exe**, kilder, kontrollsummer og veiledning. v40 er trukket fra offentlig nedlasting og erstattes av v41.
+[GitHub-utgivelsen](https://github.com/SteinOA/DSSA-Tale/releases/tag/v1.10.4-dssa.42) inneholder **DSSA-Tale-1.10.4-dssa.42-Windows-x64.exe**, kilder, kontrollsummer og veiledning. v40 og v41 er trukket fra offentlig nedlasting. v42 retter første diktering som ellers kunne bli sendt til OpenWhispr Cloud i stedet for lokal modell.
 
 ## Første start
 
@@ -20,7 +20,7 @@ Ingen konto, abonnement eller API-nøkkel kreves. Valgt lokal modell brukes til 
 - Lydimport og mappeimport med undermapper og et notat per fil.
 - Valgfri stemmeutskillelse, tekstopprydding, Google Disk og Microsoft-tilkobling.
 
-Les [bruksanvisningen](docs/BRUKSANVISNING-WINDOWS.txt) og [oppsett og testgrenser](docs/windows-v41-first-run.md). Mikrofontesten kontrollerer ikke Teams-systemlyden. Test et kort opptak før viktige møter. Stemmegrupper er ikke automatisk bekreftede personnavn. Importkøen lagres ikke ved avslutning.
+Les [bruksanvisningen](docs/BRUKSANVISNING-WINDOWS.txt) og [oppsett og testgrenser](docs/windows-v42-dictation-startup.md). Mikrofontesten kontrollerer ikke Teams-systemlyden. Test et kort opptak før viktige møter. Stemmegrupper er ikke automatisk bekreftede personnavn. Importkøen lagres ikke ved avslutning.
 
 ## Oppdatering og kilder
 

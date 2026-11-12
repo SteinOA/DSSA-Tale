@@ -1,3 +1,7 @@
+// This dependency must execute before the store reads localStorage. Importing
+// it only from main.jsx lets a shared settings chunk read upstream cloud defaults
+// before the entry chunk applies DSSA's local defaults on the first launch.
+import "../dssaDefaults";
 import { create } from "zustand";
 import { API_ENDPOINTS } from "../config/constants";
 import i18n, { normalizeUiLanguage } from "../i18n";

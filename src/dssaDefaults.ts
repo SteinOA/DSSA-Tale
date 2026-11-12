@@ -19,7 +19,7 @@ export function initializeDssaDefaults(storage: Storage) {
     const language = (storage.getItem("preferredLanguage") || "").toLowerCase().split("-")[0];
     if (!["no", "nb", "nn"].includes(language)) storage.setItem("preferredLanguage", "no");
     if (!["nb-large", "nb-large-full"].includes(storage.getItem("whisperModel") || ""))
-      storage.setItem("whisperModel", "nb-large");
+      storage.setItem("whisperModel", "nb-large-full");
     for (const key of keys.slice(2)) storage.setItem(key, "whisper");
     storage.setItem("dssaNorwegianSpeechMigrationV1", "true");
   }
@@ -55,7 +55,7 @@ export function initializeDssaDefaults(storage: Storage) {
     if (!["local", "self-hosted"].includes(storage.getItem(key) || "")) set(key, "local");
   }
   set("uiLanguage", "nb", true);
-  set("whisperModel", "nb-large", true);
+  set("whisperModel", "nb-large-full", true);
   set("preferredLanguage", "no", true);
   set("localTranscriptionProvider", "whisper", true);
   set("useCleanupModel", "false", true);
