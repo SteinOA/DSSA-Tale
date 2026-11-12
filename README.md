@@ -1,5 +1,7 @@
 # DSSA Tale for Windows
 
+**100 % lokal talegjenkjenning med NB-Whisper.** Den forhåndsvalgte modellen kjører på din egen PC. Lyden behandles lokalt og sendes ikke til en skytjeneste for transkripsjon når lokal modell er valgt. Etter at modellen er lastet ned, kan lokal tale til tekst brukes uten internett. Ingen konto, abonnement eller API-nøkkel kreves. Valgfrie skyfunksjoner og tilkoblinger har egne innstillinger og krever internett.
+
 Lokal diktering, møteopptak og lydimport med transkripsjon på både bokmål og nynorsk. Uavhengig tilpasning av OpenWhispr, med støtte for Nasjonalbibliotekets NB-Whisper. Ingen konto eller abonnement er nødvendig for lokal tale til tekst.
 
 ## Last ned v43

@@ -1,5 +1,7 @@
 # DSSA Tale v43 for Windows
 
+**100 % lokal talegjenkjenning med NB-Whisper.** Den forhåndsvalgte modellen kjører på din egen PC. Lyden behandles lokalt og sendes ikke til en skytjeneste for transkripsjon når lokal modell er valgt. Etter at modellen er lastet ned, kan lokal tale til tekst brukes uten internett. Ingen konto, abonnement eller API-nøkkel kreves. Valgfrie skyfunksjoner og tilkoblinger har egne innstillinger og krever internett.
+
 Knappen som startet oppsettsveiviseren på nytt er fjernet fra «Finn funksjoner og oppsett». Modell, mikrofon og hurtigtaster endres direkte under Innstillinger. Førstegangsveiviseren beholdes for nye brukere.
 
 ## Bokmål, nynorsk og Teams-møter
