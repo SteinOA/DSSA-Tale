@@ -4,6 +4,10 @@ Lokal diktering, møteopptak og lydimport. Uavhengig tilpasning av OpenWhispr, m
 
 ## Last ned v42
 
+**[Last ned DSSA Tale v42 for Windows x64](https://github.com/SteinOA/DSSA-Tale/releases/download/v1.10.4-dssa.42/DSSA-Tale-1.10.4-dssa.42-Windows-x64.exe)**
+
+Installasjon fra GitHub, ny modellnedlasting, lokal diktering og innliming i Codex er kontrollert på Windows. Dette er den valgte offentlige utgaven.
+
 [GitHub-utgivelsen](https://github.com/SteinOA/DSSA-Tale/releases/tag/v1.10.4-dssa.42) inneholder **DSSA-Tale-1.10.4-dssa.42-Windows-x64.exe**, kilder, kontrollsummer og veiledning. v40 og v41 er trukket fra offentlig nedlasting. v42 retter første diktering som ellers kunne bli sendt til OpenWhispr Cloud i stedet for lokal modell.
 
 ## Første start
@@ -24,7 +28,7 @@ Les [bruksanvisningen](docs/BRUKSANVISNING-WINDOWS.txt) og [oppsett og testgrens
 
 ## Oppdatering og kilder
 
-Lukk appen når opptak og transkripsjon er ferdig. Installer ny pakke manuelt. Vanlig oppdatering sletter ikke brukerdata. Windows x64-testutgaven har ikke eget DSSA-kodesigneringssertifikat; ikke slå av Windows-beskyttelsen. Se kontrollsummer og teststatus i utgivelsen.
+Lukk appen når opptak og transkripsjon er ferdig. Installer ny pakke manuelt. Vanlig oppdatering sletter ikke brukerdata. Windows x64-utgaven har ikke eget DSSA-kodesigneringssertifikat; ikke slå av Windows-beskyttelsen. Se kontrollsummer og teststatus i utgivelsen.
 
 Se [CREDITS.md](CREDITS.md), [LICENSE](LICENSE) og [distribusjon og kilder](docs/windows-distribution.md). Offentlig kildeeksport og tilhørende komponentkilder følger utgivelsen. Privat historikk og brukerprofiler følger ikke med. Appen er MIT; komponenter og modeller har egne vilkår. Mac er ikke endret.
 

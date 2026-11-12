@@ -12,7 +12,7 @@ Regresjonstesten starter fra tom lagring, laster innstillingslageret direkte som
 
 ## Grenser
 
-Feilen som ble observert var transkripsjonsruten før innlimingen. Automatisk innliming i alle eksterne programmer er ikke garantert. En faktisk diktering og innliming i Codex er ikke ende-til-ende-verifisert for denne pakken. v42 installeres ikke på denne PC-en nå, etter brukerens ønske om å fjerne den installerte programvaren. Talemotoren i v41 hadde allerede bestått test med syntetisk lyd, og native komponenter er uendret.
+Feilen som ble observert var transkripsjonsruten før innlimingen. Automatisk innliming i alle eksterne programmer er ikke garantert. v42 er lastet ned fra GitHub og installert med tom profil og tom talemodellmappe. Alle 374 installerte pakkefiler er kontrollert mot manifestet. NB-Whisper Large er lastet ned på nytt og kontrollert med SHA-256. Praktisk diktering og innliming i Codex er bekreftet på denne PC-en; loggen viser lokal transkripsjon uten Cloud-bruk. Talemotoren i v41 hadde allerede bestått test med syntetisk lyd, og native komponenter er uendret.
 
 ## Første oppsett
 
