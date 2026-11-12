@@ -63,7 +63,8 @@ function MainApp() {
   useEffect(() => {
     if (!isControlPanel) return;
     const restartSetup = () => {
-      localStorage.removeItem("onboardingCompleted");
+      // Reviewing setup must never turn a configured profile into a first run.
+      // Keep completion persisted so closing or cancelling returns to the app.
       setNeedsReauth(false);
       setShowOnboarding(true);
     };
@@ -215,7 +216,14 @@ function MainApp() {
   if (isControlPanel && showOnboarding) {
     return (
       <Suspense fallback={<LoadingFallback />}>
-        <OnboardingFlow onComplete={handleOnboardingComplete} />
+        <OnboardingFlow
+          onComplete={handleOnboardingComplete}
+          onCancel={
+            localStorage.getItem("onboardingCompleted") === "true"
+              ? () => setShowOnboarding(false)
+              : undefined
+          }
+        />
         <BackgroundModelDownloadTray placement="onboarding" />
       </Suspense>
     );

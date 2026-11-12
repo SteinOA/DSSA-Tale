@@ -65,9 +65,6 @@ export default function DssaFeatureLinks({
       className="space-y-3 rounded-xl border border-border p-4"
     >
       <h3 className="font-semibold">Finn funksjoner og oppsett</h3>
-      <Button variant="outline" onClick={() => window.dispatchEvent(new Event("dssa-start-setup"))}>
-        Start oppsettsveiviseren
-      </Button>
       <p className="text-sm text-muted-foreground">
         Åpne funksjonen eller innstillingssiden. Ingen nedlasting, innlogging eller endring starter
         når du åpner en side.

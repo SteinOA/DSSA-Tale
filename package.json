@@ -1,6 +1,6 @@
 {
   "name": "open-whispr",
-  "version": "1.10.4-dssa.42",
+  "version": "1.10.4-dssa.43",
   "description": "Lokal diktering, møter og dokumenter for Windows",
   "main": "main.js",
   "private": true,

@@ -1,5 +1,13 @@
 [
   {
+    "version": "1.10.4-dssa.43",
+    "changes": [
+      "Fjernet knappen som startet oppsettsveiviseren på nytt fra Finn funksjoner og oppsett. Vanlige endringer gjøres direkte i innstillingene.",
+      "Et fullført oppsett beholdes dersom veiviseren avbrytes eller vinduet lukkes.",
+      "Oppdatert bruksanvisningen. Oppdatering beholder brukerprofil, notater og nedlastede modeller."
+    ]
+  },
+  {
     "version": "1.10.4-dssa.42",
     "changes": [
       "Rettet feil ved første oppstart: DSSA sine lokale standardvalg brukes før innstillingslageret opprettes, også i det skjulte dikteringsvinduet.",

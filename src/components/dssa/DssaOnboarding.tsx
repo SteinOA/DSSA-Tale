@@ -9,8 +9,10 @@ import { OnboardingWindowControls } from "../onboarding/OnboardingShell";
 
 export default function DssaOnboarding({
   onComplete,
+  onCancel,
 }: {
   onComplete: (options?: { openSettings: boolean }) => void;
+  onCancel?: () => void;
 }) {
   const { i18n } = useTranslation();
   const { uiLanguage, setUiLanguage } = useSettingsStore();
@@ -141,6 +143,11 @@ export default function DssaOnboarding({
       <OnboardingWindowControls />
       <div className="mx-auto max-w-xl space-y-5 py-4">
         <img src={logo} alt="" className="h-12 w-12 rounded-xl" />
+        {onCancel && (
+          <Button variant="outline" disabled={download.isDownloading} onClick={onCancel}>
+            {tr("Avbryt og gå tilbake", "Cancel and go back")}
+          </Button>
+        )}
         <p className="text-sm text-muted-foreground">
           DSSA Tale · {tr("Trinn", "Step")} {step + 1} / 4
         </p>
