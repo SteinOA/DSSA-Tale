@@ -1,0 +1,84 @@
+[
+  {
+    "version": "1.10.4-dssa.43",
+    "changes": [
+      "Fjernet knappen som startet oppsettsveiviseren på nytt fra Finn funksjoner og oppsett. Vanlige endringer gjøres direkte i innstillingene.",
+      "Et fullført oppsett beholdes dersom veiviseren avbrytes eller vinduet lukkes.",
+      "Oppdatert bruksanvisningen. Oppdatering beholder brukerprofil, notater og nedlastede modeller."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.42",
+    "changes": [
+      "Rettet feil ved første oppstart: DSSA sine lokale standardvalg brukes før innstillingslageret opprettes, også i det skjulte dikteringsvinduet.",
+      "Første diktering skal bruke lokal NB-Whisper Large 3,1 GB uten å kreve OpenWhispr Cloud-innlogging.",
+      "Test dekker opprettelse av ferskt dikteringsvindu uten at hovedmenyen eller veiviseren først har lastet standardvalgene."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.41",
+    "changes": [
+      "Rød anbefaling om GPU i førstegangsoppsettet og ved tilgjengelig GPU på Hjem og under Tale til tekst, med forklaring for NB-Whisper Large 3,1 GB.",
+      "NB-Whisper Large med full presisjon (3,1 GB) er forhåndsvalgt og står øverst i førstegangsoppsettet. Mindre modeller er alternativer.",
+      "Windows-vinduet åpnes på hovedskjermen, uavhengig av hvor musepekeren lå ved oppstart. Dette hindrer at veiviseren havner på en utilgjengelig skjermflate.",
+      "Rettet oppstartsfeil på Windows: lokale innstillinger sikkerhetskopieres før Chromium låser LevelDB. En helt ny profil opprettes trygt før sikkerhetskopimarkøren skrives.",
+      "Førstegangsoppsettet leder gjennom språk, modellnedlasting, mikrofontest og første opptak med forklaring ved hvert trinn.",
+      "Oppsettet kontrollerer faktisk installert talemodell, viser nedlastingsframdrift og hindrer fullføring uten modell og kontrollert mikrofon.",
+      "Valgt lokal modell brukes til diktering, møteopptak og lydimport. Ingen konto eller API-nøkkel kreves. Valgfri tekstopprydding er av i grunnoppsettet.",
+      "Veiviseren åpner riktig vindusstørrelse og har vindusknapper. Den kan startes på nytt under Innstillinger → Generelt → Finn funksjoner og oppsett."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.40",
+    "changes": [
+      "Møteopptak har synlige Start opptak- og Stopp opptak-knapper og trinnvis hjelp i notatet.",
+      "Etter stopp viser notatet at lyden transkriberes og lagres. Statusen følger den faktiske stoppebehandlingen og beholdes til den er ferdig.",
+      "Ved lokal transkribering etter møtet vises behandlet og gjenstående lyd, prosent og et anslag for resttid etter to ferdige lydbiter. Mikrofon og møtelyd telles separat.",
+      "Lydkøens tekstfase skilles fra etterfølgende lagring og talerfordeling. Feilede lydbiter telles ikke som fullført."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.39",
+    "changes": [
+      "Mappeimport finner støttede lyd- og videofiler med valgfri gjennomgang av undermapper. Filene legges i kø og lagres som separate notater etter transkripsjon. Originalene beholdes.",
+      "Mappeimport kan avbrytes og viser filer som hoppes over eller ikke kan leses. Samme filsti legges ikke i kø flere ganger ved mappevalg.",
+      "Bruksanvisningen er utvidet til 28 kapitler med direkte knapper til funksjoner og innstillinger. Generelt har en egen oversikt for å finne oppsett og funksjoner.",
+      "Veiledningen forklarer automatisk notatblokk, lokal importgjenopptakelse, direkte Google Disk, stemmeskille, møteopptak, lagring og modellvalg.",
+      "Community-1-oppsettet har lenker til Hugging Face-konto, modellvilkår og tilgangsnøkkel, med trinnvis forklaring av lesetilgang.",
+      "OpenWhispr-support er fjernet fra Hjelp. Feilrapporter åpner det offentlige DSSA Tale-prosjektet. Google Disk-hjelp og opplastingsnavn er rettet."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.38",
+    "changes": [
+      "System viser installerte tale- og tekstmodeller, valgt dikteringsmodell, lagret språk og status for Silero VAD, sherpa-onnx, Community-1 og ordtidsmodeller.",
+      "System har ingen modell- eller språkvalg. Bare valgfritt Community-1-oppsett er tilgjengelig der, med forklaring på krav til modelltilgang.",
+      "Nedlasting av valgfrie wav2vec2-ordtidsmodeller ligger ved tidsjustering i Lydopplasting, med språket som er valgt der.",
+      "Installerte modeller og valgt bruk skilles tydelig. En nedlasting aktiverer ikke tidsjustering automatisk.",
+      "Endringsoversikten følger installasjonsfilen og krever ingen innlogging eller nett. Installert versjon merkes uten å påstå at den er nyest tilgjengelig."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.37",
+    "changes": [
+      "Kopier, transkriber på nytt, originaltekst, Filutforsker og Slett er synlige knapper i historikken.",
+      "Kalenderen er flyttet over velkomsten. Tekstområdene følger vindusbredden med små kantavstander.",
+      "Windows-startstørrelsen tilpasses skjermens arbeidsflate og skalering. Topplinjen tilpasses smale vinduer."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.36",
+    "changes": [
+      "Automatisk lokal notatblokk på Hjem samler ferdig diktering uten ekstra modellkjøring.",
+      "Kopier, Tøm og Angre tømming; manuelle rettelser og ny tekst etter tømming bevares.",
+      "Den flytende tekstforhåndsvisningen er lavere og bredere."
+    ]
+  },
+  {
+    "version": "1.10.4-dssa.35",
+    "changes": [
+      "Tekstopprydding er frivillig og aktiveres ikke av modellvalg eller nedlasting alene.",
+      "Modellkort viser råd om minnebehov og ekstra behandlingstid."
+    ]
+  }
+]

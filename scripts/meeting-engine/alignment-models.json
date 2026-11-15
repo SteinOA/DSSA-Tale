@@ -1,0 +1,54 @@
+{
+  "1b-nb": {
+    "repo": "NbAiLab/nb-wav2vec2-1b-bokmaal-v2",
+    "revision": "58a6eb5d7927c378f5d2785bc865756c9ae273ae",
+    "files": {
+      "model.safetensors": "6ab493ecc739df905d0decdc09ce1d9ee4453987bb1bdbcf2e8b06642b3c47b6",
+      "config.json": "5c1056914dfb0540fe7756f97d436987b28dd6f078defa9f406516ce87cd3b00",
+      "preprocessor_config.json": "8f9f560daa144e525174a9ce159ac4d168e010006d6c3e46cad02cae72a6c5ad",
+      "tokenizer_config.json": "f7188aa61db5681fbbb1445440c1976ebd5c02d314a532f2f5fcc0a7c56c64d6",
+      "special_tokens_map.json": "f5ec6860161cef6dfcba2ae449a2565a08367acc1df8c6339b4f2d55f8793087",
+      "added_tokens.json": "88f73c913695cb5ef83a96ea2a5f08289e7c38979cf32f3d98026dcd08631c7d",
+      "vocab.json": "2845960b07c17f6dae3acd31d4080499bf32e648fb9e1dd3efb9c48f781c9540"
+    }
+  },
+  "1b-nn": {
+    "repo": "NbAiLab/nb-wav2vec2-1b-nynorsk",
+    "revision": "37107327f6af742c008042d8cfdba4276de18f82",
+    "files": {
+      "model.safetensors": "55b79d680168317058eaa54710838e49501cba54bfc9403b6c9b83fa8c6c67cd",
+      "config.json": "ee41a09d449fc8875b6179db551e96f01732e76337bc291352e1b54d10ad5d0c",
+      "preprocessor_config.json": "8f9f560daa144e525174a9ce159ac4d168e010006d6c3e46cad02cae72a6c5ad",
+      "tokenizer_config.json": "d9be53051db7cc8f8d4e939cf92cd24bb736dec503caa695ce869bc1b0dda0c9",
+      "special_tokens_map.json": "f5ec6860161cef6dfcba2ae449a2565a08367acc1df8c6339b4f2d55f8793087",
+      "added_tokens.json": "a58d8a84e7348641d7c15233f9c114a991aa2a7f2598579e17f94faf5dd22643",
+      "vocab.json": "a7293e2f1c25d015aac1e491daaa13d1f03798df48afb2d9d72c290ea8d9a342"
+    }
+  },
+  "300m-nb": {
+    "repo": "NbAiLab/nb-wav2vec2-300m-bokmaal",
+    "revision": "4783f50808c12aa3d8f31b5da3c1b74a18e1a386",
+    "files": {
+      "model.safetensors": "c203521275af7bc7908ab98f9fdecf072db7de37a6b034d5061703a004679c51",
+      "config.json": "5c00483bd832243507d3fff8d486f97015ce4d59b64d989c98bf95e0e244ee8a",
+      "preprocessor_config.json": "8f9f560daa144e525174a9ce159ac4d168e010006d6c3e46cad02cae72a6c5ad",
+      "tokenizer_config.json": "fe62b325a126ea255d3a6286369cb957a83479430b11c24ee1f64971c9dc8bcb",
+      "special_tokens_map.json": "33238ee53fdde916cdd7508a659dba61badd77ded8809a7aae99788eefa11aa2",
+      "added_tokens.json": "a58d8a84e7348641d7c15233f9c114a991aa2a7f2598579e17f94faf5dd22643",
+      "vocab.json": "a7293e2f1c25d015aac1e491daaa13d1f03798df48afb2d9d72c290ea8d9a342"
+    }
+  },
+  "300m-nn": {
+    "repo": "NbAiLab/nb-wav2vec2-300m-nynorsk",
+    "revision": "6dc09e6169fc24660aeb2de6e72f6a2f8ed288b2",
+    "files": {
+      "model.safetensors": "54f27a936f80524c904104cf39165f5af627a30eef16ccbb90caf4eb21d5beb2",
+      "config.json": "d0ba3b6c24797dd559e84e91f39fa50bf0d518f83058a88643b6c3937a3436c9",
+      "preprocessor_config.json": "8f9f560daa144e525174a9ce159ac4d168e010006d6c3e46cad02cae72a6c5ad",
+      "tokenizer_config.json": "fe62b325a126ea255d3a6286369cb957a83479430b11c24ee1f64971c9dc8bcb",
+      "special_tokens_map.json": "0a28635ed95d6d9c86aaccc7de253b3cfd886702e5ddba54cdcfd273049cbee6",
+      "added_tokens.json": "a58d8a84e7348641d7c15233f9c114a991aa2a7f2598579e17f94faf5dd22643",
+      "vocab.json": "a7293e2f1c25d015aac1e491daaa13d1f03798df48afb2d9d72c290ea8d9a342"
+    }
+  }
+}

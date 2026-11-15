@@ -1,0 +1,93 @@
+export interface GoogleCalendar {
+  id: string;
+  summary: string;
+  description: string | null;
+  background_color: string | null;
+  is_selected: number;
+  is_primary: number;
+  sync_token: string | null;
+}
+
+export type CalendarResponseStatus = "needsAction" | "declined" | "tentative" | "accepted";
+
+export interface CalendarEvent {
+  id: string;
+  calendar_id: string;
+  provider: string;
+  summary: string | null;
+  start_time: string;
+  end_time: string;
+  is_all_day: number;
+  status: string;
+  hangout_link: string | null;
+  conference_data: string | null;
+  organizer_email: string | null;
+  attendees_count: number;
+  attendees: string | null;
+  /** The event's page in Google Calendar or Outlook on the web; null for Apple. */
+  web_link: string | null;
+  availability_status: CalendarAvailabilityStatus;
+  self_response_status: CalendarResponseStatus | "unknown";
+}
+
+export type LinkableCalendarEvent = CalendarEvent & { calendar_color: string | null };
+
+export type CalendarAvailabilityStatus = "free" | "tentative" | "busy" | "unavailable" | "unknown";
+
+export interface CalendarAvailabilityRequest {
+  start: string;
+  end: string;
+  minimumSlotMinutes?: number;
+  bufferMinutes?: number;
+  maxResults?: number;
+}
+
+export interface CalendarAvailabilityInterval {
+  start: string;
+  end: string;
+}
+
+export interface CalendarAvailabilitySlot extends CalendarAvailabilityInterval {
+  durationMinutes: number;
+}
+
+export interface CalendarAvailabilityResult {
+  range: CalendarAvailabilityInterval;
+  timezone: string;
+  isEntireRangeFree: boolean;
+  availableSlots: CalendarAvailabilitySlot[];
+  hasMore: boolean;
+  coverage: {
+    source: "local-calendar-cache";
+    lookaheadDays: number;
+  };
+}
+
+export interface CalendarAccount {
+  email: string;
+}
+
+export interface MicrosoftCalendarAccount extends CalendarAccount {
+  /** Entra tenant id; null or absent for accounts connected by older builds. */
+  tenantId?: string | null;
+}
+
+export interface CalendarConnectionStatus {
+  connected: boolean;
+  email: string | null;
+}
+
+export interface CalendarAttendee {
+  email: string;
+  displayName: string | null;
+  responseStatus: CalendarResponseStatus | null;
+  self: boolean;
+  resource?: boolean;
+  /** The calendar event that put this attendee on a note; removing that event removes them. */
+  addedByEvent?: string;
+}
+
+export interface Contact {
+  email: string;
+  display_name: string | null;
+}

@@ -1,0 +1,60 @@
+{
+  "extends": "electron-builder.unsigned-win.json",
+  "appId": "no.dssa.tale.windows",
+  "productName": "DSSA Tale",
+  "protocols": { "name": "DSSA Tale", "schemes": ["dssa-tale"] },
+  "artifactName": "DSSA-Tale-${version}-Windows-x64.${ext}",
+  "directories": { "output": "../../outputs/DSSA-Tale-Windows" },
+  "extraMetadata": { "windowsTrayIdentity": false },
+  "publish": null,
+  "win": {
+    "target": [{ "target": "nsis", "arch": ["x64"] }],
+    "azureSignOptions": null,
+    "forceCodeSigning": false
+  },
+  "nsis": {
+    "useZip": true,
+    "differentialPackage": false,
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false,
+    "shortcutName": "DSSA Tale",
+    "include": "resources/nsis/dssa.nsh",
+    "createDesktopShortcut": true
+  },
+  "extraResources": [
+    { "from": "src/assets", "to": "src/assets", "filter": ["**/*", "!fonts/yowza/**"] },
+    {
+      "from": "resources/bin",
+      "to": "bin",
+      "filter": [
+        "**/*",
+        "!*.bin",
+        "!*.gguf",
+        "!mediaremote-adapter.*",
+        "!msvcp140.dll",
+        "!vcruntime140.dll",
+        "!vcruntime140_1.dll",
+        "!vcomp140.dll"
+      ]
+    },
+    { "from": "resources/legal", "to": "legal" },
+    { "from": "CREDITS.md", "to": "legal/CREDITS.md" },
+    {
+      "from": "scripts/meeting-engine",
+      "to": "community-engine",
+      "filter": [
+        "community_worker.py",
+        "community_checkpoints.py",
+        "download_alignment_models.py",
+        "verify_setup.py",
+        "requirements-windows.txt",
+        "local_credential.py",
+        "worker.py",
+        "whisperx_alignment_trial.py",
+        "resource_policy.py",
+        "alignment-models.json"
+      ]
+    }
+  ]
+}

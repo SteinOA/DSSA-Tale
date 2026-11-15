@@ -1,0 +1,14 @@
+DSSA Tale Windows is a local customization of OpenWhispr v1.10.4.
+OpenWhispr: Copyright (c) 2024 OpenWhispr Team, MIT License.
+This product is not published or endorsed by OpenWhispr or Nasjonalbiblioteket.
+NB-Whisper model weights are not bundled. Existing models are reused; optional
+downloads use NbAiLab/nb-whisper-large on Hugging Face (Apache-2.0).
+The source repository retains the upstream LICENSE and component licenses.
+See the accompanying CREDITS.md and native/ notices for attribution and licenses.
+Windows v31 uses an LGPL FFmpeg audio build with LAME and Opus. Its complete
+corresponding source and build changes are in DSSA-Tale-corresponding-source.zip,
+offered beside the installer. The adapted app source is supplied separately in
+DSSA-Tale-public-source.zip; the installer's package metadata identifies its hash.
+The source assets must remain available with the binary. Other components keep
+their own licenses and are not covered by the app's MIT license.
+No endorsement by the named projects or service providers is implied.

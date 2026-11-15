@@ -1,0 +1,535 @@
+/* DSSA Tale: visible controls in both themes; colour never replaces the label. */
+:root {
+  --dssa-control-bg: #e7effb;
+  --dssa-control-hover: #d7e5fa;
+  --dssa-control-border: #9aafd0;
+  --dssa-control-text: #193862;
+  --dssa-control-focus: #245bd8;
+}
+.dark {
+  --dssa-control-bg: #c9d9ef;
+  --dssa-control-hover: #dce8f9;
+  --dssa-control-border: #80a7ed;
+  --dssa-control-text: #162e50;
+  --dssa-control-focus: #a7c8ff;
+}
+/* Sidebar navigation retains its blue page-navigation palette. */
+[data-dssa-navigation] {
+  --dssa-control-bg: #285abd;
+  --dssa-control-hover: #204caa;
+  --dssa-control-border: #17428f;
+  --dssa-control-text: #ffffff;
+}
+.dark [data-dssa-navigation] {
+  --dssa-control-bg: #2855a7;
+  --dssa-control-hover: #3266c5;
+  --dssa-control-border: #80a7ed;
+}
+/* Covers native navigation, toolbars, window controls and other icon buttons. */
+button[data-segment-button][aria-pressed="false"] {
+  background: #e9edf4;
+  color: #243752;
+  border-color: #aab7c9;
+  box-shadow: none;
+}
+.dark button[data-segment-button][aria-pressed="false"] {
+  background: #263248;
+  color: #e0e8f5;
+  border-color: #6d809d;
+}
+:where(
+  button:not([data-slot="button"]):not([role="switch"]):not([role="checkbox"]),
+  [role="button"]:not(button)
+) {
+  background-color: var(--dssa-control-bg);
+  color: var(--dssa-control-text);
+  border: 1px solid var(--dssa-control-border);
+}
+:where(
+    button:not([data-slot="button"]):not([role="switch"]):not([role="checkbox"]),
+    [role="button"]:not(button)
+  ):hover:not(:disabled) {
+  background-color: var(--dssa-control-hover);
+}
+:where(button):focus-visible {
+  outline: 2px solid var(--dssa-control-focus);
+  outline-offset: 2px;
+}
+button[data-slot="button"]:is(
+    [data-variant="outline"],
+    [data-variant="outline-flat"],
+    [data-variant="social"]
+  ) {
+  background: var(--dssa-control-bg);
+  color: var(--dssa-control-text);
+  border: 1px solid var(--dssa-control-border);
+}
+button[data-slot="button"]:is(
+    [data-variant="outline"],
+    [data-variant="outline-flat"],
+    [data-variant="social"]
+  ):hover:not(:disabled) {
+  background: var(--dssa-control-hover);
+}
+button[data-slot="button"][data-variant="default"] {
+  background: var(--dssa-control-bg);
+  color: var(--dssa-control-text);
+  border: 1px solid var(--dssa-control-border);
+  box-shadow: 0 1px 2px rgb(16 47 105 / 12%);
+}
+button[data-slot="button"][data-variant="default"]:hover:not(:disabled) {
+  background: var(--dssa-control-hover);
+}
+button[data-variant="success"] {
+  background: #14713b;
+  color: #fff;
+  border-color: #0c582c;
+}
+button[data-variant="secondary"] {
+  background: #eee8ff;
+  border: 1px solid #ad93df;
+  color: #59368b;
+}
+.dark button[data-variant="secondary"] {
+  background: #35284f;
+  border-color: #947ac0;
+  color: #edddff;
+}
+button[data-variant="ghost"] {
+  background: #e6f6f1;
+  border: 1px solid #87bcae;
+  color: #135b4b;
+}
+.dark button[data-variant="ghost"] {
+  background: #183d35;
+  border-color: #5e9c8b;
+  color: #c2f3e5;
+}
+button[data-variant="link"] {
+  background: var(--dssa-control-bg);
+  border: 1px solid var(--dssa-control-border);
+  color: var(--dssa-control-text);
+}
+button:not([data-slot="button"]):is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    [data-state="active"]
+  ) {
+  background: #2456bd;
+  color: #fff;
+  border-color: #164294;
+}
+button:not([data-slot="button"])[class*="text-destructive"] {
+  background: #fff0f0;
+  color: #a91f2c;
+  border-color: #dc939b;
+}
+.dark button:not([data-slot="button"])[class*="text-destructive"] {
+  background: #49232b;
+  color: #ffd5da;
+  border-color: #b76e7a;
+}
+[data-brand="google"] {
+  --dssa-brand-bg: #fff6dc;
+  --dssa-brand-hover: #ffedb2;
+  --dssa-brand-border: #a78321;
+  --dssa-brand-text: #54410d;
+}
+[data-brand="microsoft"] {
+  --dssa-brand-bg: #e2efff;
+  --dssa-brand-hover: #c9e1ff;
+  --dssa-brand-border: #4075b7;
+  --dssa-brand-text: #174b83;
+}
+[data-brand="apple"] {
+  --dssa-brand-bg: #e3f7ff;
+  --dssa-brand-hover: #c5edff;
+  --dssa-brand-border: #348aa7;
+  --dssa-brand-text: #075575;
+}
+[data-brand="link"] {
+  --dssa-brand-bg: #f2e8ff;
+  --dssa-brand-hover: #e5d1ff;
+  --dssa-brand-border: #925cbc;
+  --dssa-brand-text: #62328d;
+}
+.dark [data-brand="google"] {
+  --dssa-brand-bg: #403615;
+  --dssa-brand-hover: #57491c;
+  --dssa-brand-border: #b79840;
+  --dssa-brand-text: #fff0b5;
+}
+.dark [data-brand="microsoft"] {
+  --dssa-brand-bg: #183657;
+  --dssa-brand-hover: #234e7b;
+  --dssa-brand-border: #6098d6;
+  --dssa-brand-text: #d5e8ff;
+}
+.dark [data-brand="apple"] {
+  --dssa-brand-bg: #143e50;
+  --dssa-brand-hover: #20556b;
+  --dssa-brand-border: #5aaccb;
+  --dssa-brand-text: #cbf0ff;
+}
+.dark [data-brand="link"] {
+  --dssa-brand-bg: #39234f;
+  --dssa-brand-hover: #51326e;
+  --dssa-brand-border: #a27ac8;
+  --dssa-brand-text: #efdaff;
+}
+button[data-slot="button"][data-brand] {
+  background: var(--dssa-brand-bg);
+  border: 1px solid var(--dssa-brand-border);
+  color: var(--dssa-brand-text);
+}
+button[data-slot="button"][data-brand]:hover:not(:disabled) {
+  background: var(--dssa-brand-hover);
+}
+button:disabled,
+button[aria-disabled="true"] {
+  opacity: 0.55;
+}
+
+/* Round send arrows share the standard action palette, including empty drafts. */
+button[data-dssa-control="send"] {
+  background: var(--dssa-control-bg);
+  color: var(--dssa-control-text);
+  border-color: var(--dssa-control-border);
+}
+button[data-dssa-control="send"]:hover:not(:disabled) {
+  background: var(--dssa-control-hover);
+}
+button[data-dssa-control="send"]:disabled {
+  background: #e9edf4;
+  color: #52627a;
+  border-color: #aab7c9;
+  opacity: 1;
+}
+.dark button[data-dssa-control="send"]:disabled {
+  background: #263248;
+  color: #a9bbd8;
+  border-color: #6d809d;
+}
+
+/* Large shortcut pickers are real controls too, although implemented as role=button. */
+[data-dssa-control="hotkey"] {
+  background: var(--dssa-control-bg);
+  color: var(--dssa-control-text);
+  border: 2px solid var(--dssa-control-border);
+  box-shadow: 0 2px 0 rgb(26 64 120 / 12%);
+  min-height: 48px;
+}
+[data-dssa-control="hotkey"]:hover:not([aria-disabled="true"]) {
+  background: var(--dssa-control-hover);
+  border-color: var(--dssa-control-focus);
+}
+[data-dssa-control="hotkey"] [class*="text-muted-foreground"] {
+  color: inherit;
+}
+[data-dssa-control="hotkey"] [class*="font-medium"] {
+  font-weight: 600;
+}
+[data-dssa-control="hotkey"][data-capturing="true"] {
+  background: #fff2cc;
+  color: #624500;
+  border-color: #b97805;
+  box-shadow: 0 0 0 3px rgb(217 151 20 / 22%);
+}
+.dark [data-dssa-control="hotkey"][data-capturing="true"] {
+  background: #49390e;
+  color: #fff0b0;
+  border-color: #d3a94b;
+}
+button[aria-current="page"],
+button[aria-current="page"]:hover {
+  background: #2456bd;
+  color: #fff;
+  border-color: #164294;
+}
+button[aria-current="page"] :is(span, svg) {
+  color: inherit;
+}
+
+/* Standard actions are light; persistent selection has its own dark palette. */
+:where(button:not([data-slot="button"]):not([role="switch"]):not([role="checkbox"])),
+button[data-slot="button"]:is(
+    [data-variant="outline"],
+    [data-variant="outline-flat"],
+    [data-variant="social"],
+    [data-variant="link"]
+  ):not([data-brand]),
+[data-dssa-control="hotkey"] {
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 24%),
+    0 1px 2px rgb(20 49 96 / 12%);
+}
+button:not([data-slot="button"]):not([role="switch"]):not([role="checkbox"]) :is(span, svg) {
+  color: inherit;
+}
+button:not([data-slot="button"]):not([role="switch"]):not([role="checkbox"]):active:not(:disabled),
+button[data-slot="button"]:is(
+    [data-variant="outline"],
+    [data-variant="outline-flat"],
+    [data-variant="social"],
+    [data-variant="link"]
+  ):not([data-brand]):active:not(:disabled) {
+  translate: 0 1px;
+  box-shadow: inset 0 2px 3px rgb(12 31 66 / 28%);
+}
+/* The selected page is distinctly darker than an ordinary blue action. */
+button[aria-current="page"],
+button[aria-current="page"]:hover {
+  background: #15366e;
+  border-color: #0c2654;
+  box-shadow: inset 3px 0 0 #b9d7ff;
+}
+/* Drop areas remain light surfaces; they are not standard action buttons. */
+[role="button"]:not(button):not([data-dssa-control="hotkey"]) {
+  background: #e9f1ff;
+  border-color: #5a83be;
+  color: #214c91;
+}
+.dark [role="button"]:not(button):not([data-dssa-control="hotkey"]) {
+  background: #1b3154;
+  border-color: #648bc3;
+  color: #dfebff;
+}
+[data-dssa-control="hotkey"][data-capturing="true"],
+[data-dssa-control="hotkey"][data-capturing="true"]:hover {
+  background: #fff2cc;
+  color: #624500;
+  border-color: #b97805;
+  box-shadow: 0 0 0 3px rgb(217 151 20 / 22%);
+}
+.dark [data-dssa-control="hotkey"][data-capturing="true"],
+.dark [data-dssa-control="hotkey"][data-capturing="true"]:hover {
+  background: #49390e;
+  color: #fff0b0;
+  border-color: #d3a94b;
+}
+@media (prefers-reduced-motion: reduce) {
+  button:active {
+    translate: none;
+  }
+}
+
+/* Four CSS millimetres are about 15px; use 16px between separate controls. */
+:where(.flex, .inline-flex, .grid, .inline-grid):not(.overflow-hidden):has(> button ~ button) {
+  gap: 16px;
+}
+
+/* Shortcut capture is a compact action, not a full-width banner. */
+[data-dssa-control="hotkey"][data-dssa-compact="true"] {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 36px;
+  align-self: flex-start;
+}
+.dssa-hotkey-panel-row {
+  padding: 8px 12px;
+}
+/* Descriptive settings choices need neutral surfaces and readable secondary text. */
+.dssa-choice-row {
+  padding: 8px 12px;
+}
+button[data-dssa-control="choice-card"],
+button:not([data-slot="button"]):has(p) {
+  background: #f6f8fc;
+  color: #203753;
+  border: 1px solid #bdcadd;
+  box-shadow: none;
+  padding: 6px 10px;
+}
+button[data-dssa-control="choice-card"]:hover,
+button:not([data-slot="button"]):has(p):hover {
+  background: #eaf1fc;
+  color: #203753;
+}
+button[data-dssa-control="choice-card"][aria-pressed="true"] {
+  background: #eaf1fc;
+  color: #203753;
+  border-color: #3768ba;
+  box-shadow: inset 3px 0 0 #3768ba;
+}
+button[data-dssa-control="choice-card"] p,
+button:not([data-slot="button"]):has(p) p {
+  color: #465970;
+}
+.dark button[data-dssa-control="choice-card"],
+.dark button:not([data-slot="button"]):has(p) {
+  background: #1c2c43;
+  color: #edf3ff;
+  border-color: #657994;
+}
+.dark button[data-dssa-control="choice-card"]:hover,
+.dark button:not([data-slot="button"]):has(p):hover,
+.dark button[data-dssa-control="choice-card"][aria-pressed="true"] {
+  background: #273e5e;
+  color: #edf3ff;
+  border-color: #83aff6;
+}
+.dark button[data-dssa-control="choice-card"] p,
+.dark button:not([data-slot="button"]):has(p) p {
+  color: #c2cfe2;
+}
+
+/* Service identity applies to every action in its own provider area. */
+button[data-dssa-control="starter-card"] {
+  background: var(--color-card);
+  color: var(--color-foreground);
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+button[data-dssa-control="starter-card"]:hover:not(:disabled) {
+  background: var(--color-muted);
+  color: var(--color-foreground);
+  border-color: var(--color-border-hover);
+}
+[data-brand="sharepoint"] {
+  --dssa-brand-bg: #dff6f3;
+  --dssa-brand-hover: #bcebe4;
+  --dssa-brand-border: #25877c;
+  --dssa-brand-text: #12584f;
+}
+.dark [data-brand="sharepoint"] {
+  --dssa-brand-bg: #153d39;
+  --dssa-brand-hover: #1c554e;
+  --dssa-brand-border: #64b6a8;
+  --dssa-brand-text: #d2f6ee;
+}
+[data-brand-accent="sharepoint"] {
+  border-inline-end: 4px solid #25877c;
+}
+[data-brand="teams"] {
+  --dssa-brand-bg: #eeeafa;
+  --dssa-brand-hover: #ded7f4;
+  --dssa-brand-border: #6860a8;
+  --dssa-brand-text: #40376f;
+}
+.dark [data-brand="teams"] {
+  --dssa-brand-bg: #30294e;
+  --dssa-brand-hover: #44396b;
+  --dssa-brand-border: #b0a1ed;
+  --dssa-brand-text: #eee8ff;
+}
+[data-brand="facetime"] {
+  --dssa-brand-bg: #e5f8ea;
+  --dssa-brand-hover: #c9efd4;
+  --dssa-brand-border: #338448;
+  --dssa-brand-text: #195e2a;
+}
+.dark [data-brand="facetime"] {
+  --dssa-brand-bg: #193e24;
+  --dssa-brand-hover: #235831;
+  --dssa-brand-border: #79bd8a;
+  --dssa-brand-text: #d5f7de;
+}
+.dssa-provider-card {
+  border-inline-start: 4px solid var(--dssa-brand-border);
+}
+[data-provider-area] button:not([role="switch"]):not([role="checkbox"]),
+button[data-brand] {
+  background: var(--dssa-brand-bg);
+  border-color: var(--dssa-brand-border);
+  color: var(--dssa-brand-text);
+}
+[data-provider-area] button:not([role="switch"]):not([role="checkbox"]):hover:not(:disabled),
+button[data-brand]:hover:not(:disabled) {
+  background: var(--dssa-brand-hover);
+  color: var(--dssa-brand-text);
+}
+button[data-brand][aria-current="page"] {
+  background: var(--dssa-brand-hover);
+  color: var(--dssa-brand-text);
+  box-shadow: inset 3px 0 0 var(--dssa-brand-border);
+}
+[data-provider-area] :is(input, select):focus-visible {
+  outline: 2px solid var(--dssa-brand-border);
+  outline-offset: 2px;
+}
+
+/* Selection must remain visible after brand, card and generic action styles. */
+button:is(
+    [aria-pressed="false"],
+    [aria-selected="false"],
+    [role="tab"][data-state="inactive"],
+    [role="radio"][aria-checked="false"]
+  ):not([role="switch"]):not([role="checkbox"]) {
+  background: #edf1f7;
+  color: #263a54;
+  border: 1px solid #aab8cc;
+  box-shadow: none;
+}
+button:is(
+    [aria-pressed="false"],
+    [aria-selected="false"],
+    [role="tab"][data-state="inactive"],
+    [role="radio"][aria-checked="false"]
+  ):hover:not(:disabled):not([role="switch"]):not([role="checkbox"]) {
+  background: #dce6f5;
+  color: #263a54;
+}
+.dark
+  button:is(
+    [aria-pressed="false"],
+    [aria-selected="false"],
+    [role="tab"][data-state="inactive"],
+    [role="radio"][aria-checked="false"]
+  ):not([role="switch"]):not([role="checkbox"]) {
+  background: #263248;
+  color: #e0e8f5;
+  border-color: #6d809d;
+}
+.dark
+  button:is(
+    [aria-pressed="false"],
+    [aria-selected="false"],
+    [role="tab"][data-state="inactive"],
+    [role="radio"][aria-checked="false"]
+  ):hover:not(:disabled):not([role="switch"]):not([role="checkbox"]) {
+  background: #354762;
+  color: #e0e8f5;
+}
+button:is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    [role="tab"][data-state="active"],
+    [role="radio"][aria-checked="true"]
+  ):not([role="switch"]):not([role="checkbox"]),
+button:is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    [role="tab"][data-state="active"],
+    [role="radio"][aria-checked="true"]
+  ):hover:not([role="switch"]):not([role="checkbox"]) {
+  background: #15366e;
+  color: #ffffff;
+  border: 1px solid #0c2654;
+  box-shadow: inset 0 0 0 2px #b9d7ff;
+}
+.dark
+  button:is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    [role="tab"][data-state="active"],
+    [role="radio"][aria-checked="true"]
+  ):not([role="switch"]):not([role="checkbox"]) {
+  background: #174783;
+  color: #ffffff;
+  border-color: #b9d7ff;
+  box-shadow: inset 0 0 0 2px #b9d7ff;
+}
+button:is([aria-pressed], [aria-selected], [role="tab"]) :is(span, svg) {
+  color: inherit;
+}
+button:is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    [role="tab"][data-state="active"],
+    [role="radio"][aria-checked="true"]
+  ):not([role="switch"]):not([role="checkbox"])
+  * {
+  color: inherit;
+}
